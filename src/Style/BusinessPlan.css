@@ -1,0 +1,42 @@
+*{
+ 
+    padding:  0 ;
+    margin : 0 ; 
+    box-sizing:  border-box;  
+   
+  } 
+
+.BusinessPlan{
+
+
+    height: 100vh ;
+    width : 100vw ; 
+   display:  flex ;
+    background-color: orangered;
+
+}
+
+.BusinessPlan_Sidebar{
+
+ 
+    
+    width : 19% ; 
+    height : 100% ; 
+     background-color: #353B55 ; 
+  
+
+}  
+
+
+.BusinessPlan_Body{
+
+    
+  display: flex;
+  flex-direction: column;
+  width : 81% ; 
+  height :  100%; 
+ background-color: white ;  
+ align-items:  center;
+
+
+}

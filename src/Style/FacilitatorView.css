@@ -1,0 +1,161 @@
+
+*{
+ 
+    padding:  0 ;
+    margin : 0 ; 
+    box-sizing:  border-box;  
+   
+  }
+  
+
+
+
+ .clientview{
+
+    height: 100vh ;
+    width : 100vw ; 
+   display:  flex ;
+    background-color: orangered;
+   
+   
+   }   
+
+
+.clientview_sidebar{ 
+  
+  
+    
+    width : 19% ; 
+    height : 100% ; 
+     background-color: #353B55 ; 
+  
+
+
+} 
+
+.clientview_body{ 
+  
+
+    display: flex;
+    flex-direction: column;
+    width : 81% ; 
+    height :  100%; 
+   background-color: grey;  
+    justify-content:  center;
+    align-items: center;
+
+} 
+
+
+.clientview_body1{
+
+    height:  8.06% ;
+    width : 100%; 
+   display:  flex ;
+    background-color:  #FFFFFF; 
+    flex-direction: column;
+
+}
+
+.clientview_table_outer_div_body2{
+   
+
+    height:  67.12% ;
+    width : 100%; 
+   display:  flex ;
+    background-color:  pink ; 
+    flex-direction: column;
+
+}  
+
+
+.clientview_table_inner_div_column_name{  
+
+       
+  
+    height:  20% ;
+    width : 100%;  
+    background-color:  #D9D9D9; 
+    display: flex ;   
+    flex-direction: row; 
+    overflow-y:  scroll ; 
+    
+}  
+
+
+
+.clientview_table_inner_div_column_name::-webkit-scrollbar{
+
+    width:  8px; 
+    background-color: blue ;
+
+}
+  
+
+
+
+.clientview_table_inner_div_table_row{
+  
+    height:  80% ;
+    width : 100%;  
+    background-color: #FFFFFF;
+    overflow-y:  scroll ; 
+
+} 
+ 
+
+
+.clientview_table_inner_div_table_row::-webkit-scrollbar{
+
+    width:  8px;
+    background-color: blue ;
+}
+ 
+
+
+.clientview_table_row_box{
+
+     
+
+    display: flex ; 
+    align-items: center; 
+    justify-content: center; 
+   
+}
+
+ 
+
+
+
+.clientview_table_row_button{
+
+   
+    background-color:#FCC046  ;
+
+  
+}
+
+
+.body3{
+
+     
+    height:  24.82% ;
+    width : 100%; 
+   display:  flex ;
+    background-color: #FFFFFF; 
+    flex-direction: column; 
+    align-items:  flex-end;
+ 
+}
+    
+
+.add_new_program_button{
+   margin-top:  2%;
+    height:  24.82% ;
+    width : 18%;  
+    background-color: brown; 
+    margin-right: 5%;
+
+
+}
+

@@ -1,0 +1,170 @@
+*{
+ 
+    padding:  0 ;
+    margin : 0 ; 
+    box-sizing:  border-box;  
+   
+  }
+  
+
+
+
+.OuterBox{
+    
+    height:  100vh;
+    width: 100vw;
+    background-color:  #FFF8EE;  
+    display: flex;
+    justify-content: center;
+}   
+
+.InnerBox {
+   
+     
+     height: 100%; 
+     width: 82.08%; 
+     background-color:  #FFF8EE; 
+     display:  flex ; 
+     flex-direction:  column;
+
+}  
+
+.logo-box{
+   
+    height :  21.78%    ; 
+    width :  100% ;   
+
+
+} 
+
+
+
+
+.logo-picture-text{
+  
+    background-color:  #FFF8EE ;  
+    height : 11%  ; 
+    width : 12% ;
+     margin-top: 5% ; 
+    overflow:  hidden; 
+    display: flex ; 
+    flex-direction: row;
+
+}  
+
+
+.logo_picture{
+   
+     height : 100% ;
+      width :20% ; 
+}  
+ 
+
+
+
+.logo-text{
+    
+
+    font-size: 12px;
+    font-weight: 600; 
+ 
+
+}
+
+.logo_name{
+    
+
+    height : 100% ;
+    width :100% ; 
+}
+
+
+.description1{
+   
+      
+    height : 19.14% ;
+    width : 51.50%  ;   
+    background-color: #FFF8EE;  
+    display: flex ; 
+    align-items: flex-end ;   
+    overflow: hidden;
+  
+
+}   
+
+
+.Description1Text {
+    
+    margin : 0 ; 
+    padding:  0;
+    color: #F06B6D;
+    font-size: 300% ;
+    font-weight: 800  ; 
+    line-height:  118.182%; 
+    text-align: start;
+
+}
+
+
+
+
+
+
+
+.description2{
+   
+
+      
+    height:  59.08%; 
+    width:100%;
+    background-color: "red" ; 
+    display: flex ; 
+    flex-direction: row;
+    
+
+}
+ 
+.description2-box {
+   
+    
+   
+     padding-top: 2%  ;
+    height:  59.08%; 
+    width: 41.54% ;
+    
+}  
+
+.description2-text{
+      
+    margin : 0 ; 
+    padding:  0;
+    color: #000;
+    font-size: 87.5%;
+    font-weight: 300  ; 
+    line-height:   145%; 
+    text-align: start;
+
+     
+}  
+
+.description2-button{
+
+     width:  20%;
+     height : 20% ; 
+     background-color: #F06B6D;
+
+}
+
+
+
+.illustrsation1{
+     
+    height : 100%  ; 
+
+    width :  58.46%  ;  
+    background-color: red ; 
+    overflow:  hidden;
+
+}
+
+
