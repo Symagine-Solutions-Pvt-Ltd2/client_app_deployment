@@ -99,7 +99,7 @@ function  FacilitatorView() {
 
 
 
-               <div   className="clientview_table_row_box"   style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
+               <div   className="clientview_table_row_box"   style= {{   width: "10%"  ,  height: "40%"   ,  borderRight : "1px solid black" }}>
                <p>Sl No</p>
                </div>  
 
@@ -144,10 +144,13 @@ function  FacilitatorView() {
 
                <div    className="clientview_table_row_box"     style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid black" }}>
                <p>  {  index+1 }   </p>
-               </div> 
+               </div>  
+
+
                <div     className="clientview_table_row_box" style= {{   width: "25%" , height: "100%"   , borderRight : "1px solid black" }}>
                  <p>   {  el.facilitator_name}    </p>
-               </div>
+               </div> 
+               
                <div    className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
                  <p>  {   el.email_id}  </p>
                </div> 

@@ -23,7 +23,7 @@ function   GettingStarted() {
   return (
     
     
-    <div className="OuterBox">
+    <div className="OuterBox_getStarted">
         <div className="InnerBox">
 
             
@@ -62,7 +62,7 @@ function   GettingStarted() {
                   
              <div style= {{  height : "40%"  , display : "flex"  , alignItems : "flex-end", backgroundColor : "#FFF8EE"   }}>
            
-             <input type="button" value = "Get Started"  onClick={() => { goToApp() }}  style= {{  backgroundColor : "#5E81F4"  ,  height : "50%"  , width : "50%"   ,  borderRadius: "18px" }}  /> 
+             <input type="button" value = "Get Started"  onClick={() => { goToApp() }}  style= {{  backgroundColor : "#5E81F4"  ,  height : "60%"  , width : "65%"   ,  borderRadius: "18px" }}  /> 
               
             </div> 
             </div>   

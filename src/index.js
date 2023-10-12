@@ -52,7 +52,9 @@ root.render(
            <Route index  element ={  <StudentView /> }  />  
            <Route  path= "addstudent"  element ={  <AddAccount/> }  />    
            <Route  path= "viewplan"  element ={  <BusinessPlan /> }  />    
-        </Route>  
+        </Route>   
+
+        
    </Route>  
    <Route path= "viewcourse"  >
        <Route index  element ={  <Course /> } />   

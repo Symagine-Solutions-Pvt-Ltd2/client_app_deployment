@@ -18,8 +18,9 @@ function Home () {
 
   
 
-    console.log( ) ; 
+    console.log(   location.state.name ) ; 
     console.log(location.state.typeId ) ;
+    console.log( location.state.programName) ;
   
 
  const goToNext = () => {  
@@ -58,12 +59,14 @@ function Home () {
                
                <div className="home-body-inner-description1" > 
 
-              <p> program_Admin</p> 
+              <p>client</p> 
 
               <p>Ready to start your day with Future Founders?</p>
                </div>
             </div>
-            <div className="home-body2">  
+            <div className="home-body2">   
+
+
              
                 <div  onClick={() => { goToNext() } }     className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
                    <p style={{ color : "white"}}>Dashboard</p>

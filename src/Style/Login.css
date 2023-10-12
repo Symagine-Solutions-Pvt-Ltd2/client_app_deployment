@@ -16,7 +16,7 @@
 
     display: flex;
     justify-content: center; 
-     background-color: #5E81F4;
+     background-color: #F7E5E9;
 }    
 
 
@@ -55,7 +55,8 @@ overflow:  hidden;
  
     font-size: 55px ;
     font-weight: 800  ;  
-    line-height: normal;
+    line-height: normal; 
+    color: #F06B6D;
 
 
 }

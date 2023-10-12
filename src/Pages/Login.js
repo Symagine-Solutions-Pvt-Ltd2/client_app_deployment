@@ -61,13 +61,19 @@ function Login() {
           if(   res.data.data.type_id === "client") {
 
           
+
+
           navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   , name :  res.data.data.client_name  , programName : res.data.data.program_name     }} ,  { replace : false}  )  ;  
+          
+          
 
           }else if(  res.data.data.type_id === "facilitator" )  {
 
 
                
-          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   , name :  res.data.data.facilitator_name  , programName : res.data.data.program_name     }} ,  { replace : false}  )  ;
+          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   , name :  res.data.data.facilitator_name  , programName : res.data.data.program_name     }} ,  { replace : false}  )  ; 
+
+          
           }else{
          
             navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   , Name :  res.data.data.name  , programName : res.data.data.program_name     }} ,  { replace : false}  )  ;
@@ -99,8 +105,6 @@ function Login() {
 
     <div   className="InnerBox-1"   >  
 
-       
-    <p> Login at first   </p> 
     </div>
  
 

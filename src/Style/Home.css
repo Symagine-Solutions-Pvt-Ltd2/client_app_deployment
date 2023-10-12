@@ -38,7 +38,7 @@ display:  flex ;
     flex-direction: column;
     width : 81% ; 
     height :  100%; 
-   background-color: grey ;  
+   background-color: #FFF8EE; 
     justify-content:  center;
     align-items: center;
   
@@ -49,7 +49,7 @@ display:  flex ;
     padding:  10px;
     width : 100% ; 
     height : 43.57%; 
-    background-color: aqua; 
+    background-color: #FFF8EE; 
     display: flex ;
     justify-content: center;
     align-items: flex-end;
@@ -64,7 +64,7 @@ display:  flex ;
     height : 18.51% ; 
     display: flex; 
     justify-content: space-between; 
-    background-color: beige; 
+    background-color: #FFF8EE; 
     align-items: center;
 
 }   
@@ -74,8 +74,10 @@ display:  flex ;
     width :  45.56% ; 
     height : 90.95% ; 
     background-color:  #353B55; 
-    border-radius:  25px ;
-
+    border-radius:  25px ; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
 
 }  
 
@@ -86,7 +88,7 @@ display:  flex ;
    height : 37.92% ; 
    display: flex; 
   justify-content: center;
-    background-color: beige; 
+    background-color: #FFF8EE; ; 
     padding-top:  15px ;
 }  
 
