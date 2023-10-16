@@ -15,19 +15,7 @@ function Course() {
     const  navigate = useNavigate() ; 
   
     
-    const onTrigger = (  event  ) => { 
     
-
-       // console.log( typeId) ; 
-        console.log("bhjgjgj") ; 
-          
-       // navigate(  "/home/course"   ,    { state: {    typeId : "course"  }}  ,    { replace : false}  )   ;
-    
-    
-        event.preventDefault();
-      }
-
-       
 
       useEffect(() => { 
     
@@ -35,12 +23,12 @@ function Course() {
 
         axios({ 
   
-         url : "http://localhost:8000/admin/Course_wmb"  ,    
+         url : "http://localhost:8000/admin/course_wmb"  ,    
          
          method : "POST"  , 
          data : {
            
-            "course_name" : "Future_new"  
+          "_id" : "65250cca510a19787d4d025a"
   
          }
   
@@ -80,7 +68,9 @@ function Course() {
        <div className="clientview_body"  >    
  
 
-            <div  className="clientview_body1"  style ={{ height : "12%"}} > 
+            <div  className="clientview_body1"  style ={{ height : "12%"}} >  
+
+
                
                <div style={{  backgroundColor : "pink"  , height : "60%"  }} >
                <p>Name of course: xxsöeldfmsdl </p> 
@@ -102,12 +92,17 @@ function Course() {
 
          <div  className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
            <p>Sl No</p>
-         </div> 
-         <div  className="clientview_table_row_box"  style= {{   width: "85%" , height: "100%"   }}>
+         </div>  
+
+         <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"   }}>
             <p>Type</p>
          </div>
         
-   
+           
+         <div  className="clientview_table_row_box"  style= {{   width: "45%" , height: "100%"   }}>
+            <p>Name</p>
+         </div>
+        
  
    </div>  
 
@@ -123,21 +118,27 @@ function Course() {
      
      data.map( (  el  , index  )  => ( 
 
-     <div   key={ index} style= {{ width : "100%" , height: "25%"   , display : "flex" , flexDirection : "row"}} > 
+     <div   key={ index} style= {{ width : "100%" , height: "25%"   , display : "flex" , flexDirection : "row"   , borderBottom : "1px solid black" }} > 
 
 
-   <div   className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black"   }}>
+   <div   className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black"    }}>
+
+
     <p>  {  index+1 }  </p>
     </div> 
     <div  className="clientview_table_row_box"   style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid black" }}>
-      <p> Future Founders - fr - 2023 </p>
+      <p> { el.type_id} </p>
     </div> 
 
 
     <div   className="clientview_table_row_box" style= {{   width: "45%" ,  height: "100%"  ,  display : "flex" , flexDirection : "row"}  }>
-      
+       
 
-         <input  className="clientview_table_row_button"    style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red" }}   type="button" value = "View"  onClick={()  => {  navigate(  "/home/viewcourse/permanentcoursedetails"   ,   { state: {    typeId :  "permanent_course_content"  }}     , { replace : false}  )  }  } /> 
+
+     <div   style={{ height: "40%"  , width : "55%"   }}  > 
+      <p>{ el.name }</p>
+    </div>
+         <input  className="clientview_table_row_button"    style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red" }}   type="button" value = "View"  onClick={()  => { console.log("clicked")  }  } /> 
                       
                                 
     </div> 

@@ -11,18 +11,18 @@ function StudentView() {
   const [ data , setData ] = useState( []);  
     const  navigate = useNavigate() ;   
     const location = useLocation();  
-    const [  schoolName  , setSchoolName   ]   =  useState( location.state.schoolName ) ; 
-    const [  programName  , setProgramName  ]   = useState( location.state.programName ) ;   
+    const [  schoolId  , setSchoolId   ]   =  useState( location.state.schoolId ) ; 
+    const [  programId  , setProgramId  ]   = useState( location.state.programId) ;   
 
 
-    console.log(   location.state.schoolName )  ;
-  //  console.log(   location.state.programName )  ; 
-
+    console.log(  location.state.schoolId  )  ;
+    console.log( location.state.programId )  ; 
+    
 
 
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/student/addstudent"   ,  { state: {    typeId : "student"   ,      schoolName : schoolName    , programName :  programName             }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/student/addstudent"   ,  { state: {    typeId : "student"   ,      schoolId: schoolId   , programId :  programId          }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
 
@@ -43,7 +43,7 @@ function StudentView() {
 
          data : {
            
-                "search_key" :  schoolName   , 
+                "search_key" :  schoolId  , 
                 "page_no" :  1 ,
                  "limit" : 10000   
   

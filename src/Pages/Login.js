@@ -63,7 +63,7 @@ function Login() {
           
 
 
-          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   ,  clientData :  res.data.data     }} ,  { replace : false}  )  ;  
+          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   ,  data :  res.data.data     }} ,  { replace : false}  )  ;  
           
           
 
@@ -71,12 +71,12 @@ function Login() {
 
 
                
-          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   , name :  res.data.data.facilitator_name  , programName : res.data.data.program_name     }} ,  { replace : false}  )  ; 
+          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   , data :  res.data.data    }} ,  { replace : false}  )  ; 
 
           
           }else{
          
-            navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   , Name :  res.data.data.name  , programName : res.data.data.program_name     }} ,  { replace : false}  )  ;
+            navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   ,  data :  res.data.data      }} ,  { replace : false}  )  ;
 
           }
 

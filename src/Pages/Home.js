@@ -12,12 +12,12 @@ function Home () {
     const  navigate = useNavigate() ;   
 
     const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ; 
-    const [   clientId  , setClientId  ]   = useState(  location.state.clientData._id) ; 
-    const [  programId , setProgramId ]   = useState( location.state.clientData.program_id ) ; 
+    const [   clientId  , setClientId  ]   = useState(  location.state.data._id) ; 
+    const [  programId , setProgramId ]   = useState( location.state.data.program_id ) ; 
  
 
   
-
+    console.log(   location.state.data ) ; 
     console.log(   location.state.clientData ) ; 
     console.log(location.state.typeId ) ;
   
@@ -165,14 +165,17 @@ function Home () {
                
                <div className="home-body-inner-description1" > 
 
-              <p> program_Admin</p> 
+              <p>facilitator </p> 
 
               <p>Ready to start your day with Future Founders?</p>
                </div>
             </div>
             <div className="home-body2">  
-             
-                <div  onClick={() => { goToNext() } }     className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
+              
+
+
+
+                <div  onClick={() => {   navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   userId : location.state.data._id  , programId : programId  }}    ,     { replace : false}  )} }     className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
                    <p style={{ color : "white"}}>Dashboard</p>
                 </div> 
                 

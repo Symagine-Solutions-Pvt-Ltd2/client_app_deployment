@@ -20,7 +20,8 @@ import StudentView from "./Pages/StudentView"  ;
 import AddAccount from './Pages/AddAccount'; 
 import FacilitatorView from  "./Pages/FacilitatorView"  ;
 import BusinessPlan from './Pages/BusinessPlan';  
-import CourseDetails from './Pages/CourseDetails';
+import CourseDetails from './Pages/CourseDetails'; 
+import EditAccount from './Pages/EditAccount';
 
 
 
@@ -45,12 +46,17 @@ root.render(
    <Route index element ={  <Home/> } />   
    <Route path= "dashboard" >
         <Route index  element ={  <SchoolView />  } />   
-        <Route  path= "addschool"  element ={  <AddAccount/> }  />   
+        <Route  path= "addschool"  element ={  <AddAccount/> }  /> 
+        <Route  path= "editschool"  element ={  <EditAccount/> }  />   
         <Route  path= "facilitator"  element ={  <FacilitatorView/> }  />    
-        <Route  path= "addfacilitator"  element ={  <AddAccount/> }  />   
+        <Route  path= "addfacilitator"  element ={  <AddAccount/> }  /> 
+        <Route  path= "editfacilitator"  element ={  <EditAccount/> }  />   
+
+
         <Route  path= "student"  >
            <Route index  element ={  <StudentView /> }  />  
-           <Route  path= "addstudent"  element ={  <AddAccount/> }  />    
+           <Route  path= "addstudent"  element ={  <AddAccount/> }  />
+           <Route  path= "editstudent"  element ={  <EditAccount/> }  />    
            <Route  path= "viewplan"  element ={  <BusinessPlan /> }  />    
         </Route>   
 

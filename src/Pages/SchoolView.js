@@ -40,24 +40,24 @@ function SchoolView() {
 
 
 
-  /* 
+  
     console.log("in school view ")  ; 
     
     console.log( location.state.typeId ) ;   
 
-    console.log( location.state.clientId ) ;  
+    console.log( location.state.userId ) ;  
 
     console.log(location.state.programId ) ;  
- */
+  
+
+    console.log( data) ; 
+
 
     
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/addschool"   ,   { state: {    typeId : "school"  ,   type : typeId   ,   clientId : clientId ,   programId : programId    }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/addschool"   ,   { state: {    typeId : "school"  ,   clientId : clientId ,   programId : programId   , programName : "program87"   }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
-
-
-
 
       }   
     
@@ -65,7 +65,11 @@ function SchoolView() {
 
 
 
-      useEffect(() => { 
+      useEffect(() => {   
+
+      if(  typeId === "client"){
+
+      
 
         axios({ 
   
@@ -91,7 +95,41 @@ function SchoolView() {
         } ).catch(( err) => {  
             console.log( "error") ;
   
-         }  ) ; 
+         }  ) ;   
+
+
+
+        }else if(   typeId === "facilitator"  ){
+
+
+          axios({ 
+  
+            url : "http://localhost:8000/facilitator/s_facilitator"  ,  
+            method : "POST"  , 
+
+            data : { 
+
+               "_id" : "652d52ab74af052340fc5644"
+     
+            }
+     
+           }).then( ( res) => {   
+     
+     
+            // console.log(  res.data.data ) ; 
+            
+            const newarr = [  res.data.data ] ;  
+            setData( newarr) ;
+          //  console.log(  newarr )  ; 
+     
+           } ).catch(( err) => {  
+               console.log( "error") ;
+     
+            }  ) ;   
+   
+
+        }
+
   
     } , [])  ; 
  
@@ -225,7 +263,7 @@ function SchoolView() {
 
                                 </div>
                                
-              <input    style={{ height: "40%"  , width : "60%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,     { state: {    typeId : "facilitator_with_add_account",   school_name : data[index].school_name   ,     school_id : data[index]._id  ,      program_name : location.state.programName     }}           ,     { replace : false}  )  }  } /> 
+              <input    style={{ height: "40%"  , width : "60%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/facilitator"   ,     { state: {       schoolId : data[index]._id  ,      programName : "prijk"  ,    programId :  data[index].program_id         }}           ,     { replace : false}  )  }  } /> 
                              
                    </div>   
 
@@ -236,7 +274,7 @@ function SchoolView() {
                                <p> { el.total_students } </p>
                      </div>
                            
-                    <input  style={{ height: "40%"  , width : "80%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student_with_add_account",   school_name : data[index].school_name   ,        program_name : location.state.programName     }}        ,  { replace : false}  )  }  } /> 
+                    <input  style={{ height: "40%"  , width : "80%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : data[index]._id ,        programId :  data[index].program_id   }}        ,  { replace : false}  )  }  } /> 
                         
                    </div>  
 
@@ -251,7 +289,7 @@ function SchoolView() {
             <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Status"    onClick= { () => {handleStatusChange( el.school_name) } }   /> 
                             
                              
-           <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/client/editschool"   ,  { state: {    typeId : "school"   ,    data : el   ,  type : "system_admin"     }}   , { replace : false}  )  }  } />   
+           <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/editschool"   ,  { state: {    typeId : "school"   ,    data : el   ,  type : "system_admin"     }}   , { replace : false}  )  }  } />   
 
 
 
@@ -305,7 +343,7 @@ function SchoolView() {
 
 
 
-        case "content_admin" :   
+        case "facilitator" :   
     
         return(
     
@@ -399,7 +437,7 @@ function SchoolView() {
                            <p>2</p>
                                 </div>
                                
-              <input    style={{ height: "40%"  , width : "60%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,     { state: {    typeId : "facilitator",   school_name : data[index].school_name   ,     school_id : data[index]._id  ,      program_name : location.state.programName     }}           ,     { replace : false}  )  }  } /> 
+              <input    style={{ height: "40%"  , width : "60%"}}   type="button" value = "view"  onClick={()  => {     navigate(  "/home/dashboard/facilitator"   ,     { state: {    typeId : typeId ,    schoolId : data[index]._id.$oid ,       programId :  data[index].program_id         }}           ,     { replace : false}  )  }  } /> 
                              
                    </div>   
 
@@ -410,7 +448,7 @@ function SchoolView() {
                                <p>2</p>
                      </div>
                            
-                    <input  style={{ height: "40%"  , width : "80%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student_with_add_account",   school_name : data[index].school_name   ,        program_name : location.state.programName     }}        ,  { replace : false}  )  }  } /> 
+                    <input  style={{ height: "40%"  , width : "80%"}}   type="button" value = "view"  onClick={()  => {  navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : data[index]._id.$oid ,        programId :  data[index].program_id   }}        ,  { replace : false}  )  }  } /> 
                         
                    </div>  
 
@@ -419,20 +457,7 @@ function SchoolView() {
                     <p>Active</p>
                    </div>  
 
-         {/*    <div    className="clientview_table_row_box"   style= {{   width: "18%"  ,    height: "100%"  , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"}}> 
-                      
-
-            <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
-                            
-                             
-           <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/client/editschool"   ,  { state: {    typeId : "school" }}   , { replace : false}  )  }  } />   
-
-
-
-
-
-                   </div>
-     */}
+       
 
                  </div>  
 
@@ -445,11 +470,7 @@ function SchoolView() {
                   </div> 
     
                   <div className="body3"> 
-    
-               {/*    <div onClick={ () => { goToNext() } } className="add_new_program_button">
-                    <p> Add new school </p>
-                  </div>
-                 */}
+                   
                   </div>
                 
                 </div>
