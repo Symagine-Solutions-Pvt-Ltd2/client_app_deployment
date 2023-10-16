@@ -13,58 +13,33 @@ function AddAccount() {
     // const [ name , setName ]   = useState( location.state.name  ) ; 
     const location = useLocation(); 
 
-   // const [ typeId , setTypeId ] =  useState(  ) ;   
-   const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;    
-  
-   const [  type  , setType ]   = useState( location.state.type   ) ;  
- 
-  console.log( location.state.typeId  ) ; 
    
-
- /*  
-  console.log( location.state.type) ; 
-  
-  console.log( location.state.schoolId ) ; 
-
-  console.log( location.state.programId ) ;  
-
-  console.log( location.state.schoolId ) ;    */
-
-
-
-  console.log("ggfh") ;  
-
-
-
-
-
-   
+   const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
     const  navigate = useNavigate() ; 
  
     
      // to keep track of the program 
-     const [ assignedProgram ,   setAssignedProgram  ]   = useState( location.state.programId) ;     
-
-
+     const [ assignedProgram ,   setAssignedProgram  ]   = useState(  location.state.programName ) ;     
+      //console.log(  location.state.programName) ; 
 
      // to keep track of the client name 
-     const [ client ,   setClient   ]   = useState( location.state.clientId ) ;   
+     const [ client ,   setClient   ]   = useState(   location.state.clientName  ) ;    
+    //   console.log(  location.state.schoolName ) ; 
      
       // to select the admin type
      const [  admin ,   setAdmin  ]   = useState( "program_admin" ) ;  
 
-
-
-        // to add new client in the database 
-    
+ 
+          // to keep track of the school name 
+     const [ school ,   setSchool  ]   = useState(   location.state.schoolName ) ;  
 
 
 
       // to add new facilitator in the database 
     const addFacilitator  = (  event  ) => { 
-       
+    
 
-
+      
       console.log( event.target.name.value) ;   
       console.log( event.target.email.value) ;    
       console.log( event.target.password.value) ;    
@@ -73,13 +48,13 @@ function AddAccount() {
 
       if(  event.target.password.value !== event.target.reset_password.value  ) {
          
-          alert( "Password  mismatched!") ;  
+          alert( "Please check password again!") ;  
          
       } else {
 
         axios({ 
 
-                url : "http://localhost:8000/facilitator/f_registration"  ,   
+                url : "http://localhost:8000/admin/f_registration"  ,   
 
                 method : "POST"  , 
                 data : {
@@ -88,19 +63,16 @@ function AddAccount() {
                         "email_id" :  event.target.email.value  , 
                         "password"  : event.target.password.value  , 
                         "type_id" : "facilitator" ,  
-                        "program_name" : location.state.program_name ,  
-                        "school_name" :  location.state.school_name ,  
-                        "school_id" : location.state.school_id 
+                        "school_name" :  school ,  
+                         "program_name" : assignedProgram   , 
                 }
           
                }).then( ( res) => {   
           
                   if(   res.data.message ===  "Registered Successfully."    ){
                    
-                    alert( "Registered Successfully.")  ;  
-
-
-                    navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :    "facilitator_with_add_account"    ,   school_name : location.state.school_name    }}    , { replace : false}  )   ;
+                    alert( "Registered Successfully.")  ; 
+                    navigate(  "/home/dashboard/facilitator"   ,     { state: {      schoolName : school   ,   programName : assignedProgram     }}   ,   { replace : false}  )   ;
                   } 
                   else {
           
@@ -161,8 +133,8 @@ function AddAccount() {
                 "password" : event.target.password.value ,
                  "type_id" : "school"  ,
                  "contact_person" :   event.target.contact_person.value  ,
-                 "program_name" : location.state.program_name   , 
-                 "client_name" :  location.state.client_name ,    
+                 "program_name" : assignedProgram   , 
+                 "client_name" : client ,    
                
               }
         
@@ -170,10 +142,9 @@ function AddAccount() {
         
                 if(   res.data.message ===  "Registered Successfully."    ){
                  
-                  alert( "Registered Successfully.")  ;  
-
-
-                   navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId :    "system_admin"   ,  clientName : location.state.client_name    }}     ,      { replace : false}  )   ;
+                  alert( "Registered Successfully.")  ; 
+               
+                  navigate(  "/home/dashboard"   ,    { state : { clientName : client , programName : assignedProgram    } }    ,   { replace : false}  )   ;
     
                 } 
                 else {
@@ -201,25 +172,20 @@ function AddAccount() {
 
 
 
-     
-    
-    
        
   
 
         // to add new student in the database 
      const  addStudent = ( event) => {
 
-             
+   
       console.log( event.target.name.value) ;   
       console.log( event.target.email.value) ;    
       console.log( event.target.password.value) ;    
-      console.log( event.target.repeat_password.value) ;     
+      console.log( event.target.repeat_password.value) ;  
+      
 
-
-    
-
-     if(  event.target.password.value !== event.target.repeat_password.value  ) {
+      if(  event.target.password.value !== event.target.repeat_password.value  ) {
          
         alert( "Please check password again!") ;   
 
@@ -234,13 +200,13 @@ function AddAccount() {
 
               data : {
                 
-                "student_name" :  event.target.name.value  ,
+                "student_name" : event.target.name.value ,
                 "email_id" : event.target.email.value , 
-                "password" :event.target.password.value  , 
-                "type_id" :  "student"   , 
-                "program_name"   : location.state.program_name     ,
-                 "school_name"   : location.state.school_name    ,
-                 
+                "password" : event.target.password.value ,
+                 "type_id" : "student"  , 
+                 "program_name" : assignedProgram   , 
+                 "school_name" :  school   ,    
+               
               }
         
              }).then( ( res) => {   
@@ -248,17 +214,14 @@ function AddAccount() {
                 if(   res.data.message ===  "Registered Successfully."    ){
                  
                   alert( "Registered Successfully.")  ; 
-                 
-
-                  console.log(  res.data.data) ;  
-
-
-                 navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student_with_add_account",   school_name : location.state.school_name  ,        program_name : location.state.program_name     }}        ,  { replace : false}  )  
+               
+                  navigate(  "/home/dashboard/student"   ,    { state : {  schoolName :  school    , programName : assignedProgram    } }    ,   { replace : false}  )   ;
     
                 } 
                 else {
         
-                  alert(   res.data.message  )  ;
+                  alert(   res.data.message  )  ; 
+
                 }
                
              } ).catch(( err) => { 
@@ -271,30 +234,26 @@ function AddAccount() {
         }
 
      
-      event.preventDefault() ; 
+
+        event.preventDefault() ; 
          
+          
+       //    navigate( navigate(  "/home/dashboard/client/student"   ,  { replace : false}  )  ) ;
      }
    
  
 
- 
 
-
-
-     const handleCheckboxChange = (option) => { 
-
-        setAdmin(option) ;
-    };
 
 
 
 
     switch( typeId )  { 
-       
 
 
 
-      case "facilitator" :   
+
+      case "system_admin_facilitator" :   
 
       return( 
   
@@ -314,20 +273,15 @@ function AddAccount() {
            
            <form className="addaccount_form"   style= {{  height : "65.99%" }}   onSubmit={  addFacilitator }    >    
       
-               <div className="addaccount_form_row"  style= {{  height : "20%" }}> 
- 
-
-
-                           <div className="addaccount_admin_Form-Description" >   
+               <div className="addaccount_form_row"  style= {{  height : "20%" }}>
+                           <div className="admin_Form-Description" >   
                           <p>Name of facilitator</p> 
-                          </div>       
-
-
-                          <div className="addaccount_admin_Form-Input" >   
+                          </div>        
+                          <div className="admin_Form-Input" >   
 
                           <input type="text"
                                   name="name"
-                                  className="addaccount_admin_input-box" 
+                                  className="admin_input-box" 
                                   style={ { borderRadius : "16px"}} 
                                 
                                   /> 
@@ -336,14 +290,14 @@ function AddAccount() {
        
                 
                 <div className="addaccount_form_row"  style= {{  height : "20%" }}>
-                           <div className="addaccount_admin_Form-Description" >   
+                           <div className="admin_Form-Description" >   
                           <p>Email id</p> 
                           </div>        
-                          <div className="addaccount_admin_Form-Input" >  
+                          <div className="admin_Form-Input" >  
 
                           <input type="text"
                                   name="email"
-                                  className="addaccount_admin_input-box"  
+                                  className="admin_input-box"  
                                   style={ { borderRadius : "16px"}}
                                   /> 
                           </div>  
@@ -351,13 +305,13 @@ function AddAccount() {
                  
 
                 <div className="addaccount_form_row"  style= {{  height : "20%" }}>
-                           <div className="addaccount_admin_Form-Description" >   
+                           <div className="admin_Form-Description" >   
                           <p>Password</p> 
                           </div>        
-                          <div className="addaccount_admin_Form-Input" >         
+                          <div className="admin_Form-Input" >         
                           <input type="text"
                                   name="password"
-                                  className="addaccount_admin_input-box" 
+                                  className="admin_input-box" 
                                   style={ { borderRadius : "16px"}}
                                   /> 
                           </div>  
@@ -366,14 +320,14 @@ function AddAccount() {
                
 
                 <div className="addaccount_form_row"  style= {{  height : "20%"  }}>
-                           <div className="addaccount_admin_Form-Description" >   
+                           <div className="admin_Form-Description" >   
                           <p>Repeat Password</p> 
                           </div>        
-                          <div className="addaccount_admin_Form-Input" >         
+                          <div className="admin_Form-Input" >         
                           <input type="text"
                                   name="reset_password"
                                
-                                  className="addaccount_admin_input-box" 
+                                  className="admin_input-box" 
                                   style={ { borderRadius : "16px"}}
                                   /> 
                           </div>  
@@ -391,14 +345,15 @@ function AddAccount() {
                   </div>
       
            </div>
-           
-
-
-           
+          
             </div>
       )   ;  
  
+  
 
+
+
+      
 
        
       case "school" :   
@@ -422,74 +377,74 @@ function AddAccount() {
            <form className="addaccount_form" onSubmit={ addSchool }    >    
       
                <div className="addaccount_form_row">
-                           <div className="addaccount_admin_Form-Description" >   
+                           <div className="admin_Form-Description" >   
                           <p>Name of school</p> 
                           </div>        
-                          <div className="addaccount_admin_Form-Input" >         
+                          <div className="admin_Form-Input" >         
                           <input type="text"
                                   name="name"
-                                  className="addaccount_admin_input-box"
+                                  className="admin_input-box"
                                   /> 
                           </div>  
                 </div> 
        
                 
                 <div className="addaccount_form_row">
-                           <div className="addaccount_admin_Form-Description" >   
+                           <div className="admin_Form-Description" >   
                           <p>Email id</p> 
                           </div>        
-                          <div className="addaccount_admin_Form-Input" >         
+                          <div className="admin_Form-Input" >         
                           <input type="text"
                                   name="email"
-                                  className="addaccount_admin_input-box"
+                                  className="admin_input-box"
                                   /> 
                           </div>  
                 </div> 
                  
 
                 <div className="addaccount_form_row">
-                           <div className="addaccount_admin_Form-Description" >   
+                           <div className="admin_Form-Description" >   
                           <p>Password</p> 
                           </div>        
-                          <div className="addaccount_admin_Form-Input" >         
+                          <div className="admin_Form-Input" >         
                           <input type="text"
                                   name="password"
-                                  className="addaccount_admin_input-box"
+                                  className="admin_input-box"
                                   /> 
                           </div>  
                 </div> 
              
                 <div className="addaccount_form_row">
-                           <div className="addaccount_admin_Form-Description" >   
+                           <div className="admin_Form-Description" >   
                           <p>Repeat Password</p> 
                           </div>        
-                          <div className="addaccount_admin_Form-Input" >         
+                          <div className="admin_Form-Input" >         
                           <input type="text"
                                   name="repeat_password"
-                                  className="addaccount_admin_input-box"
+                                  className="admin_input-box"
                                   /> 
                           </div>  
                 </div> 
                 
                 <div className="addaccount_form_row">
-                           <div className="addaccount_admin_Form-Description" >   
+                           <div className="admin_Form-Description" >   
                           <p>Name of contact person</p> 
                           </div>        
-                          <div className="addaccount_admin_Form-Input" >         
+                          <div className="admin_Form-Input" >         
                           <input type="text"
                                   name="contact_person"
-                                  className="addaccount_admin_input-box"
+                                  className="admin_input-box"
                                   /> 
                           </div>  
                 </div> 
                 
 
                 <div className="addaccount_form_row">
-                <div className="addaccount_admin_Form-Description" >   
+                <div className="admin_Form-Description" >   
                           <p>Program Assigned</p> 
                 </div>     
 
-                <div className="addaccount_admin_Form-Input" >         
+                <div className="admin_Form-Input" >         
                          
                  <p>{ assignedProgram }</p>
                  </div>  
@@ -515,17 +470,9 @@ function AddAccount() {
       )   ;  
        
        
-        
      
 
-      
-
-
-
-
-
-
-
+     
       case "student" :   
 
       return( 
@@ -544,16 +491,15 @@ function AddAccount() {
 
          
          <form className="addaccount_form"   style= {{  height : "65.99%" }}   onSubmit={  addStudent }    >    
-     
-
+    
              <div className="addaccount_form_row"  style= {{  height : "20%" }}>
-                         <div className="addaccount_admin_Form-Description" >   
+                         <div className="admin_Form-Description" >   
                         <p>Name of student</p> 
                         </div>        
-                        <div className="addaccount_admin_Form-Input" >         
+                        <div className="admin_Form-Input" >         
                         <input type="text"
                                 name="name"
-                                className="addaccount_admin_input-box" 
+                                className="admin_input-box" 
                                 style={ { borderRadius : "16px"}}
                                 /> 
                         </div>  
@@ -561,13 +507,13 @@ function AddAccount() {
      
               
               <div className="addaccount_form_row"  style= {{  height : "20%" }}>
-                         <div className="addaccount_admin_Form-Description" >   
+                         <div className="admin_Form-Description" >   
                         <p>Email id</p> 
                         </div>        
-                        <div className="addaccount_admin_Form-Input" >         
+                        <div className="admin_Form-Input" >         
                         <input type="text"
                                 name="email"
-                                className="addaccount_admin_input-box"  
+                                className="admin_input-box"  
                                 style={ { borderRadius : "16px"}}
                                 /> 
                         </div>  
@@ -575,13 +521,13 @@ function AddAccount() {
                
 
               <div className="addaccount_form_row"  style= {{  height : "20%" }}>
-                         <div className="addaccount_admin_Form-Description" >   
+                         <div className="admin_Form-Description" >   
                         <p>Password</p> 
                         </div>        
-                        <div className="addaccount_admin_Form-Input" >         
+                        <div className="admin_Form-Input" >         
                         <input type="text"
-                                name="password"  
-                                className="addaccount_admin_input-box" 
+                                name="password"
+                                className="admin_input-box" 
                                 style={ { borderRadius : "16px"}}
                                 /> 
                         </div>  
@@ -590,13 +536,13 @@ function AddAccount() {
              
 
               <div className="addaccount_form_row"  style= {{  height : "20%"  }}>
-                         <div className="addaccount_admin_Form-Description" >   
+                         <div className="admin_Form-Description" >   
                         <p>Repeat Password</p> 
                         </div>        
-                        <div className="addaccount_admin_Form-Input" >         
+                        <div className="admin_Form-Input" >         
                         <input type="text"
                                 name="repeat_password"
-                                className="addaccount_admin_input-box" 
+                                className="admin_input-box" 
                                 style={ { borderRadius : "16px"}}
                                 /> 
                         </div>  

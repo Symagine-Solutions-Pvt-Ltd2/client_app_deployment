@@ -12,15 +12,15 @@ function Home () {
     const  navigate = useNavigate() ;   
 
     const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ; 
-    const [   name  , setName  ]   = useState( location.state.name ) ; 
-    const [  programName  , setProgramName  ]   = useState( location.state.programName ) ; 
-
+    const [   clientId  , setClientId  ]   = useState(  location.state.clientData._id) ; 
+    const [  programId , setProgramId ]   = useState( location.state.clientData.program_id ) ; 
+ 
 
   
 
-    console.log(   location.state.name ) ; 
+    console.log(   location.state.clientData ) ; 
     console.log(location.state.typeId ) ;
-    console.log( location.state.programName) ;
+  
   
 
  const goToNext = () => {  
@@ -28,11 +28,11 @@ function Home () {
    
 
    console.log(  typeId) ;  
-   console.log(  name) ;  
-   console.log( programName) ;  
+  
+   console.log( programId) ;  
 
    
-    navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   clientName : name   , programName : programName  }}    ,     { replace : false}  )  ;
+    navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   clientId : clientId   , programId : programId  }}    ,     { replace : false}  )  ;
  
  
   }

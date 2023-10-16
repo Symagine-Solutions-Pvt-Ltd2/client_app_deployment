@@ -26,6 +26,7 @@ function SchoolView() {
    const[ popupInfo  , setPopupInfo ] = useState("") ;
    const[ popup  , setPopup ] = useState( false) ; 
   
+ 
 
 
     
@@ -33,26 +34,26 @@ function SchoolView() {
     const  navigate = useNavigate() ;  
     const location = useLocation();  
     const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
-    const [  clientName   , setClientName  ]   = useState( location.state.clientName   ) ;   
+    const [  clientId   , setClientId  ]   = useState( location.state.clientId   ) ;   
+    const [  programId   , setProgramId  ]   = useState( location.state.programId  ) ;   
+ 
+
+
 
   /* 
-    console.log("in school view ")  ;
-
-    console.log( location.state.clientName  )  ; 
-
-    console.log( location.state.programName) ;   */  
+    console.log("in school view ")  ; 
     
     console.log( location.state.typeId ) ;   
 
+    console.log( location.state.clientId ) ;  
 
-
-
-
+    console.log(location.state.programId ) ;  
+ */
 
     
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/client/addschool"   ,   { state: {    typeId : "system_admin_school"  ,   type : "system_admin"   ,   client_name : location.state.clientName ,   program_name :  location.state.programName   }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/addschool"   ,   { state: {    typeId : "school"  ,   type : typeId   ,   clientId : clientId ,   programId : programId    }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
 
@@ -68,13 +69,13 @@ function SchoolView() {
 
         axios({ 
   
-         url : "http://localhost:8000/admin/ac_school"  ,  
+         url : "http://localhost:8000/admin/ca_school"  ,  
          method : "POST"  , 
          data : {
            
-                  "search_key" :  clientName   , 
+                  "search_key" :  clientId   , 
                 "page_no" :  1 ,
-                 "limit" : 10   
+                 "limit" : 100000   
   
          }
   
@@ -220,7 +221,8 @@ function SchoolView() {
 
 
                    <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "20%"}}>  
-                           <p>2</p>
+                           <p> { el.total_facilitator } </p> 
+
                                 </div>
                                
               <input    style={{ height: "40%"  , width : "60%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,     { state: {    typeId : "facilitator_with_add_account",   school_name : data[index].school_name   ,     school_id : data[index]._id  ,      program_name : location.state.programName     }}           ,     { replace : false}  )  }  } /> 
@@ -231,7 +233,7 @@ function SchoolView() {
             <div  className="clientview_table_row_box"  style= {{   width: "12%"  ,  height: "100%" , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>  
 
                      <div  className="clientview_table_row_box"   style={{ height: "40%"  , width : "20%"}}> 
-                               <p>2</p>
+                               <p> { el.total_students } </p>
                      </div>
                            
                     <input  style={{ height: "40%"  , width : "80%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student_with_add_account",   school_name : data[index].school_name   ,        program_name : location.state.programName     }}        ,  { replace : false}  )  }  } /> 
@@ -240,7 +242,7 @@ function SchoolView() {
 
 
                    <div   className="clientview_table_row_box"  style= {{  width: "7%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
-                    <p>Active</p>
+                    <p> { el.status } </p>
                    </div>  
 
             <div    className="clientview_table_row_box"   style= {{   width: "18%"  ,    height: "100%"  , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"}}> 
@@ -285,7 +287,24 @@ function SchoolView() {
 
      
       
-    
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         case "content_admin" :   
     
         return(
