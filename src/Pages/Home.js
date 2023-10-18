@@ -18,9 +18,10 @@ function Home () {
 
   
     console.log(   location.state.data ) ; 
-    console.log(   location.state.clientData ) ; 
+  //  console.log(   location.state.clientData ) ; 
     console.log(location.state.typeId ) ;
-  
+   
+
   
 
  const goToNext = () => {  
@@ -32,7 +33,7 @@ function Home () {
    console.log( programId) ;  
 
    
-    navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   clientId : clientId   , programId : programId  }}    ,     { replace : false}  )  ;
+    navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   clientId : clientId   , programId : programId   ,   data :   location.state.data   }}    ,     { replace : false}  )  ;
  
  
   }
@@ -70,9 +71,10 @@ function Home () {
              
                 <div  onClick={() => { goToNext() } }     className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
                    <p style={{ color : "white"}}>Dashboard</p>
-                </div> 
+                </div>  
+
                 
-                <div  onClick={() => { navigate(  "/home/viewcourse"  ,    { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
+                <div  onClick={() => { navigate(  "/home/viewcourse"  ,      { state: {    courseId :  location.state.data._id  }}  ,  { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
                 <p style={{ color : "white"}}>View Course</p>
                 </div>
              
@@ -112,18 +114,19 @@ function Home () {
                
                <div className="home-body-inner-description1" > 
 
-              <p> program_Admin</p> 
+              <p> school </p> 
 
               <p>Ready to start your day with Future Founders?</p>
                </div>
             </div>
             <div className="home-body2">  
              
-                <div  onClick={() => { goToNext() } }     className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
+                <div  onClick={() => {    navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,  programId : programId   ,   data :   location.state.data   }}    ,     { replace : false}  )  ; } }    
+                 className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
                    <p style={{ color : "white"}}>Dashboard</p>
                 </div> 
                 
-                <div  onClick={() => { navigate(  "/home/viewcourse"  ,    { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
+                <div  onClick={() => { navigate(  "/home/viewcourse"  ,     { state: {    courseId : location.state.data._id  }} ,    { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
                 <p style={{ color : "white"}}>View Course</p>
                 </div>
              
@@ -175,13 +178,13 @@ function Home () {
 
 
 
-                <div  onClick={() => {   navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   userId : location.state.data._id  , programId : programId  }}    ,     { replace : false}  )} }     className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
+                <div  onClick={() => {   navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   userId : location.state.data._id  , programId : programId  }}    ,     { replace : false}  )   } }     className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
                    <p style={{ color : "white"}}>Dashboard</p>
                 </div> 
                 
-                <div  onClick={() => { navigate(  "/home/viewcourse"  ,    { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
+                <div  onClick={() => { navigate(  "/home/viewcourse"  ,     { state: {    courseId : location.state.data._id  }}  ,    { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
                 <p style={{ color : "white"}}>View Course</p>
-                </div>
+                </div>  
              
              </div>
               

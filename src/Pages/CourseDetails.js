@@ -1,8 +1,8 @@
 
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
-import { useState } from "react"; 
+import { useState   , useEffect  } from "react"; 
 import Sidebar from "../Sidebar"  ; 
-
+import axios from "axios"  ; 
 
 
 
@@ -14,126 +14,116 @@ function CourseDetails() {
     const  navigate = useNavigate() ;  
     const location = useLocation();  
 
- 
+  
+
+
+  const [ data , setData ] = useState( []); 
   const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
+  const [  contentType ,  setContentType   ]   = useState( location.state.type  ) ; 
+  const [  courseName  ,  setCourseName  ]   = useState(  location.state.courseName ) ; 
+  const [  contentName  ,  setContentName  ]   = useState(  location.state.name  ) ; 
+ 
+
+  console.log(   location.state.typeId  )  ;
+  console.log(   location.state.type  )  ;
+  console.log(    location.state.courseName  )  ;
+  console.log(  location.state.name  )  ;
 
 
-    const goToNext = () => {
+  useEffect(() => { 
+    
+
+   if( location.state.type === "module"  ) {
+
+   
+    axios({   
+
+     url : "http://localhost:8000/admin/module_am"  ,    
+     
+     method : "POST"  , 
+     data : { 
+
+
+      "course_name" : courseName   ,
+      "module_name" : contentName , 
+      "type_id"  :   contentType
+
+     }
+
+    }).then( ( res) => {   
+
+      console.log(  "details" ) ;
+      console.log(  res ) ; 
+      setData(  res.data.data ) ;  
+    
+
+    } ).catch(( err) => {  
+        console.log( "error") ;
+
+     }  ) ; 
+ 
+ 
+
+    }
+    else  if (   location.state.type === "workshop"    ) {
+      
+
+      axios({   
+
+        url : "http://localhost:8000/admin/module_am"  ,    
+        
+        method : "POST"  , 
+        data : { 
+   
+   
+         "course_name" : courseName   ,
+         "module_name" : contentName , 
+         "type_id"  :   contentType
+   
+        }
+   
+       }).then( ( res) => {   
+   
+         console.log(  "details" ) ;
+         console.log(  res ) ; 
+        //  setData(  res.data.data ) ;  
+       
+   
+       } ).catch(( err) => {  
+           console.log( "error") ;
+   
+        }  ) ; 
+    
+         
+
+    }
+
+} , [])  ; 
+
   
-        navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent" }}   ,  { replace : false}  ) ; 
-        console.log("ASJghshGHS") ;  
- 
- 
- 
- 
-       }  
+
+
+
+
+
+
+
+
+
   
+   console.log( location.state.typeId  ) ; 
+     
+
+
+
+
+
 
   
 
 
     switch( typeId )  {  
-    
-    case "draft_course_content" : 
 
-    
-    return( 
-
-
-        <div className="clientview">  
-
-        <div className="clientview_sidebar" >
-               <Sidebar /> 
-        </div>  
-
-        <div className="clientview_body">   
-
-        
-         <div  className="clientview_body1"> 
-         <p>hjxgajgj</p> 
-         </div>
-        
-          <div className="clientview_table_outer_div_body2">   
-
-
-           <div className="clientview_table_inner_div_column_name">  
-           <div  style= {{   width: "10%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-           <p>Sl No</p>
-           </div> 
-           <div style= {{   width: "40%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-             <p>Type</p>
-           </div>
-           <div style= {{   width: "50%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
-             <p>Name of Module</p>
-           </div>
-          
-
-
-          </div> 
-          <div  className="clientview_table_inner_div_table_row">
-             
-            
-          <div style= {{ width : "100%" , height: "25%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
-          <div  style= {{   width: "10%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-           <p>1</p>
-           </div> 
-           <div style= {{   width: "40%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-             <p>Module</p>
-           </div>
-         
-
-
-           <div style= {{   width: "50%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row"}}>   
-
-
-                            <div style={{ height: "100%"  , width : "30%"}} >
-                             <p> Module 1</p>
-                            </div>
-
-                         
-
-                             <div  style={{ height: "100%"  , width : "20%"}} >
-                                    <input type="button" value = "submit"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
-                             </div> 
-
-
-
-                             <div  style={{ height: "100%"  , width : "20%"}} >
-                                    <input type="button" value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/module"   ,  { state: {    typeId : "addcoursecontent" }}   ,  { replace : false}  )  }  } /> 
-                             </div> 
-
-
-
-                             <div  style={{ height: "100%"  , width : "20%"}} >
-                                    <input type="button" value = "delete"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
-                             </div> 
-
-           </div> 
-
-    
-
-         </div>
-
-          </div>
-          
-          
-
-          </div> 
-
-          <div className="body3"> 
-
-          <div onClick={ () => { goToNext() } } className="add_new_program_button">
-            <p>Add</p>
-          </div>
-        
-          </div>
-        
-        </div>
-
-
-
-</div>
-) ;     
 
    case "permanent_course_content" :   
 
@@ -153,59 +143,92 @@ function CourseDetails() {
      <div  className="clientview_body1"> 
      <p>hjxgajgj</p> 
      </div>
-    
-      <div className="clientview_table_outer_div_body2">   
+       
+
+     <div className="clientview_table_outer_div_body2"  style ={{ height : "80%"}}  >   
+      
 
 
-       <div className="clientview_table_inner_div_column_name">  
-       <div  style= {{   width: "10%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+
+      <div className="clientview_table_inner_div_column_name"   >   
+
+
+
+
+     <div  className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
        <p>Sl No</p>
-       </div> 
-       <div style= {{   width: "40%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-         <p>Type</p>
-       </div>
-       <div style= {{   width: "50%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
-         <p>Name of Module</p>
-       </div>
-      
+     </div>  
 
-
-      </div> 
-      <div  className="clientview_table_inner_div_table_row">
-         
-        
-      <div style= {{ width : "100%" , height: "25%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
-      <div  style= {{   width: "10%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-       <p>1</p>
-       </div> 
-       <div style= {{   width: "40%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-         <p>Module</p>
-       </div>
-     
-
-
-       <div style= {{   width: "50%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row"}}>   
-
-
-                        <div style={{ height: "100%"  , width : "30%"}} >
-                         <p> Module 1</p>
-                        </div>
-
-                     
-
-            
-
-       </div> 
-
-
-
+     <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"   }}>
+        <p>Type</p>
      </div>
+    
+       
+     <div  className="clientview_table_row_box"  style= {{   width: "45%" , height: "100%"   }}>
+        <p>Name</p>
+     </div>
+    
 
-      </div>
-      
-      
+</div>  
 
-      </div> 
+
+
+
+
+ <div  className="clientview_table_inner_div_table_row" >
+    
+
+
+{ 
+ 
+ data.map( (  el  , index  )  => ( 
+
+ <div   key={ index} style= {{ width : "100%" , height: "25%"   , display : "flex" , flexDirection : "row"   , borderBottom : "1px solid black" }} > 
+
+
+<div   className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black"    }}>
+
+
+<p>  {  index+1 }  </p>
+</div> 
+<div  className="clientview_table_row_box"   style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid black" }}>
+  <p> { el.type_id} </p>
+</div> 
+
+
+<div   className="clientview_table_row_box" style= {{   width: "45%" ,  height: "100%"  ,  display : "flex" , flexDirection : "row"}  }>
+   
+
+
+ <div   style={{ height: "40%"  , width : "55%"   }}  > 
+  <p>{ el.name }</p>
+</div>
+     <input  className="clientview_table_row_button"    style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red" }}   type="button" value = "View"  onClick={()  => { navigate(  "/home/viewcourse/permanentcoursedetails"   ,     { state: {    typeId : "permanent_course_content" }}    ,     { replace : false}  )   }  } /> 
+                  
+                            
+</div> 
+
+</div>
+
+
+
+ ))
+}
+
+
+  </div>
+
+
+
+     
+     
+     </div> 
+
+
+ 
+
+
+
 
       <div className="body3"> 
 
@@ -216,7 +239,9 @@ function CourseDetails() {
 
 
 
-</div>
+</div> 
+
+
 ) ;     
 
 

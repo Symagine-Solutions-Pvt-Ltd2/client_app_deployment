@@ -77,7 +77,9 @@ function  FacilitatorView() {
  
 
 
-  case "client" :  
+  case "client" :    
+  case "school" : 
+
   return ( 
 
 

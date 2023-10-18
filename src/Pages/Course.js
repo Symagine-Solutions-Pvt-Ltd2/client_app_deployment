@@ -9,13 +9,16 @@ function Course() {
   
 
 
-  const [ data , setData ] = useState( []);
+  const [ data , setData ] = useState( []); 
+  const [ courseName  , setCourseName  ] = useState( "No Course Material"); 
     const location = useLocation(); 
    //   const [ typeId , setTypeId ] =  useState( location.state.typeId   ) ;   
     const  navigate = useNavigate() ; 
   
     
-    
+      
+
+   console.log(  location.state.courseId)  ; 
 
       useEffect(() => { 
     
@@ -23,12 +26,12 @@ function Course() {
 
         axios({ 
   
-         url : "http://localhost:8000/admin/course_wmb"  ,    
+         url : "http://localhost:8000/admin/course_details_id"  ,    
          
          method : "POST"  , 
          data : {
            
-          "_id" : "65250cca510a19787d4d025a"
+          "_id" :   location.state.courseId
   
          }
   
@@ -37,7 +40,7 @@ function Course() {
           console.log(  "here" ) ;
           console.log(  res ) ; 
            setData(  res.data.data ) ;  
-           
+          setCourseName(  res.data.data[0].course_name  );
            
          //  console.log(   res.data.data[1].name )  ;
   
@@ -73,7 +76,7 @@ function Course() {
 
                
                <div style={{  backgroundColor : "pink"  , height : "60%"  }} >
-               <p>Name of course: xxsöeldfmsdl </p> 
+               <p>Name of course:  {  courseName  }  </p> 
                </div>
             
              </div>
@@ -137,8 +140,11 @@ function Course() {
 
      <div   style={{ height: "40%"  , width : "55%"   }}  > 
       <p>{ el.name }</p>
-    </div>
-         <input  className="clientview_table_row_button"    style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red" }}   type="button" value = "View"  onClick={()  => { console.log("clicked")  }  } /> 
+    </div> 
+
+   <input  className="clientview_table_row_button"    style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red" }}   type="button" value = "View"  
+
+   onClick={()  => { navigate(  "/home/viewcourse/permanentcoursedetails"   ,     { state: {    typeId : "permanent_course_content"   ,  courseName :  el.course_name   ,   type :  el.type_id  ,   name : el.name   }}    ,     { replace : false}  )   }  } /> 
                       
                                 
     </div> 
@@ -158,7 +164,11 @@ function Course() {
          
          
          </div> 
+ 
 
+
+
+ 
 
         </div> 
  

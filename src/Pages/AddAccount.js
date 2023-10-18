@@ -88,7 +88,7 @@ function AddAccount() {
               
                     alert( "Registered Successfully.")  ;  
                     console.log(  res.data.data) ;   
-                    // navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :    "facilitator_with_add_account"    ,   school_name : location.state.school_name    }}    , { replace : false}  )   ;
+                    // navigate(  "/home/dashboard/facilitator"   ,    { state: {    typeId :    "facilitator_with_add_account"    ,   school_name : location.state.school_name    }}    , { replace : false}  )   ;
                   } 
                   else {
           

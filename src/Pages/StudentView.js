@@ -14,7 +14,10 @@ function StudentView() {
     const [  schoolId  , setSchoolId   ]   =  useState( location.state.schoolId ) ; 
     const [  programId  , setProgramId  ]   = useState( location.state.programId) ;   
 
+  
 
+
+    console.log( "studentview" )  ; 
     console.log(  location.state.schoolId  )  ;
     console.log( location.state.programId )  ; 
     
@@ -194,7 +197,7 @@ function StudentView() {
 
 
        <div  className="clientview_table_row_box" style= {{  width: "11%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
-        <p>Active</p>
+        <p> { el.status }</p>
        </div>   
 
 
@@ -205,7 +208,7 @@ function StudentView() {
                      <input    className="clientview_table_row_button"       style={{ height: "45%"  , width : "40%"   ,border: "0px solid red" }}  type="button" value = "status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
                      
                        
-                      <input   className="clientview_table_row_button"       style={{ height: "45%"  , width : "40%"   ,border: "0px solid red" }}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+                      <input   className="clientview_table_row_button"       style={{ height: "45%"  , width : "40%"   ,border: "0px solid red" }}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/student/editstudent"   ,    { state: { typeId : "student"  }}     ,       { replace : false}  )  }  } /> 
                        
        </div>
 
