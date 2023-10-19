@@ -33,7 +33,7 @@ function Home () {
    console.log( programId) ;  
 
    
-    navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   clientId : clientId   , programId : programId   ,   data :   location.state.data   }}    ,     { replace : false}  )  ;
+    navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   clientId :  location.state.data._id  , programId : programId   ,   data :   location.state.data   }}    ,     { replace : false}  )  ;
  
  
   }

@@ -3,10 +3,28 @@ import {Link , useNavigate  , useLocation  } from "react-router-dom" ;
 import { useState  , useEffect } from "react"; 
 import Sidebar from "../Sidebar"  ;  
 import axios from "axios"  ;  
+  
+
+
+
+// popup 
+import Popup from "../Components/Popup"; 
+
 
 
 
 function StudentView() {    
+  
+    // for popup 
+    const[ popupInfo  , setPopupInfo ] = useState("") ;
+    const[ popup  , setPopup ] = useState( false) ; 
+    const[ userNameForPopup  , setUserNameForPopup ] = useState( "") ; 
+
+ 
+
+
+
+
     
   const [ data , setData ] = useState( []);  
     const  navigate = useNavigate() ;   
@@ -72,6 +90,22 @@ function StudentView() {
 
 
 
+ 
+
+
+
+
+    const  handleStatusChange = ( cs  ) => {    
+    
+      setPopupInfo( cs) ;
+      // console.log( cs) ;
+      setUserNameForPopup( cs.student_name) ;
+        setPopup( true)  ;
+      
+ } 
+
+
+
 
 
     return(
@@ -87,7 +121,10 @@ function StudentView() {
     <div className="clientview_body">   
 
      
-   
+     
+    <Popup  trigger= { popup  } setTrigger={ setPopup }   data={ popupInfo}  >
+                <h3>{userNameForPopup}</h3>
+          </Popup>
 
 
      <div  className="clientview_body1">  
@@ -181,7 +218,7 @@ function StudentView() {
  
 
 
-            <input  className="clientview_table_row_button"       style={{ height: "45%"  , width : "60%"   ,border: "0px solid red" }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/student/viewplan"   ,  { replstuace : false}  )  }  } /> 
+      <input   className="inner_table_btn"   style={{ height: "40%"  , width : "60%"   ,border: "0px solid red" }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/student/viewplan"   ,  { replstuace : false}  )  }  } /> 
             
 
        </div> 
@@ -189,7 +226,7 @@ function StudentView() {
 
        <div className="clientview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row"}}> 
                         
-                        <input     className="clientview_table_row_button"       style={{ height: "45%"  , width : "60%"   ,border: "0px solid red" }}  type="button" value = "download"    onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
+          <input      className="inner_table_btn"       style={{ height: "40%"  , width : "70%"   ,border: "0px solid red" }}  type="button" value = "download"    onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
                        
        </div>  
 
@@ -205,10 +242,10 @@ function StudentView() {
                     
 
 
-                     <input    className="clientview_table_row_button"       style={{ height: "45%"  , width : "40%"   ,border: "0px solid red" }}  type="button" value = "status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+         <input   className="inner_table_btn"      style={{ height: "40%"  , width : "40%"   ,border: "0px solid red" }}  type="button" value = "status"  onClick={()  => {  handleStatusChange( el)  }  } /> 
                      
                        
-                      <input   className="clientview_table_row_button"       style={{ height: "45%"  , width : "40%"   ,border: "0px solid red" }}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/student/editstudent"   ,    { state: { typeId : "student"  }}     ,       { replace : false}  )  }  } /> 
+        <input   className="inner_table_btn"     style={{ height: "40%"  , width : "40%"   ,border: "0px solid red" }}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/student/editstudent"   ,    { state: { typeId : "student"  }}     ,       { replace : false}  )  }  } /> 
                        
        </div>
 
@@ -231,7 +268,7 @@ function StudentView() {
         
         
 
-      <div className="clientview_table_inner_div_column_name"  style = {{ backgroundColor : "#FFFFFF" }} >   
+      <div className="clientview_table_inner_div_column_name"  style = {{ backgroundColor : "#FFFFFF"  , borderBottom : "1px solid black" }} >   
  
 
 
@@ -269,7 +306,7 @@ function StudentView() {
 
       <div className="body3"> 
 
-      <div onClick={ () => { goToNext() } } className="add_new_program_button"   style= { {  backgroundColor : "#FCC046"}} >
+      <div onClick={ () => { goToNext() } } className="add_new_program_button"   style= { {   backgroundColor : "#FCC046"  , borderRadius : 15 , display : "flex"  , alignItems : "center"  , justifyContent : 'center'   }} >
         <p>Add new student</p>
       </div>
     

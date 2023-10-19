@@ -145,7 +145,7 @@
     width : 18%;  
     background-color: #FCC046 ; 
     margin-right: 5%;
-
+    border-radius: 25;
 
 }
   
@@ -160,4 +160,13 @@
     align-items: center; 
     justify-content: center; 
    
+}
+ 
+
+
+.inner_table_btn{
+
+    background-color: #FCC046;
+    border-radius: 20px; 
+    border: 0px solid red ;
 }

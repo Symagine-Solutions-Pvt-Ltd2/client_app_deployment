@@ -135,6 +135,37 @@
   border-radius:  20px; 
 
 
+} 
+
+.admin_Form-Description{
+
+
+
+flex : 30% ;   
+display:flex ; 
+align-items: center; 
+padding-left: 5%;
+
+} 
+
+.admin_Form-Input{
+    
+  flex : 70% ; 
+ background-color: #FFFFFF ; 
+ display: flex; 
+ align-items:  center ;
+ justify-content:center  ;
+ border-left: 1px solid black ;
+
+}  
+
+
+.admin_input-box{
+
+  width : 80% ; 
+  height : 60% ;  
+  border-radius:  20px;
+
 }
 
 

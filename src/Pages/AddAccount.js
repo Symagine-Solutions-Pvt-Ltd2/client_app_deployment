@@ -20,16 +20,16 @@ function AddAccount() {
     const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
 
 
-   /*   
+   
   
-
+    console.log( "addaccount" ) ; 
   console.log( location.state.schoolId ) ; 
   console.log( location.state.typeId  ) ; 
-  // console.log( location.state.clientId ) ; 
+  console.log( location.state.clientId ) ; 
   console.log( location.state.programId ) ;  
   // console.log( location.state.programName) ;    
   
- */
+
 
 
 
@@ -88,7 +88,7 @@ function AddAccount() {
               
                     alert( "Registered Successfully.")  ;  
                     console.log(  res.data.data) ;   
-                    // navigate(  "/home/dashboard/facilitator"   ,    { state: {    typeId :    "facilitator_with_add_account"    ,   school_name : location.state.school_name    }}    , { replace : false}  )   ;
+         navigate(  "/home/dashboard/facilitator"   ,    { state: {    typeId :    "client"    ,   schoolId : location.state.schoolId  , programId : location.state.programId   }}    , { replace : false}  )   ;
                   } 
                   else {
           
@@ -162,7 +162,7 @@ function AddAccount() {
                    
                   console.log( res.data.data) ; 
 
-                //    navigate(  "/home/dashboard/school"   ,   { state: {    typeId :    "system_admin"   ,  clientName : location.state.client_name    }}     ,      { replace : false}  )   ;
+                  navigate(  "/home/dashboard"   ,   { state: {    typeId :    "client"   ,   programId : location.state.programId    , clientId :location.state.clientId   }}     ,      { replace : false}  )   ;
     
                 } 
                 else {
@@ -242,7 +242,7 @@ function AddAccount() {
                   console.log(  res.data.data) ;  
 
 
-             //    navigate(  "/home/dashboard/student"      ,   { state: {    typeId : "student_with_add_account",   school_name : location.state.school_name  ,        program_name : location.state.program_name     }}        ,  { replace : false}  )  
+            navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : location.state.schoolId  ,        programId : location.state.programId   }}        ,  { replace : false}  )  
     
                 } 
                 else {

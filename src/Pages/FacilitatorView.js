@@ -2,13 +2,25 @@ import {Link , useNavigate  , useLocation} from "react-router-dom" ;
 import { useState , useEffect  } from "react"; 
 import Sidebar from "../Sidebar"  ;  
 import axios from "axios"  ; 
-import  "../Style/FacilitatorView.css" ; 
+import  "../Style/FacilitatorView.css" ;  
+
+
+import Popup  from "../Components/Popup";
 
 
 
 
 function  FacilitatorView() {    
-     
+      
+ // for popup 
+ const[ popupInfo  , setPopupInfo ] = useState("") ;
+ const[ popup  , setPopup ] = useState( false) ; 
+ const[ userNameForPopup  , setUserNameForPopup ] = useState( "") ; 
+
+
+
+
+
     const [ data , setData ] = useState( []);
     const  navigate = useNavigate() ;   
     const location = useLocation();    
@@ -16,7 +28,9 @@ function  FacilitatorView() {
      const [  programId  , setProgramId]   = useState( location.state.programId ) ; 
      const [  typeId  , setTypeId]   = useState( location.state.typeId  ) ; 
  
+ 
 
+     console.log( "FacilitatorView" ) ; 
     console.log( location.state.schoolId ) ; 
     console.log( location.state.programId ) ;
     console.log( location.state.typeId ) ;
@@ -70,6 +84,18 @@ function  FacilitatorView() {
  
   
 
+   
+
+
+    const  handleStatusChange = ( cs  ) => {    
+    
+      setPopupInfo( cs) ;
+      // console.log( cs) ;
+      setUserNameForPopup( cs.facilitator_name) ;
+        setPopup( true)  ;
+      
+ } 
+
 
  
     switch( typeId )  {  
@@ -90,7 +116,10 @@ function  FacilitatorView() {
             </div> 
             <div className="clientview_body">   
 
-
+             
+            <Popup  trigger= { popup  } setTrigger={ setPopup }   data={ popupInfo}  >
+                <h3>{userNameForPopup}</h3>
+          </Popup>
 
              <div  className="clientview_body1"> 
          
@@ -109,7 +138,7 @@ function  FacilitatorView() {
 
 
 
-               <div   className="clientview_table_row_box"   style= {{   width: "10%"  ,  height: "40%"   ,  borderRight : "1px solid black" }}>
+               <div   className="clientview_table_row_box"   style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
                <p>Sl No</p>
                </div>  
 
@@ -167,7 +196,7 @@ function  FacilitatorView() {
 
 
                <div    className="clientview_table_row_box"   style= {{  width: "15%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
-                 <p>Account Status</p>
+                 <p> { el.status } </p>
                </div>  
 
 
@@ -175,9 +204,9 @@ function  FacilitatorView() {
                <div  className="clientview_table_row_box"  style= {{   width: "25%"  ,  height: "100%" , borderRight : "1px solid black"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
 
 
-                 <input type="button"  value= "Status" className="clientview_table_row_button"    style= {{  width :"40%"  , height:"50%"  ,   border: "0px solid red" }}  /> 
+                 <input type="button"  className="inner_table_btn"  value= "Status"     style= {{  width :"36%"  , height:"40%"  ,   border: "0px solid red" }}     onClick= { () => {handleStatusChange( el) } }  /> 
 
-                 <input type="button"  value= "Edit"   className="clientview_table_row_button"     style= {{ width :"40%"  , height:"50%" ,   border: "0px solid red" }}  />  
+                 <input type="button"   className="inner_table_btn"   value= "Edit"    style= {{ width :"36%"  , height:"40%" ,   border: "0px solid red" }}  />  
 
 
 
@@ -204,7 +233,7 @@ function  FacilitatorView() {
 
               <div className="body3"> 
 
-              <div onClick={ () => { goToNext() } } className="add_new_program_button"  style= { {  backgroundColor : "#FCC046"}}>
+              <div onClick={ () => { goToNext() } } className="add_new_program_button"  style= { {  backgroundColor : "#FCC046"  , borderRadius : 15 , display : "flex"  , alignItems : "center"  , justifyContent : 'center'} }>
                 <p>Add new facilitator</p>
               </div>
             

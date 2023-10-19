@@ -22,8 +22,8 @@ position: relative;
 width : 50% ; 
 height : 40% ;
 
-background-color: #5A6199;   
-
+background-color: #353B55;   
+border-radius: 2%;
 
 
 
@@ -33,18 +33,19 @@ background-color: #5A6199;
 
  .close-btn {
     
-    height : 50% ;
-    width : 30% ; 
+    height : 60% ;
+    width : 20% ;  
+  
 
 }  
 
 .popup-inner-body1{
 
     height: 20%; 
-    background-color: peru; 
     display : flex ; 
     align-items:  center ; 
-    justify-content: flex-end ;
+    justify-content: flex-end ;  
+    padding-right:  2%;
 }
 
 
@@ -52,7 +53,7 @@ background-color: #5A6199;
 
   
       height: 40%; 
-      background-color:  violet;
+      background-color: #FFF;
 
 } 
   
@@ -63,10 +64,9 @@ background-color: #5A6199;
 
   
     height: 40%; 
-    background-color: peru; 
     display : flex ; 
     align-items:  center ; 
-    justify-content: space-between;
+    justify-content: space-around;
 
 }  
 
@@ -76,8 +76,10 @@ background-color: #5A6199;
 
 .popup-inner-body2-button{
 
-   height : 50% ;
-   width : 30% ; 
+   height : 45% ;
+   width : 25% ; 
+   background-color: #B7B7D1;
+
 
 }
 

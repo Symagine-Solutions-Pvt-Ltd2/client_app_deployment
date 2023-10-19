@@ -3,18 +3,28 @@
 import React from 'react'; 
 import "../Components/Popup.css" ; 
 import { useState  , useEffect} from "react";
+import axios from "axios"  ;
+
+ 
 
 
 
 const Popup = (  props ) => {
   
-  
+  const userDetails  =  props.data ; 
+
+  console.log( props.data) ; 
 
    
 
   const [ status  , setStatus  ] = useState( "");
 
+ 
 
+  const statusChange = ( value )  => { 
+     
+    alert( value) ; 
+  }
 
 
 
@@ -44,11 +54,14 @@ const Popup = (  props ) => {
   
 
 
-                    <input className="popup-inner-body2-button"    type="button" value = "Active"   /> 
-                    <input  className="popup-inner-body2-button"    type="button" value = "Delete"   />  
-                    <input  className="popup-inner-body2-button"     type="button" value = "Inactive"   />  
- 
+                    <input style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1"}}  className="popup-inner-body2-button"    type="button" value = "Active" 
+                        onClick={()  => {  statusChange( "active") }} /> 
 
+                    <input  style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1" }}  className="popup-inner-body2-button"     type="button" value = "Inactive"  
+                       onClick={()  => {  statusChange( "inactive") }} />  
+ 
+                      <input  style = {{ borderRadius : 15   , backgroundColor : "#F06B6E" ,  color : "#FFF" }}   className="popup-inner-body2-button"    type="button" value = "Delete"  
+                          onClick={()  => {  statusChange( "delete") }}  />  
 
                     </div> 
 

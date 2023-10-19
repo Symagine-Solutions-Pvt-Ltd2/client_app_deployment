@@ -97,7 +97,7 @@ function Course() {
            <p>Sl No</p>
          </div>  
 
-         <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"   }}>
+         <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"  ,  borderRight : "1px solid black"   }}>
             <p>Type</p>
          </div>
         
@@ -142,7 +142,7 @@ function Course() {
       <p>{ el.name }</p>
     </div> 
 
-   <input  className="clientview_table_row_button"    style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red" }}   type="button" value = "View"  
+   <input   className="inner_table_btn"  style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red" }}   type="button" value = "View"  
 
    onClick={()  => { navigate(  "/home/viewcourse/permanentcoursedetails"   ,     { state: {    typeId : "permanent_course_content"   ,  courseName :  el.course_name   ,   type :  el.type_id  ,   name : el.name   }}    ,     { replace : false}  )   }  } /> 
                       
