@@ -21,7 +21,9 @@ import AddAccount from './Pages/AddAccount';
 import FacilitatorView from  "./Pages/FacilitatorView"  ;
 import BusinessPlan from './Pages/BusinessPlan';  
 import CourseDetails from './Pages/CourseDetails'; 
-import EditAccount from './Pages/EditAccount';
+import EditAccount from './Pages/EditAccount'; 
+import ForgotPassword from "./Pages/ForgotPassword"  ;  
+import Password from "./Pages/Password"  ;  
 
 
 
@@ -41,7 +43,13 @@ root.render(
       
  <Route path= "/"   >  
  <Route index element={<GettingStarted />} />  
- <Route path= "login"  element ={  <Login/>  } />   
+ <Route path= "login"  element ={  <Login/>  } />  
+ <Route path= "forgotpassword"  element ={  <ForgotPassword/>  } />   
+ <Route path= "password"  element ={  <Password/>  } />  
+
+
+
+
  <Route path= "home"  > 
    <Route index element ={  <Home/> } />   
    <Route path= "dashboard" >

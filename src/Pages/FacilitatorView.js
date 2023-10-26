@@ -206,7 +206,7 @@ function  FacilitatorView() {
 
                  <input type="button"  className="inner_table_btn"  value= "Status"     style= {{  width :"36%"  , height:"40%"  ,   border: "0px solid red" }}     onClick= { () => {handleStatusChange( el) } }  /> 
 
-                 <input type="button"   className="inner_table_btn"   value= "Edit"    style= {{ width :"36%"  , height:"40%" ,   border: "0px solid red" }}  />  
+                 <input type="button"   className="inner_table_btn"   value= "Edit"    style= {{ width :"36%"  , height:"40%" ,   border: "0px solid red" }}   onClick={ () =>{  navigate(  "/home/dashboard/editfacilitator"   ,  { state: {    typeId : "facilitator"   ,    data : el    }}   , { replace : false}  )}} />  
 
 
 

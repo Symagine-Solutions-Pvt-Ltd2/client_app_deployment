@@ -295,7 +295,7 @@ function SchoolView() {
             <input    className="inner_table_btn"    style={{ height: "40%"  , width : "40%"}}   type="button" value = "Status"    onClick= { () => {handleStatusChange( el) } }   /> 
                             
                              
-           <input    className="inner_table_btn"    style={{ height: "40%"  , width : "40%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/editschool"   ,  { state: {    typeId : "school"   ,    data : el   ,  type : "system_admin"     }}   , { replace : false}  )  }  } />   
+           <input    className="inner_table_btn"    style={{ height: "40%"  , width : "40%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/editschool"   ,  { state: {    typeId : "school"   ,    data : el       }}   , { replace : false}  )  }  } />   
 
 
 

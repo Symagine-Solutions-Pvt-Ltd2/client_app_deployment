@@ -18,13 +18,16 @@ function  EditAccount(  {  props }) {
   const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;   
   const [  data  , setData ]   = useState( location.state.data   ) ;  
 
- 
+  
+
+    console.log( "editaccount" );
+   
     console.log( data ) ;   
   
  // console.log( location.state.type) ;  
     
 
-  
+   
  
 
 
@@ -40,7 +43,7 @@ function  EditAccount(  {  props }) {
         console.log( event.target.contact_person.value) ;  
          
 
-      navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId : location.state.type    ,  clientName : data.client_name     }}     ,      { replace : false}  )   ;
+
         
    //      console.log(  location.state.type    )   ; 
 
@@ -65,8 +68,8 @@ axios({
                   
                             
                           console.log( res) ; 
-
-                       
+                     alert(  res.data.message) ; 
+                  navigate(  "/home/dashboard"   ,   { state: {    typeId: "client"  ,   clientId :  data.client_id , programId :  data.program_id    }}     ,      { replace : false}  )   ;
                      } ).catch(( err) => { 
                          console.log( "error") ;
                 
@@ -96,7 +99,7 @@ axios({
   
          
 
-    navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :  location.state.type  ,   school_name : data.school_name     }}    , { replace : false}  )   ;
+   
         
    //      console.log(  location.state.type    )   ; 
 
@@ -120,7 +123,8 @@ axios({
                   
                             
                           console.log( res) ; 
-
+                          alert(  res.data.message) ; 
+                          navigate(  "/home/dashboard/facilitator"   ,    { state: {  typeId: "client"    ,    schoolId : data.school_id  , programId : data.program_id      }}    , { replace : false}  )   ;
                        
                      } ).catch(( err) => { 
                          console.log( "error") ;
@@ -145,7 +149,7 @@ axios({
         console.log( event.target.email.value) ;     
          
         
-      navigate(  "/home/dashboard/client/student"   ,    { state: {     school_name : data.school_name     }}    , { replace : false}  )   ;
+
         
          
 
@@ -167,7 +171,10 @@ axios({
        }).then( ( res) => {   
     
               
-            console.log( res) ; 
+            console.log( res) ;  
+
+            alert(  res.data.message) ; 
+            navigate(  "/home/dashboard/student"   ,    { state: {     schoolId : data.school_id  , programId : data.program_id      }}    , { replace : false}  )   ;
 
          
        } ).catch(( err) => { 
