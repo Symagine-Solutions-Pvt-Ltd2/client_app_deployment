@@ -1,7 +1,8 @@
 
 import {Link } from "react-router-dom"  ;  
 import "./Style/Sidebar.css"  ;    
-
+import  logo1 from "./Images/logo1.png" ;  
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 // import this component to  render  the sidebar in every page 
@@ -10,20 +11,14 @@ function SideBar() {
   
 
    return(
-    <div  className= "Sidebar" >
-      <div  className="Sidebar-description">    
+    <div  className= "Sidebar"  style={{ borderTopRightRadius: 25  , borderBottomRightRadius : 25}}>
+      <div  className="Sidebar-description"   style={{ borderRadius: 25}}>    
            
-         <div   className="Sidebar-Program-Name-div" >   
+         <div   className="Sidebar-Program-Name-div" style={ {  borderRadius : 25}} >    
            
-                    <div className="Sidebar-Program-Name-inner-div">
-      
-                            <div   style={{  backgroundColor : "white"}}> 
-                               <p>logo</p> 
-                            </div> 
-                            <div style={{ color : "white"}}>
-                                 <p>Future Founders</p> 
-                            </div>  
-      
+                    <div className="Sidebar-Program-Name-inner-div"  style={ { justifyContent : "center"}}>
+             
+                         <img src={ logo1}  alt= { "ccv"}  height={"100%"}  />   
                      </div>   
          </div>
 
@@ -37,11 +32,11 @@ function SideBar() {
           
 
          < div  className="Sidebar-Admin-info-div" > 
-                <div  style={{  height: "55%"  , backgroundColor : "#353B55"}}>
+                <div  style={{  height: "55%"  }}>
                  <p  style={{ color : "white"}}>Mike Hannigan</p>
                  </div> 
 
-                 <div  style={{  height: "35%"  , backgroundColor : "#353B55"}}>
+                 <div  style={{  height: "35%"  }}>
                 <p style={{ color : "white"}}> System Admin  </p>
                   </div>
          </div>  
@@ -50,7 +45,8 @@ function SideBar() {
 
          <div   className="Sidebar-Program-Home-Button-div" >  
 
-               <div style={{ backgroundColor : "#B7B7D0" ,  width : "51.70%" , height : "45.88%"}}>
+               <div style={{ backgroundColor : "#B7B7D0" ,  width : "56.70%" , height : "45.88%"  , borderRadius : 25}}> 
+
                <p>Home</p>
                </div>
                  
@@ -66,13 +62,15 @@ function SideBar() {
  
                       <div className="Sidebar-logout-button"> 
                          
-                      <div style={{height : "100%" , width :"20%"}}>
+                      <div style={{height : "100%" , width :"30%"  , display : "flex"  , alignItems : "center"}}>
+                  
+                      <LogoutIcon  sx={{ color: "#F06B6D"  , fontSize : 22    }}/>
+                    
+                      </div> 
 
-                         <p  style={{ color : "red"}}>h</p>
-                      </div>
-                      <div style={{height : "100%" , width :"80%"}}>
+                      <div style={{height : "100%" , width :"60%"   ,  display : "flex"  , alignItems : "center" }}>
 
-                         <p style={{ color : "red"}}>Log out</p>
+                         <p style={{ color : "#F06B6D"  , fontSize : 14  , textAlign : "end"  }}>Log out</p>
                       </div>
                         
       

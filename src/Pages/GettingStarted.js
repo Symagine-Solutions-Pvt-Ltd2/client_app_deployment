@@ -1,7 +1,8 @@
 import "../Style/GettingStarted.css"  ;  
 import {Link , useNavigate } from "react-router-dom" ;  
 
-import getStarted from "../Images/getStarted.jpg"  ; 
+import getStarted from "../Images/getStarted.jpg"  ;  
+import  logo from "../Images/logo.png" ; 
   
 
 // frame 24 
@@ -27,19 +28,15 @@ function   GettingStarted() {
         <div className="InnerBox">
 
             
-            <div className="logo-box" >  
-                 <div  className="logo-picture-text" > 
- 
+            <div className="logo-box" >   
 
-                  <div  style={{ height: "100%"    ,  marginRight : "4px" , overflow: "hidden"  }}>
-                 <p >jahj</p>
-                  </div> 
-   
 
-                  
-                   <div style={{ height: "100%"   , overflow: "hidden" ,   backgroundColor: "#FFF8EE" , display : "flex" ,  alignItems : "center" , justifyContent : "center"}}>
-                  <p  className="logo-text">Future Founders</p> 
-                  </div>
+                 <div  className="logo-picture-text"   > 
+                 
+
+                 <img src={ logo }  alt= { "ccv"}  height={"100%"}  />  
+
+                <p style= {{ width: "75%" , height: "80%"  , fontWeight : "700" }}>Learn Up</p>
 
                  </div>  
               
@@ -62,7 +59,7 @@ function   GettingStarted() {
                   
              <div style= {{  height : "40%"  , display : "flex"  , alignItems : "flex-end", backgroundColor : "#FFF8EE"   }}>
            
-             <input type="button" value = "Get Started"  onClick={() => { goToApp() }}  style= {{  backgroundColor : "#5E81F4"  ,  height : "60%"  , width : "65%"   ,  borderRadius: "18px" }}  /> 
+             <input type="button" value = "Get Started"  onClick={() => { goToApp() }}  style= {{  backgroundColor : "#5E81F4"  ,  height : "60%"  , width : "65%"   ,  borderRadius: "18px"   , border : "0px solid red"}}  /> 
               
             </div> 
             </div>   

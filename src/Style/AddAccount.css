@@ -28,7 +28,7 @@
     
   width : 19% ; 
   height : 100% ; 
-   background-color: #353B55 ; 
+   background-color: #FFF ; 
   
   } 
   
@@ -127,8 +127,8 @@
     width : 10.96% ; 
     height : 55% ;  
     border-radius:  20px; 
-
-
+   background-color: #FCC046;
+   border: 0px solid red
 
   }
   

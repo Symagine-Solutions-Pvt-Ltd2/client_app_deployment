@@ -49,7 +49,7 @@ function SchoolView() {
 
     console.log(location.state.programId ) ;  
   
-
+    console.log(location.state.clientId  ) ;  
     //console.log(location.state.data) ; 
 
 
@@ -438,22 +438,22 @@ function SchoolView() {
                    <div  className="clientview_table_row_box"   style= {{   width: "15%"  ,  height: "100%"  , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>   
 
 
-                   <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "20%"}}>  
+                   <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "50%"}}>  
                            <p> { el.total_facilitators } </p>
                                 </div>
                                
-              <input    style={{ height: "40%"  , width : "60%"}}   type="button" value = "view"  onClick={()  => {     navigate(  "/home/dashboard/facilitator"   ,     { state: {    typeId : typeId ,    schoolId : data[index]._id.$oid ,       programId :  data[index].program_id         }}           ,     { replace : false}  )  }  } /> 
+              <input    className="inner_table_btn"   style={{ height: "40%"  , width : "40%"}}   type="button" value = "view"  onClick={()  => {     navigate(  "/home/dashboard/facilitator"   ,     { state: {    typeId : typeId ,    schoolId : data[index]._id.$oid ,       programId :  data[index].program_id         }}           ,     { replace : false}  )  }  } /> 
                              
                    </div>   
 
 
             <div  className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%" , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>  
 
-                     <div  className="clientview_table_row_box"   style={{ height: "40%"  , width : "20%"}}> 
+                     <div  className="clientview_table_row_box"   style={{ height: "60%"  , width : "50%"}}> 
                                <p> { el.total_students }</p>
                      </div>
                            
-                    <input  style={{ height: "40%"  , width : "80%"}}   type="button" value = "view"  onClick={()  => {  navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : data[index]._id.$oid ,        programId :  data[index].program_id   }}        ,  { replace : false}  )  }  } /> 
+            <input    className="inner_table_btn" style={{ height: "40%"  , width : "40%"}}   type="button" value = "view"  onClick={()  => {  navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : data[index]._id.$oid ,        programId :  data[index].program_id   }}        ,  { replace : false}  )  }  } /> 
                         
                    </div>  
 
@@ -579,22 +579,22 @@ function SchoolView() {
                      <div  className="clientview_table_row_box"   style= {{   width: "15%"  ,  height: "100%"  , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>   
   
   
-                     <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "20%"}}>  
+                     <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "50%"}}>  
                              <p> { el.total_facilitators } </p>
                                   </div>
                                  
-                <input    style={{ height: "40%"  , width : "60%"}}   type="button" value = "view"  onClick={()  => {     navigate(  "/home/dashboard/facilitator"   ,     { state: {    typeId : typeId ,    schoolId : el._id ,       programId :  el.program_id        }}           ,     { replace : false}  )  }  } /> 
+                <input    className="inner_table_btn"    style={{ height: "40%"  , width : "40%"}}   type="button" value = "view"  onClick={()  => {     navigate(  "/home/dashboard/facilitator"   ,     { state: {    typeId : typeId ,    schoolId : el._id ,       programId :  el.program_id        }}           ,     { replace : false}  )  }  } /> 
                                
                      </div>   
   
   
               <div  className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%" , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>  
   
-                       <div  className="clientview_table_row_box"   style={{ height: "40%"  , width : "20%"}}> 
+                       <div  className="clientview_table_row_box"   style={{ height: "40%"  , width : "50%"}}> 
                                  <p> { el.total_students }</p>
                        </div>
                              
-                      <input  style={{ height: "40%"  , width : "80%"}}   type="button" value = "view"  onClick={()  => {  navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : el._id ,        programId :   el.program_id     }}        ,  { replace : false}  )  }  } /> 
+                      <input   className="inner_table_btn"  style={{ height: "40%"  , width : "40%"}}   type="button" value = "view"  onClick={()  => {  navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : el._id ,        programId :   el.program_id     }}        ,  { replace : false}  )  }  } /> 
                           
                      </div>  
   

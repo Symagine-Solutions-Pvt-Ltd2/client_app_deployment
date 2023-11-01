@@ -87,7 +87,8 @@ function AddAccount() {
    
               
                     alert( "Registered Successfully.")  ;  
-                    console.log(  res.data.data) ;   
+                    console.log(  res.data.data) ;  
+
          navigate(  "/home/dashboard/facilitator"   ,    { state: {    typeId :    "client"    ,   schoolId : location.state.schoolId  , programId : location.state.programId   }}    , { replace : false}  )   ;
                   } 
                   else {
@@ -484,7 +485,7 @@ function AddAccount() {
            
   
         <div  className="addaccount_form_row_btn_div"> 
-                          <input className="addaccount_form_row_btn" type="submit" value="Submit" /> 
+  <input className="addaccount_form_row_btn" type="submit" value="Submit" /> 
         </div>
                         
     </form>

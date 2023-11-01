@@ -116,17 +116,19 @@ function Login() {
      </div>  
 
       <div className="input_text1"> 
-      <input  className="input_box_text" placeholder="Enter your email or user id"    onChange={onChangeEmail } /> 
+      <input  className="input_box_text"  style={{    border : "1px solid #5E81F4"  }} placeholder="Enter your email or user id"    onChange={onChangeEmail } /> 
       </div> 
 
       <div className="input_text2"> 
-      <input  className="input_box_text" placeholder="Enter your password"  onChange={  onChangePassword} /> 
+      <input  className="input_box_text" style={{    border : "1px solid #5E81F4"  }}  placeholder="Enter your password"  onChange={  onChangePassword} /> 
       </div>
       
 
-      <div className="password-text"> 
-        <p>Forgot password?</p>
-        <p>Click here </p>
+      <div className="password-text" > 
+
+      <input style = {{ height : "100%"  , width : "55%"   , display : "flex"  , textAlign : "end"  , color : "#5A6198"  , border : "0px solid red"}}  type="text"  value="Forgot password? "  disabled /> 
+      <input  style = {{ height : "100%"  , color : "#F06B6D" , backgroundColor : "#F7E5E9"  , border : "0px solid red"  , textAlignLast : "center" }}  type="button" value= "Click here"   onClick={ () => {    navigate(  "/forgotpassword"  ,   { replace : false}  )  ; }}/> 
+
       </div>
 
       <div className="button"   onClick={ () => {  goToHome()  }}>

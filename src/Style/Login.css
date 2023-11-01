@@ -97,6 +97,7 @@ height : 8% ;
     background-color: "white"; 
     border-radius: 20px; 
     text-align: center ;
+ 
     
 }
   
@@ -104,7 +105,9 @@ height : 8% ;
 
     top : 61.96% ;  
     position: absolute;  
-    display:  flex;
+    display:  flex; 
+    align-items: center;
+    justify-content: flex-start;
 }
 
 
