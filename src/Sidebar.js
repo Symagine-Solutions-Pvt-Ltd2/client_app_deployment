@@ -2,7 +2,7 @@
 import {Link } from "react-router-dom"  ;  
 import "./Style/Sidebar.css"  ;    
 import  logo1 from "./Images/logo1.png" ;  
-import LogoutIcon from '@mui/icons-material/Logout';
+import LogoutIcon from '@mui/icons-material/Logout'; 
 
 
 // import this component to  render  the sidebar in every page 
@@ -45,10 +45,8 @@ function SideBar() {
 
          <div   className="Sidebar-Program-Home-Button-div" >  
 
-               <div style={{ backgroundColor : "#B7B7D0" ,  width : "56.70%" , height : "45.88%"  , borderRadius : 25}}> 
+         <input style={{ backgroundColor : "#B7B7D0" ,  width : "56.70%" , height : "45.88%"  , borderRadius : 25   , border : "0px"}}  type= "button"   value = "Home"  /> 
 
-               <p>Home</p>
-               </div>
                  
             </div>    
 

@@ -120,7 +120,7 @@
       
     height:  59.08%; 
     width:100%;
-    background-color: "red" ; 
+    background-color: #FFF8EE ; 
     display: flex ; 
     flex-direction: row;
     
@@ -165,7 +165,7 @@
     height : 100%  ; 
 
     width :  58.46%  ;  
-    background-color: red ; 
+    background-color: #FFF8EE ; 
     overflow:  hidden;
 
 }

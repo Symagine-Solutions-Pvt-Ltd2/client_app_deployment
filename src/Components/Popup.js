@@ -3,7 +3,9 @@
 import React from 'react'; 
 import "../Components/Popup.css" ; 
 import { useState  , useEffect} from "react";
-import axios from "axios"  ;
+import axios from "axios"  ;  
+import CloseIcon from '@mui/icons-material/Close';
+
 
  
 
@@ -13,18 +15,145 @@ const Popup = (  props ) => {
   
   const userDetails  =  props.data ; 
 
-  console.log( props.data) ; 
+  console.log( userDetails  ) ; 
 
    
+  
 
   const [ status  , setStatus  ] = useState( "");
 
  
 
   const statusChange = ( value )  => { 
+       
+   
+
+
+
+    if(  userDetails.type_id === "school" ){
+ 
+       
+     // alert( value) ;          
+                 
+       axios({ 
      
-    alert( value) ; 
+       url : "http://localhost:8000/admin/school_sc"  ,   
+ 
+       method : "POST"  ,  
+ 
+       data : {
+         
+         
+            "_id" : userDetails._id , 
+            "client_id" :  userDetails.client_id ,
+                  "status" : value   
+ 
+       }
+ 
+      }).then( ( res) => {   
+ 
+       console.log( res) ; 
+       alert( res.data.message) ;  
+      props.setTrigger( false ) ;
+        
+      } ).catch(( err) => { 
+          console.log( "error") ;
+ 
+       }  ) ;   
+ 
+  
+ 
+   } 
+    else if(  userDetails.type_id === "facilitator" ){
+
+                    
+     axios({ 
+  
+    url : "http://localhost:8000/admin/facilitator_sc"  ,   
+
+    method : "POST"  ,  
+
+    data : {
+      
+      
+         "_id" : userDetails._id , 
+         "school_id" :  userDetails.school_id ,
+               "status" : value   
+
+    }
+
+   }).then( ( res) => {   
+
+    console.log( res) ; 
+    alert( res.data.message) ;  
+   props.setTrigger( false ) ;
+     
+   } ).catch(( err) => { 
+       console.log( "error") ;
+
+    }  ) ;  
+
+// alert( value) ; 
+
+}   
+else if(   userDetails.type_id === "student"  ) {
+    
+
+
+
+   axios({ 
+ 
+   url : "http://localhost:8000/admin/student_sc"  ,   
+
+   method : "POST"  ,  
+
+   data : {
+     
+     
+        "_id" : userDetails._id , 
+        "school_id" :  userDetails.school_id ,
+         "status" : value   
+
+   }
+
+  }).then( ( res) => {   
+
+   console.log( res) ; 
+   alert( res.data.message) ;  
+  props.setTrigger( false ) ;
+    
+  } ).catch(( err) => { 
+      console.log( "error") ;
+
+   }  ) ;   
+ 
+//  alert( value) ; 
+
+
+
+}
+
+
+
+
+
+
+   
+ 
+
+
+   
+
+
+  
   }
+  
+
+
+
+
+
+
 
 
 
@@ -36,7 +165,9 @@ const Popup = (  props ) => {
 
                     <div className="popup-inner-body1"> 
 
-                     <button className="close-btn" onClick={ () => {  props.setTrigger( false ) }  }>close</button>   
+                     <button className="close-btn" onClick={ () => {  props.setTrigger( false ) }  }>
+                     <CloseIcon  sx={{ color: "#FFFFFF"  , fontSize : 35   }}/>
+                      </button>   
                     
                     </div> 
 

@@ -132,7 +132,7 @@ function Login() {
       </div>
 
       <div className="button"   onClick={ () => {  goToHome()  }}>
-            <p>Log in</p>
+            <p  style= {{  color  : "#FFFFFF"  , fontWeight : 600  , fontSize : 16}}>Log in</p>
      </div>  
 
      <div className="description2_login">

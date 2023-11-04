@@ -2,6 +2,7 @@ import "../Style/Home.css" ;
 import Sidebar from "../Sidebar"  ;   
 import {Link, useNavigate , useLocation } from "react-router-dom"  ;   
 import { useState  } from "react"; 
+import home_logo from "../Images/home_logo.png" ; 
 
 
 
@@ -58,13 +59,24 @@ function Home () {
             <div className="home-body">
 
             <div className="home-body1">
-               
+                
+
+                
                <div className="home-body-inner-description1" > 
 
-              <p>client</p> 
+            <p>facilitator </p> 
 
-              <p>Ready to start your day with Future Founders?</p>
-               </div>
+             <p>Ready to start your day with Future Founders?</p>
+              </div>  
+             <div   className="home-body-illustration">
+    
+              <img src={ home_logo }  alt= { "ccv"}  height={"100%"}  />   
+                 </div>
+
+            <div style= {{ backgroundColor : "#D9D9D9"  , width : "5%" ,  height : "43.2%"   , borderTopRightRadius : 25  , borderBottomRightRadius : 25}}>
+ 
+
+           </div>
             </div>
             <div className="home-body2">   
 
@@ -113,12 +125,21 @@ function Home () {
 
             <div className="home-body1">
                
-               <div className="home-body-inner-description1" > 
+            <div className="home-body-inner-description1" > 
 
-              <p> school </p> 
+             <p>facilitator </p> 
 
-              <p>Ready to start your day with Future Founders?</p>
-               </div>
+                    <p>Ready to start your day with Future Founders?</p>
+                </div>  
+               <div   className="home-body-illustration">
+    
+               <img src={ home_logo }  alt= { "ccv"}  height={"100%"}  />   
+                 </div>
+
+                   <div style= {{ backgroundColor : "#D9D9D9"  , width : "5%" ,  height : "43.2%"   , borderTopRightRadius : 25  , borderBottomRightRadius : 25}}>
+ 
+
+            </div>
             </div>
             <div className="home-body2">  
              
@@ -172,7 +193,18 @@ function Home () {
               <p>facilitator </p> 
 
               <p>Ready to start your day with Future Founders?</p>
+               </div>  
+               <div   className="home-body-illustration">
+                  
+               <img src={ home_logo }  alt= { "ccv"}  height={"100%"}  />   
                </div>
+             
+               <div style= {{ backgroundColor : "#D9D9D9"  , width : "5%" ,  height : "43.2%"   , borderTopRightRadius : 25  , borderBottomRightRadius : 25}}>
+               
+          
+               </div>
+
+
             </div>
             <div className="home-body2">  
               

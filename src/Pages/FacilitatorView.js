@@ -80,7 +80,7 @@ function  FacilitatorView() {
   
          }  ) ; 
   
-    } , [])  ; 
+    } , [ popup])  ; 
  
   
 
@@ -282,7 +282,7 @@ function  FacilitatorView() {
 
 
 
-       <div   className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "40%"   ,  borderRight : "1px solid black" }}>
+       <div   className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
        <p>Sl No</p>
        </div>  
 

@@ -129,7 +129,11 @@ function SchoolView() {
    
 
         }else{
-             
+              
+
+
+
+          
           const newarr = [ location.state.data  ] ;  
           setData( newarr) ;
          console.log(  newarr )  ; 
@@ -151,6 +155,7 @@ function SchoolView() {
       // console.log( cs) ;
       setUserNameForPopup( cs.school_name) ;
         setPopup( true)  ;
+      
       
  } 
 
@@ -184,7 +189,7 @@ function SchoolView() {
 
                 <Popup  trigger= { popup  } setTrigger={ setPopup }   data={ popupInfo}  >
                 <h3>{userNameForPopup}</h3>
-          </Popup>
+                 </Popup>
 
 
                  
@@ -292,7 +297,7 @@ function SchoolView() {
             <div    className="clientview_table_row_box"   style= {{   width: "18%"  ,    height: "100%"  , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"  , justifyContent : "space-around"}}> 
                       
 
-            <input    className="inner_table_btn"    style={{ height: "40%"  , width : "40%"}}   type="button" value = "Status"    onClick= { () => {handleStatusChange( el) } }   /> 
+            <input    className="inner_table_btn"    style={{ height: "40%"  , width : "40%"}}   type="button" value = "Status"    onClick= { () => {handleStatusChange( el) } }   />       
                             
                              
            <input    className="inner_table_btn"    style={{ height: "40%"  , width : "40%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/editschool"   ,  { state: {    typeId : "school"   ,    data : el       }}   , { replace : false}  )  }  } />   
