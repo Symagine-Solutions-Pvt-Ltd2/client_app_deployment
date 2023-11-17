@@ -8,7 +8,10 @@ import LogoutIcon from '@mui/icons-material/Logout';
 // import this component to  render  the sidebar in every page 
 function SideBar() {
  
-  
+    
+
+
+   
 
    return(
     <div  className= "Sidebar"  style={{ borderTopRightRadius: 25  , borderBottomRightRadius : 25}}>

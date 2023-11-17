@@ -13,7 +13,7 @@ function   GettingStarted() {
   const goToApp  = () => {
     
    navigate(  "/login"  ,   { replace : false}  )  ; 
-   alert( "hi")  ;
+  
    }   
 
 
@@ -45,7 +45,7 @@ function   GettingStarted() {
             
             <div  className="description1" >
 
-            <p  className="Description1Text"> Get Things Done With Future Founders</p>
+            <p  className="Description1Text"> <span  style= {{ color : "#353B55"}} >Unlock your potential with </span> <span>learn-up</span></p>
             </div>  
   
            
@@ -54,7 +54,7 @@ function   GettingStarted() {
             <div  className="description2-box"> 
 
             <p className="description2-text" >
-            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+            learn, explore, grow
             </p>
                   
              <div style= {{  height : "40%"  , display : "flex"  , alignItems : "flex-end", backgroundColor : "#FFF8EE"   }}>

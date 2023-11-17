@@ -63,7 +63,7 @@ function Login() {
           
 
 
-          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   ,  data :  res.data.data     }} ,  { replace : false}  )  ;  
+         navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   ,  data :  res.data.data         }} ,  { replace : false}  )  ;  
           
           
 
