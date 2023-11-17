@@ -43,7 +43,7 @@ function StudentView() {
 
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/student/addstudent"   ,  { state: {    typeId : "student"   ,      schoolId: schoolId   , programId :  programId          }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/student/addstudent"   ,  { state: {    typeId : "student"   ,      schoolId: schoolId   , programId :  programId     ,    userInfo :  location.state.userInfo        }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
 
@@ -115,7 +115,7 @@ function StudentView() {
 
 
     <div className="clientview_sidebar" >
-           <Sidebar /> 
+           <Sidebar  info = {  location.state.userInfo} Link /> 
     </div>  
    
     <div className="clientview_body">   
@@ -142,35 +142,35 @@ function StudentView() {
 
 
        <div  className="clientview_table_row_box"   style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
-       <p>Sl No</p>
+       <p className="header_text">Sl No</p>
        </div> 
        <div  className="clientview_table_row_box" style= {{   width: "11%" , height: "100%"   , borderRight : "1px solid black" }}>
-         <p>Name of school</p>
+         <p className="header_text" >Name of school</p>
        </div>
        <div  className="clientview_table_row_box"  style= {{   width: "11%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
-         <p>Name of student</p>
+         <p className="header_text">Name of student</p>
        </div>
        <div  className="clientview_table_row_box"   style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid black"  }}> 
 
-         <p  style={{ textAlign : "center"}}>Status (submitted Business Plan)</p>
+         <p  className="header_text"  style={{ textAlign : "center"}}>Status (submitted Business Plan)</p>
        </div> 
        <div  className="clientview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid black"}}> 
-        <p style={{ textAlign : "center"}} >Certificate issued</p>
+        <p className="header_text" style={{ textAlign : "center"}} >Certificate issued</p>
        </div> 
 
        <div className="clientview_table_row_box"   style= {{  width: "11%"  ,    height: "100%"   , borderRight : "1px solid black"  , justifyContent : "center"}}> 
-        <p style={{ textAlign : "center"}} >View Business Plan</p>
+        <p className="header_text" style={{ textAlign : "center"}} >View Business Plan</p>
        </div> 
        <div  className="clientview_table_row_box" style= {{   width: "11%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
-        <p>Download</p>
+        <p className="header_text">Download</p>
        </div>
         
        <div className="clientview_table_row_box"   style= {{   width: "11%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
-        <p>Account Status</p>
+        <p className="header_text">Account Status</p>
        </div>
 
        <div   className="clientview_table_row_box"  style= {{   width: "15%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
-        <p>Account status</p>
+        <p className="header_text">Account status</p>
        </div>
     </div>   
   
@@ -218,7 +218,7 @@ function StudentView() {
  
 
 
-      <input   className="inner_table_btn"   style={{ height: "40%"  , width : "60%"   ,border: "0px solid red" }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/student/viewplan"   ,  { replstuace : false}  )  }  } /> 
+      <input   className="inner_table_btn"   style={{ height: "40%"  , width : "60%"   ,border: "0px solid red" }}  type="button" value = "view"  onClick={()  => {     }  } /> 
             
 
        </div> 
@@ -245,7 +245,7 @@ function StudentView() {
          <input   className="inner_table_btn"      style={{ height: "40%"  , width : "40%"   ,border: "0px solid red" }}  type="button" value = "status"  onClick={()  => {  handleStatusChange( el)  }  } /> 
                      
                        
-        <input   className="inner_table_btn"     style={{ height: "40%"  , width : "40%"   ,border: "0px solid red" }}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/student/editstudent"   ,    { state: {  typeId : "student"   ,     data : el   }}     ,       { replace : false}  )  }  } /> 
+        <input   className="inner_table_btn"     style={{ height: "40%"  , width : "40%"   ,border: "0px solid red" }}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/student/editstudent"   ,    { state: {  typeId : "student"   ,     data : el   ,    userInfo :  location.state.userInfo   }}     ,       { replace : false}  )  }  } /> 
                        
        </div>
 

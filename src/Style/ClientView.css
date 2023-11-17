@@ -170,3 +170,14 @@
     border-radius: 20px; 
     border: 0px solid red ;
 }
+
+
+
+.header_text{
+
+
+    font-weight:  700;
+    font-size:  16px;
+    
+    font-style: normal;
+   }

@@ -134,7 +134,7 @@ function CourseDetails() {
     <div className="clientview">  
 
     <div className="clientview_sidebar" >
-           <Sidebar /> 
+           <Sidebar   info = {  location.state.userInfo}  /> 
     </div>  
 
     <div className="clientview_body">   

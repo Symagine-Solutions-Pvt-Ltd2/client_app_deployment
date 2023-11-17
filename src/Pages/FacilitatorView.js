@@ -40,7 +40,7 @@ function  FacilitatorView() {
 
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/addfacilitator"   ,   { state: {    typeId : "facilitator"    ,   schoolId : schoolId    , programId :  programId }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/addfacilitator"   ,   { state: {    typeId : "facilitator"    ,   schoolId : schoolId    , programId :  programId  ,   userInfo :  location.state.userInfo }}   ,  { replace : false}  ) ; 
    
 
       }  
@@ -112,7 +112,7 @@ function  FacilitatorView() {
     <div className="clientview">  
 
             <div className="clientview_sidebar" >
-                   <Sidebar /> 
+                   <Sidebar    info = {  location.state.userInfo} /> 
             </div> 
             <div className="clientview_body">   
 
@@ -139,22 +139,22 @@ function  FacilitatorView() {
 
 
                <div   className="clientview_table_row_box"   style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
-               <p>Sl No</p>
+               <p className="header_text">Sl No</p>
                </div>  
 
 
                <div   className="clientview_table_row_box"  style= {{   width: "25%" , height: "100%"   , borderRight : "1px solid black" }}>
-                 <p>Name of facilitator</p>
+                 <p className="header_text">Name of facilitator</p>
                </div> 
 
                <div   className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
-                 <p>Email ID</p>
+                 <p className="header_text">Email ID</p>
                </div>
                <div  className="clientview_table_row_box"  style= {{  width: "15%"  ,  height: "100%"  , borderRight : "1px solid black"}}>
-                 <p>Account Status</p>
+                 <p className="header_text" >Account Status</p>
                </div> 
                <div    className="clientview_table_row_box" style= {{   width: "25%"  ,  height: "100%"  , borderRight : "1px solid black"}}> 
-                <p>Account status</p>
+                <p className="header_text">Account status</p>
                </div> 
    
 
@@ -206,7 +206,7 @@ function  FacilitatorView() {
 
                  <input type="button"  className="inner_table_btn"  value= "Status"     style= {{  width :"36%"  , height:"40%"  ,   border: "0px solid red" }}     onClick= { () => {handleStatusChange( el) } }  /> 
 
-                 <input type="button"   className="inner_table_btn"   value= "Edit"    style= {{ width :"36%"  , height:"40%" ,   border: "0px solid red" }}   onClick={ () =>{  navigate(  "/home/dashboard/editfacilitator"   ,  { state: {    typeId : "facilitator"   ,    data : el    }}   , { replace : false}  )}} />  
+                 <input type="button"   className="inner_table_btn"   value= "Edit"    style= {{ width :"36%"  , height:"40%" ,   border: "0px solid red" }}   onClick={ () =>{  navigate(  "/home/dashboard/editfacilitator"   ,  { state: {    typeId : "facilitator"   ,    data : el   ,    userInfo :  location.state.userInfo    }}   , { replace : false}  )}} />  
 
 
 
@@ -259,7 +259,7 @@ function  FacilitatorView() {
     <div className="clientview">  
 
     <div className="clientview_sidebar" >
-           <Sidebar /> 
+           <Sidebar    info = {  location.state.userInfo} /> 
     </div> 
     <div className="clientview_body">   
 
@@ -283,19 +283,19 @@ function  FacilitatorView() {
 
 
        <div   className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
-       <p>Sl No</p>
+       <p className="header_text">Sl No</p>
        </div>  
 
 
        <div   className="clientview_table_row_box"  style= {{   width: "32%" , height: "100%"   , borderRight : "1px solid black" }}>
-         <p>Name of facilitator</p>
+         <p className="header_text" >Name of facilitator</p>
        </div> 
 
        <div   className="clientview_table_row_box"  style= {{   width: "36%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
-         <p>Email ID</p>
+         <p className="header_text">Email ID</p>
        </div>
        <div  className="clientview_table_row_box"  style= {{  width: "20%"  ,  height: "100%"  , borderRight : "1px solid black"}}>
-         <p>Account Status</p>
+         <p className="header_text">Account Status</p>
        </div> 
 
 

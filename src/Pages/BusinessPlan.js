@@ -8,7 +8,9 @@ import {Link , useNavigate  , useLocation} from "react-router-dom" ;
 function BusinessPlan() {    
       
 
-    const  navigate = useNavigate() ;  
+    const  navigate = useNavigate() ;   
+    const location = useLocation();  
+
     const goToNext = () => {
   
         navigate(  "/home/dashboard/client/addclient"   ,  { replace : false}  ) ; 
@@ -23,7 +25,7 @@ function BusinessPlan() {
    <div className="BusinessPlan" > 
 
     <div className="BusinessPlan_Sidebar" >
-       <Sidebar />
+       <Sidebar   info = {  location.state.userInfo}  />
     </div> 
     <div className="BusinessPlan_Body" >   
 

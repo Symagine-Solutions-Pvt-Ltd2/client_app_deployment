@@ -63,7 +63,7 @@ function Course() {
 
      
         <div className="clientview_sidebar" >
-          <Sidebar /> 
+          <Sidebar   info = {  location.state.userInfo}  /> 
         </div>   
 
 
@@ -144,7 +144,7 @@ function Course() {
 
    <input   className="inner_table_btn"  style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red" }}   type="button" value = "View"  
 
-   onClick={()  => { navigate(  "/home/viewcourse/permanentcoursedetails"   ,     { state: {    typeId : "permanent_course_content"   ,  courseName :  el.course_name   ,   type :  el.type_id  ,   name : el.name   }}    ,     { replace : false}  )   }  } /> 
+   onClick={()  => { navigate(  "/home/viewcourse/permanentcoursedetails"   ,     { state: {    typeId : "permanent_course_content"   ,  courseName :  el.course_name   ,   type :  el.type_id  ,   name : el.name   ,     userInfo :  location.state.userInfo   }}    ,     { replace : false}  )   }  } /> 
                       
                                 
     </div> 

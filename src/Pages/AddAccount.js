@@ -89,7 +89,7 @@ function AddAccount() {
                     alert( "Registered Successfully.")  ;  
                     console.log(  res.data.data) ;  
 
-         navigate(  "/home/dashboard/facilitator"   ,    { state: {    typeId :    "client"    ,   schoolId : location.state.schoolId  , programId : location.state.programId   }}    , { replace : false}  )   ;
+         navigate(  "/home/dashboard/facilitator"   ,    { state: {    typeId :    "client"    ,   schoolId : location.state.schoolId  , programId : location.state.programId ,   userInfo :  location.state.userInfo      }}    , { replace : false}  )   ;
                   } 
                   else {
           
@@ -163,7 +163,7 @@ function AddAccount() {
                    
                   console.log( res.data.data) ; 
 
-                  navigate(  "/home/dashboard"   ,   { state: {    typeId :    "client"   ,   programId : location.state.programId    , clientId :location.state.clientId   }}     ,      { replace : false}  )   ;
+                  navigate(  "/home/dashboard"   ,   { state: {    typeId :    "client"   ,   programId : location.state.programId    , clientId :location.state.clientId  ,    userInfo :  location.state.userInfo     }}     ,      { replace : false}  )   ;
     
                 } 
                 else {
@@ -243,7 +243,7 @@ function AddAccount() {
                   console.log(  res.data.data) ;  
 
 
-            navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : location.state.schoolId  ,        programId : location.state.programId   }}        ,  { replace : false}  )  
+            navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : location.state.schoolId  ,        programId : location.state.programId    ,    userInfo :  location.state.userInfo    }}        ,  { replace : false}  )  
     
                 } 
                 else {
@@ -287,7 +287,7 @@ function AddAccount() {
           <div className="form_outer_div">
      
           <div className="form_outer_div_sidebar" >
-            <Sidebar /> 
+            <Sidebar   info = {  location.state.userInfo}  /> 
           </div>   
   
   
@@ -304,7 +304,7 @@ function AddAccount() {
 
 
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Name of facilitator</p> 
+                          <p className="header_text">Name of facilitator</p> 
                           </div>       
 
 
@@ -322,7 +322,7 @@ function AddAccount() {
                 
                 <div className="addaccount_form_row"  style= {{  height : "20%" }}>
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Email id</p> 
+                          <p  className="header_text">Email id</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >  
 
@@ -337,7 +337,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row"  style= {{  height : "20%" }}>
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Password</p> 
+                          <p  className="header_text">Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -352,7 +352,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row"  style= {{  height : "20%"  }}>
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Repeat Password</p> 
+                          <p  className="header_text">Repeat Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -394,7 +394,7 @@ function AddAccount() {
           <div className="form_outer_div">
      
           <div className="form_outer_div_sidebar" >
-            <Sidebar /> 
+            <Sidebar   info = {  location.state.userInfo}  /> 
           </div>   
   
   
@@ -408,7 +408,7 @@ function AddAccount() {
       
                <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Name of school</p> 
+                          <p  className="header_text">Name of school</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -421,7 +421,7 @@ function AddAccount() {
                 
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Email id</p> 
+                          <p className="header_text">Email id</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -434,7 +434,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Password</p> 
+                          <p className="header_text">Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -446,7 +446,7 @@ function AddAccount() {
              
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Repeat Password</p> 
+                          <p className="header_text">Repeat Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -458,7 +458,7 @@ function AddAccount() {
                 
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Name of contact person</p> 
+                          <p className="header_text">Name of contact person</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -471,7 +471,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row">
                 <div className="addaccount_admin_Form-Description" >   
-                          <p>Program Assigned</p> 
+                          <p className="header_text">Program Assigned</p> 
                 </div>     
 
                 <div className="addaccount_admin_Form-Input" >         
@@ -518,7 +518,7 @@ function AddAccount() {
         <div className="form_outer_div">
      
         <div className="form_outer_div_sidebar" >
-          <Sidebar /> 
+          <Sidebar    info = {  location.state.userInfo}  /> 
         </div>   
 
 
@@ -533,7 +533,7 @@ function AddAccount() {
 
              <div className="addaccount_form_row"  style= {{  height : "20%" }}>
                          <div className="addaccount_admin_Form-Description" >   
-                        <p>Name of student</p> 
+                        <p className="header_text">Name of student</p> 
                         </div>        
                         <div className="addaccount_admin_Form-Input" >         
                         <input type="text"
@@ -547,7 +547,7 @@ function AddAccount() {
               
               <div className="addaccount_form_row"  style= {{  height : "20%" }}>
                          <div className="addaccount_admin_Form-Description" >   
-                        <p>Email id</p> 
+                        <p className="header_text">Email id</p> 
                         </div>        
                         <div className="addaccount_admin_Form-Input" >         
                         <input type="text"
@@ -561,7 +561,7 @@ function AddAccount() {
 
               <div className="addaccount_form_row"  style= {{  height : "20%" }}>
                          <div className="addaccount_admin_Form-Description" >   
-                        <p>Password</p> 
+                        <p className="header_text" >Password</p> 
                         </div>        
                         <div className="addaccount_admin_Form-Input" >         
                         <input type="text"
@@ -576,7 +576,7 @@ function AddAccount() {
 
               <div className="addaccount_form_row"  style= {{  height : "20%"  }}>
                          <div className="addaccount_admin_Form-Description" >   
-                        <p>Repeat Password</p> 
+                        <p className="header_text">Repeat Password</p> 
                         </div>        
                         <div className="addaccount_admin_Form-Input" >         
                         <input type="text"

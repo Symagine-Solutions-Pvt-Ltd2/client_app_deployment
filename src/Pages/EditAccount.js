@@ -69,7 +69,7 @@ axios({
                             
                           console.log( res) ; 
                      alert(  res.data.message) ; 
-                  navigate(  "/home/dashboard"   ,   { state: {    typeId: "client"  ,   clientId :  data.client_id , programId :  data.program_id    }}     ,      { replace : false}  )   ;
+                  navigate(  "/home/dashboard"   ,   { state: {    typeId: "client"  ,   clientId :  data.client_id , programId :  data.program_id   ,   userInfo :  location.state.userInfo      }}     ,      { replace : false}  )   ;
                      } ).catch(( err) => { 
                          console.log( "error") ;
                 
@@ -124,7 +124,7 @@ axios({
                             
                           console.log( res) ; 
                           alert(  res.data.message) ; 
-                          navigate(  "/home/dashboard/facilitator"   ,    { state: {  typeId: "client"    ,    schoolId : data.school_id  , programId : data.program_id      }}    , { replace : false}  )   ;
+                          navigate(  "/home/dashboard/facilitator"   ,    { state: {  typeId: "client"    ,    schoolId : data.school_id  , programId : data.program_id   ,   userInfo :  location.state.userInfo        }}    , { replace : false}  )   ;
                        
                      } ).catch(( err) => { 
                          console.log( "error") ;
@@ -174,7 +174,7 @@ axios({
             console.log( res) ;  
 
             alert(  res.data.message) ; 
-            navigate(  "/home/dashboard/student"   ,    { state: {     schoolId : data.school_id  , programId : data.program_id      }}    , { replace : false}  )   ;
+            navigate(  "/home/dashboard/student"   ,    { state: {     schoolId : data.school_id  , programId : data.program_id ,   userInfo :  location.state.userInfo         }}    , { replace : false}  )   ;
 
          
        } ).catch(( err) => { 
@@ -219,7 +219,7 @@ axios({
 
 
               <div className="form_outer_div_sidebar" >
-            <Sidebar /> 
+            <Sidebar   info = {  location.state.userInfo}  /> 
           </div>   
   
   
@@ -233,7 +233,7 @@ axios({
       
                <div className="editaccount_form_row"  style= {{  height : "20%" }}>
                            <div className="admin_Form-Description" >   
-                          <p>Name of facilitator</p> 
+                          <p className="header_text">Name of facilitator</p> 
                           </div>        
                           <div className="admin_Form-Input" >   
 
@@ -250,7 +250,7 @@ axios({
                 
                 <div className="editaccount_form_row"  style= {{  height : "20%" }}>
                            <div className="admin_Form-Description" >   
-                          <p>Email id</p> 
+                          <p className="header_text">Email id</p> 
                           </div>        
                           <div className="admin_Form-Input" >  
 
@@ -293,7 +293,7 @@ axios({
           
               <div className="form_outer_div">
                <div className="form_outer_div_sidebar" >
-            <Sidebar /> 
+            <Sidebar     info = {  location.state.userInfo} /> 
           </div>   
   
   
@@ -308,7 +308,7 @@ axios({
                <div className="editaccount_form_row"> 
 
                            <div className="admin_Form-Description" >   
-                          <p>Name of school</p> 
+                          <p  className="header_text">Name of school</p> 
                           </div>       
 
 
@@ -325,7 +325,7 @@ axios({
                 
                 <div className="editaccount_form_row">
                            <div className="admin_Form-Description" >   
-                          <p>Email id</p> 
+                          <p className="header_text">Email id</p> 
                           </div>        
                           <div className="admin_Form-Input" >         
                           <input type="text" 
@@ -341,7 +341,7 @@ axios({
                 
                 <div className="editaccount_form_row">
                            <div className="admin_Form-Description" >   
-                          <p>Name of contact person</p> 
+                          <p  className="header_text">Name of contact person</p> 
                           </div>        
                           <div className="admin_Form-Input" >         
                           <input type="text" 
@@ -355,7 +355,7 @@ axios({
 
                 <div className="editaccount_form_row">
                 <div className="admin_Form-Description" >   
-                          <p>Program Assigned</p> 
+                          <p className="header_text">Program Assigned</p> 
                 </div>     
 
                 <div className="admin_Form-Input" >         
@@ -393,7 +393,7 @@ axios({
             
                 <div className="form_outer_div">
                  <div className="form_outer_div_sidebar" >
-          <Sidebar /> 
+          <Sidebar  info = {  location.state.userInfo}  /> 
         </div>   
 
 
@@ -407,7 +407,7 @@ axios({
     
              <div className="editaccount_form_row"  style= {{  height : "20%" }}>
                          <div className="admin_Form-Description" >   
-                        <p>Name of student</p> 
+                        <p className="header_text">Name of student</p> 
                         </div>        
                         <div className="admin_Form-Input" >         
                         <input type="text"
@@ -422,7 +422,7 @@ axios({
               
               <div className="editaccount_form_row"  style= {{  height : "20%" }}>
                          <div className="admin_Form-Description" >   
-                        <p>Email id</p> 
+                        <p className="header_text">Email id</p> 
                         </div>        
                         <div className="admin_Form-Input" >         
                         <input type="text"

@@ -2,16 +2,65 @@
 import {Link } from "react-router-dom"  ;  
 import "./Style/Sidebar.css"  ;    
 import  logo1 from "./Images/logo1.png" ;  
-import LogoutIcon from '@mui/icons-material/Logout'; 
+import LogoutIcon from '@mui/icons-material/Logout';  
+import { useState  , useEffect  } from "react"; 
+
 
 
 // import this component to  render  the sidebar in every page 
-function SideBar() {
+function SideBar(   props ) {
  
     
+  
+   console.log( props.info) ;  
+  
+   const [  userInfo   , setUserInfo ]   = useState({ }  ) ;   
+
+     
+  
+
+     
+   useEffect(() => { 
+
+      if(   props.info.type === "client"){
+          
+         
+        let  newUser = {
+           name : props.info.name , 
+           type : "Client"
+        }
+        setUserInfo( newUser ) ;
+      }
+
+      else  if(   props.info.type === "school"){
+          
+         
+        let  newUser = {
+           name : props.info.name , 
+           type : "School"
+        }
+        setUserInfo( newUser ) ;
+      } 
+    
+      else  if(   props.info.type === "facilitator"){
+          
+         
+        let  newUser = {
+           name : props.info.name , 
+           type : "Facilitator"
+        }
+        setUserInfo( newUser ) ;
+      } 
 
 
-   
+        
+
+ } , [ props.info.type])  ; 
+
+
+
+
+
 
    return(
     <div  className= "Sidebar"  style={{ borderTopRightRadius: 25  , borderBottomRightRadius : 25}}>
@@ -36,11 +85,11 @@ function SideBar() {
 
          < div  className="Sidebar-Admin-info-div" > 
                 <div  style={{  height: "55%"  }}>
-                 <p  style={{ color : "white"}}>Mike Hannigan</p>
+                 <p  style={{ color : "white"}}> {  userInfo.name } </p>
                  </div> 
 
                  <div  style={{  height: "35%"  }}>
-                <p style={{ color : "white"}}> System Admin  </p>
+                <p style={{ color : "white"}}>  {  userInfo.type  } </p>
                   </div>
          </div>  
 
