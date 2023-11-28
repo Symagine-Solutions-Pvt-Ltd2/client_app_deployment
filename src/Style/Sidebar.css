@@ -113,11 +113,12 @@
 
 .Sidebar-logout-button{
 
-  height: 10% ;
+  height: 12% ;
   width: 40.41% ; 
   background-color: #5A6199 ; 
   display: flex;  
   overflow: hidden; 
   margin-bottom: 14%;
+  border-radius: 15px;
   
 }

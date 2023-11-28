@@ -56,7 +56,7 @@ function SchoolView() {
     
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/addschool"   ,   { state: {        typeId : "school"  ,   clientId : clientId ,   programId : programId   , programName : "program87"   ,     userInfo :  location.state.userInfo   }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/addschool"   ,   { state: {        typeId : "school"  ,   clientId : clientId ,   programId : programId   , programName : "program87"   ,     userInfo :  location.state.userInfo   ,    data :   location.state.data   }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
       }   

@@ -394,7 +394,7 @@ function AddAccount() {
           <div className="form_outer_div">
      
           <div className="form_outer_div_sidebar" >
-            <Sidebar   info = {  location.state.userInfo}  /> 
+            <Sidebar   info = {  location.state.userInfo}    data = {  location.state.data}  /> 
           </div>   
   
   

@@ -54,7 +54,7 @@ function Home () {
 
             <div className="home">  
             <div className="home-sidebar" >
-                   <Sidebar   info = {  location.state.userInfo}/> 
+                   <Sidebar   info = {  location.state.userInfo}   data = {  location.state.data} /> 
             </div> 
             <div className="home-body">
 
@@ -88,7 +88,7 @@ function Home () {
                 </div>  
 
                 
-                <div  onClick={() => { navigate(  "/home/viewcourse"  ,      { state: {    courseId :  location.state.data._id  ,   userInfo :  location.state.userInfo   }}  ,  { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
+                <div  onClick={() => { navigate(  "/home/viewcourse"  ,      { state: {    courseId :  location.state.data._id  ,   userInfo :  location.state.userInfo  ,  data :   location.state.data   }}  ,  { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
                 <p style={{ color : "white"}}>View Course</p>
                 </div>
              
@@ -149,7 +149,7 @@ function Home () {
                    <p style={{ color : "white"}}>Dashboard</p>
                 </div> 
                 
-                <div  onClick={() => { navigate(  "/home/viewcourse"  ,     { state: {    courseId : location.state.data._id   ,   userInfo :  location.state.userInfo  }} ,    { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
+                <div  onClick={() => { navigate(  "/home/viewcourse"  ,     { state: {    courseId : location.state.data._id   ,   userInfo :  location.state.userInfo   , data :   location.state.data }} ,    { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
                 <p style={{ color : "white"}}>View Course</p>
                 </div>
              

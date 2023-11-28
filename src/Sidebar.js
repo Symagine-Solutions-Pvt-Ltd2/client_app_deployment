@@ -1,5 +1,5 @@
 
-import {Link } from "react-router-dom"  ;  
+import {Link  , useNavigate } from "react-router-dom"  ;  
 import "./Style/Sidebar.css"  ;    
 import  logo1 from "./Images/logo1.png" ;  
 import LogoutIcon from '@mui/icons-material/Logout';  
@@ -11,7 +11,9 @@ import { useState  , useEffect  } from "react";
 function SideBar(   props ) {
  
     
-  
+    
+
+   const  navigate = useNavigate() ; 
    console.log( props.info) ;  
   
    const [  userInfo   , setUserInfo ]   = useState({ }  ) ;   
@@ -97,7 +99,9 @@ function SideBar(   props ) {
 
          <div   className="Sidebar-Program-Home-Button-div" >  
 
-         <input style={{ backgroundColor : "#B7B7D0" ,  width : "56.70%" , height : "45.88%"  , borderRadius : 25   , border : "0px"}}  type= "button"   value = "Home"  /> 
+         <input style={{ backgroundColor : "#B7B7D0" ,  width : "52.70%" , height : "50.88%"  , borderRadius : 25   , border : "0px"}}  type= "button"   value = "Home"   
+          onClick={ () => {     navigate(  "/home"  ,    { state: {    typeId :  props.info.type  ,  userInfo : {  name : props.info.name   ,   type : props.info.type   }   , data : props.data  }} ,  { replace : false}  )  ; }}
+         /> 
 
                  
             </div>    
@@ -110,9 +114,9 @@ function SideBar(   props ) {
          <div className="Sidebar-logout-box">   
 
  
-                      <div className="Sidebar-logout-button"> 
+                      <button className="Sidebar-logout-button"  onClick={  () => {    navigate(  "/login"  ,   { replace : false}  )  ; }}> 
                          
-                      <div style={{height : "100%" , width :"30%"  , display : "flex"  , alignItems : "center"}}>
+                      <div style={{height : "100%" , width :"40%"  , display : "flex"  , alignItems : "center" , justifyContent : "center"}}>
                   
                       <LogoutIcon  sx={{ color: "#F06B6D"  , fontSize : 22    }}/>
                     
@@ -124,7 +128,7 @@ function SideBar(   props ) {
                       </div>
                         
       
-                      </div>  
+                      </button>  
          </div>
     </div>
 
