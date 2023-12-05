@@ -40,7 +40,7 @@ function  FacilitatorView() {
 
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/addfacilitator"   ,   { state: {    typeId : "facilitator"    ,   schoolId : schoolId    , programId :  programId  ,   userInfo :  location.state.userInfo }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/addfacilitator"   ,   { state: {    typeId : "facilitator"    ,   schoolId : schoolId    , programId :  programId  ,   userInfo :  location.state.userInfo  ,  data : location.state.data   }}   ,  { replace : false}  ) ; 
    
 
       }  
@@ -62,7 +62,7 @@ function  FacilitatorView() {
            
                   "search_key" : schoolId , 
                 "page_no" :  1 ,
-                 "limit" : 5   
+                 "limit" : 10000  
   
          }
   
@@ -96,6 +96,9 @@ function  FacilitatorView() {
       
  } 
 
+ 
+
+
 
  
     switch( typeId )  {  
@@ -112,7 +115,7 @@ function  FacilitatorView() {
     <div className="clientview">  
 
             <div className="clientview_sidebar" >
-                   <Sidebar    info = {  location.state.userInfo} /> 
+                   <Sidebar    info = {  location.state.userInfo}  data =  { location.state.data  }  /> 
             </div> 
             <div className="clientview_body">   
 
@@ -206,7 +209,7 @@ function  FacilitatorView() {
 
                  <input type="button"  className="inner_table_btn"  value= "Status"     style= {{  width :"36%"  , height:"40%"  ,   border: "0px solid red" }}     onClick= { () => {handleStatusChange( el) } }  /> 
 
-                 <input type="button"   className="inner_table_btn"   value= "Edit"    style= {{ width :"36%"  , height:"40%" ,   border: "0px solid red" }}   onClick={ () =>{  navigate(  "/home/dashboard/editfacilitator"   ,  { state: {    typeId : "facilitator"   ,    data : el   ,    userInfo :  location.state.userInfo    }}   , { replace : false}  )}} />  
+                 <input type="button"   className="inner_table_btn"   value= "Edit"    style= {{ width :"36%"  , height:"40%" ,   border: "0px solid red" }}   onClick={ () =>{  navigate(  "/home/dashboard/editfacilitator"   ,  { state: {    typeId : "facilitator"   ,    data1 : el   ,    userInfo :  location.state.userInfo    ,  data : location.state.data     }}   , { replace : false}  )}} />  
 
 
 
@@ -259,7 +262,7 @@ function  FacilitatorView() {
     <div className="clientview">  
 
     <div className="clientview_sidebar" >
-           <Sidebar    info = {  location.state.userInfo} /> 
+           <Sidebar    info = {  location.state.userInfo}   data  = { location.state.data   }  /> 
     </div> 
     <div className="clientview_body">   
 

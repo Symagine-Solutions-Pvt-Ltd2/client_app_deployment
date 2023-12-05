@@ -16,13 +16,13 @@ function  EditAccount(  {  props }) {
   const  navigate = useNavigate() ; 
   const location = useLocation();
   const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;   
-  const [  data  , setData ]   = useState( location.state.data   ) ;  
+  const [  data  , setData ]   = useState( location.state.data1   ) ;  
 
   
 
     console.log( "editaccount" );
    
-    console.log( data ) ;   
+    console.log( location.state.data1 ) ;   
   
  // console.log( location.state.type) ;  
     
@@ -69,7 +69,7 @@ axios({
                             
                           console.log( res) ; 
                      alert(  res.data.message) ; 
-                  navigate(  "/home/dashboard"   ,   { state: {    typeId: "client"  ,   clientId :  data.client_id , programId :  data.program_id   ,   userInfo :  location.state.userInfo      }}     ,      { replace : false}  )   ;
+                  navigate(  "/home/dashboard"   ,   { state: {    typeId: "client"  ,   clientId :  data.client_id , programId :  data.program_id   ,   userInfo :  location.state.userInfo  ,  data : location.state.data       }}     ,      { replace : false}  )   ;
                      } ).catch(( err) => { 
                          console.log( "error") ;
                 
@@ -124,7 +124,7 @@ axios({
                             
                           console.log( res) ; 
                           alert(  res.data.message) ; 
-                          navigate(  "/home/dashboard/facilitator"   ,    { state: {  typeId: "client"    ,    schoolId : data.school_id  , programId : data.program_id   ,   userInfo :  location.state.userInfo        }}    , { replace : false}  )   ;
+                          navigate(  "/home/dashboard/facilitator"   ,    { state: {  typeId: "client"    ,    schoolId : data.school_id  , programId : data.program_id   ,   userInfo :  location.state.userInfo   , data : location.state.data         }}    , { replace : false}  )   ;
                        
                      } ).catch(( err) => { 
                          console.log( "error") ;
@@ -174,7 +174,7 @@ axios({
             console.log( res) ;  
 
             alert(  res.data.message) ; 
-            navigate(  "/home/dashboard/student"   ,    { state: {     schoolId : data.school_id  , programId : data.program_id ,   userInfo :  location.state.userInfo         }}    , { replace : false}  )   ;
+            navigate(  "/home/dashboard/student"   ,    { state: {     schoolId : data.school_id  , programId : data.program_id ,   userInfo :  location.state.userInfo     , data : location.state.data      }}    , { replace : false}  )   ;
 
          
        } ).catch(( err) => { 
@@ -219,7 +219,7 @@ axios({
 
 
               <div className="form_outer_div_sidebar" >
-            <Sidebar   info = {  location.state.userInfo}  /> 
+            <Sidebar   info = {  location.state.userInfo}  data = { location.state.data  }    /> 
           </div>   
   
   
@@ -293,7 +293,7 @@ axios({
           
               <div className="form_outer_div">
                <div className="form_outer_div_sidebar" >
-            <Sidebar     info = {  location.state.userInfo} /> 
+            <Sidebar     info = {  location.state.userInfo} data ={ location.state.data}   /> 
           </div>   
   
   
@@ -393,7 +393,7 @@ axios({
             
                 <div className="form_outer_div">
                  <div className="form_outer_div_sidebar" >
-          <Sidebar  info = {  location.state.userInfo}  /> 
+          <Sidebar  info = {  location.state.userInfo}  data = { location.state.data }   /> 
         </div>   
 
 

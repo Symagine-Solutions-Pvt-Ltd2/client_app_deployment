@@ -38,14 +38,20 @@ function Course() {
         }).then( ( res) => {   
   
           console.log(  "here" ) ;
-          console.log(  res ) ; 
-           setData(  res.data.data ) ;  
-          setCourseName(  res.data.data[0].course_name  );
+          console.log(  res ) ;  
+          
+           if( res.data.message === "Information retrieve successfully"){
+
+            setData(  res.data.data ) ;  
+            setCourseName(  res.data.data[0].course_name  ); 
+
+           }
            
          //  console.log(   res.data.data[1].name )  ;
   
-        } ).catch(( err) => {  
-            console.log( "error") ;
+        } ).catch(( err) => {   
+
+            console.log( "errort") ;
   
          }  ) ; 
   
@@ -63,7 +69,7 @@ function Course() {
 
      
         <div className="clientview_sidebar" >
-          <Sidebar   info = {  location.state.userInfo}  /> 
+          <Sidebar   info = {  location.state.userInfo}  data = {location.state.data }  /> 
         </div>   
 
 
@@ -75,8 +81,9 @@ function Course() {
 
 
                
-               <div style={{  backgroundColor : "pink"  , height : "60%"  }} >
-               <p>Name of course:  {  courseName  }  </p> 
+               <div style={{  backgroundColor : "#D9D9D9"  , height : "60%"  , display : "flex"   , justifyContent : "center"  , alignItems : "center" }} > 
+
+               <p className="header_text" >Name of course:  {  courseName  }  </p> 
                </div>
             
              </div>
@@ -94,16 +101,16 @@ function Course() {
 
 
          <div  className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
-           <p>Sl No</p>
+           <p className="header_text"  >Sl No</p>
          </div>  
 
          <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"  ,  borderRight : "1px solid black"   }}>
-            <p>Type</p>
+            <p className="header_text">Type</p>
          </div>
         
            
          <div  className="clientview_table_row_box"  style= {{   width: "45%" , height: "100%"   }}>
-            <p>Name</p>
+            <p className="header_text">Name</p>
          </div>
         
  

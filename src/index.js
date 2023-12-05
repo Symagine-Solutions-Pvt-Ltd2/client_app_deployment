@@ -49,7 +49,7 @@ root.render(
 
 
 
-
+  
  <Route path= "home"  > 
    <Route index element ={  <Home/> } />   
    <Route path= "dashboard" >
@@ -75,6 +75,8 @@ root.render(
        <Route  path= "permanentcoursedetails"  element ={  <CourseDetails /> } />  
    </Route>
  </Route>   
+ 
+  
  </Route>
 </Routes>     
 

@@ -89,7 +89,7 @@ function AddAccount() {
                     alert( "Registered Successfully.")  ;  
                     console.log(  res.data.data) ;  
 
-         navigate(  "/home/dashboard/facilitator"   ,    { state: {    typeId :    "client"    ,   schoolId : location.state.schoolId  , programId : location.state.programId ,   userInfo :  location.state.userInfo      }}    , { replace : false}  )   ;
+         navigate(  "/home/dashboard/facilitator"   ,    { state: {    typeId :    "client"    ,   schoolId : location.state.schoolId  , programId : location.state.programId ,   userInfo :  location.state.userInfo  ,  data : location.state.data       }}    , { replace : false}  )   ;
                   } 
                   else {
           
@@ -163,7 +163,7 @@ function AddAccount() {
                    
                   console.log( res.data.data) ; 
 
-                  navigate(  "/home/dashboard"   ,   { state: {    typeId :    "client"   ,   programId : location.state.programId    , clientId :location.state.clientId  ,    userInfo :  location.state.userInfo     }}     ,      { replace : false}  )   ;
+                  navigate(  "/home/dashboard"   ,   { state: {    typeId :    "client"   ,   programId : location.state.programId    , clientId :location.state.clientId  ,    userInfo :  location.state.userInfo    , data : location.state.data     }}     ,      { replace : false}  )   ;
     
                 } 
                 else {
@@ -205,9 +205,22 @@ function AddAccount() {
       console.log( event.target.email.value) ;    
       console.log( event.target.password.value) ;    
       console.log( event.target.repeat_password.value) ;     
-
-
     
+
+      event.target.sbtn.disabled =  true ; 
+
+      setTimeout(() => {
+        console.log("After two second") ;
+        console.log( event.target.sbtn.disabled) ;
+        event.target.sbtn.disabled =  false;
+      }, 3000) 
+
+
+
+
+
+      
+
 
      if(  event.target.password.value !== event.target.repeat_password.value  ) {
          
@@ -243,7 +256,7 @@ function AddAccount() {
                   console.log(  res.data.data) ;  
 
 
-            navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : location.state.schoolId  ,        programId : location.state.programId    ,    userInfo :  location.state.userInfo    }}        ,  { replace : false}  )  
+            navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : location.state.schoolId  ,        programId : location.state.programId    ,    userInfo :  location.state.userInfo  , data : location.state.data     }}        ,  { replace : false}  )  
     
                 } 
                 else {
@@ -287,7 +300,7 @@ function AddAccount() {
           <div className="form_outer_div">
      
           <div className="form_outer_div_sidebar" >
-            <Sidebar   info = {  location.state.userInfo}  /> 
+            <Sidebar   info = {  location.state.userInfo}   data = { location.state.data }    /> 
           </div>   
   
   
@@ -518,7 +531,7 @@ function AddAccount() {
         <div className="form_outer_div">
      
         <div className="form_outer_div_sidebar" >
-          <Sidebar    info = {  location.state.userInfo}  /> 
+          <Sidebar    info = {  location.state.userInfo}   data = { location.state.data }    /> 
         </div>   
 
 
@@ -594,7 +607,7 @@ function AddAccount() {
          
 
                         <div  className="addaccount_form_row_btn_div"  style= {{  height : "20%" }}> 
-                        <input className="addaccount_form_row_btn"   style= {{  height : "60%" }}  type="submit" value="Submit" /> 
+                        <input  name= "sbtn"  className="addaccount_form_row_btn"   style= {{  height : "60%" }}  type="submit" value="Submit" /> 
                         </div>
                       
                     </form>
