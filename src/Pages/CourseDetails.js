@@ -70,14 +70,14 @@ function CourseDetails() {
 
       axios({   
 
-        url : "http://localhost:8000/admin/module_am"  ,    
+        url : "http://localhost:8000/admin/workshop_am"  ,    
         
         method : "POST"  , 
         data : { 
    
    
          "course_name" : courseName   ,
-         "module_name" : contentName , 
+         "workshop_name" : contentName , 
          "type_id"  :   contentType
    
         }
@@ -86,7 +86,7 @@ function CourseDetails() {
    
          console.log(  "details" ) ;
          console.log(  res ) ; 
-        //  setData(  res.data.data ) ;  
+          setData(  res.data.data ) ;  
        
    
        } ).catch(( err) => {  
@@ -134,14 +134,14 @@ function CourseDetails() {
     <div className="clientview">  
 
     <div className="clientview_sidebar" >
-           <Sidebar   info = {  location.state.userInfo}  /> 
+           <Sidebar   info = {  location.state.userInfo}    /> 
     </div>  
 
     <div className="clientview_body">   
 
     
      <div  className="clientview_body1"> 
-     <p>hjxgajgj</p> 
+
      </div>
        
 
@@ -192,19 +192,17 @@ function CourseDetails() {
 <p>  {  index+1 }  </p>
 </div> 
 <div  className="clientview_table_row_box"   style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid black" }}>
-  <p> { el.type_id} </p>
+  <p> { el.sub_type} </p>
 </div> 
 
 
-<div   className="clientview_table_row_box" style= {{   width: "45%" ,  height: "100%"  ,  display : "flex" , flexDirection : "row"}  }>
+<div   className="clientview_table_row_box" style= {{   width: "45%" ,  height: "100%"  ,  display : "flex" , flexDirection : "row" ,  alignItems : "center"}  }>
    
 
 
- <div   style={{ height: "40%"  , width : "55%"   }}  > 
-  <p>{ el.name }</p>
+ <div   style={{ height: "40%"    }}  > 
+  <p>{  el.name || el.text_name || el.quiz_name }</p>
 </div>
-     <input  className="clientview_table_row_button"    style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red" }}   type="button" value = "View"  onClick={()  => { navigate(  "/home/viewcourse/permanentcoursedetails"   ,     { state: {    typeId : "permanent_course_content" }}    ,     { replace : false}  )   }  } /> 
-                  
                             
 </div> 
 
