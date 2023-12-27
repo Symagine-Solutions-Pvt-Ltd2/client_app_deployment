@@ -14,7 +14,7 @@ function SideBar(   props ) {
     
 
    const  navigate = useNavigate() ; 
-   console.log( props.info) ;  
+   /* console.log( props.info) ;   */
   
    const [  userInfo   , setUserInfo ]   = useState({ }  ) ;   
 
@@ -58,6 +58,27 @@ function SideBar(   props ) {
         
 
  } , [ props.info.type])  ; 
+
+
+
+
+   
+
+
+
+
+   const Logout  = ()  => {
+       
+
+
+      localStorage.removeItem('items')  ; 
+      navigate(  "/login"  ,   { replace : false}  )  ;
+
+   }
+
+
+
+
 
 
 
@@ -113,8 +134,8 @@ function SideBar(   props ) {
 
          <div className="Sidebar-logout-box">   
 
- 
-                      <button className="Sidebar-logout-button"  onClick={  () => {    navigate(  "/login"  ,   { replace : false}  )  ; }}> 
+   
+                      <button className="Sidebar-logout-button"  onClick={ () => {  Logout()  }  }> 
                          
                       <div style={{height : "100%" , width :"40%"  , display : "flex"  , alignItems : "center" , justifyContent : "center"}}>
                   

@@ -56,13 +56,13 @@ function Login() {
   
            
           console.log( res ) ;  
-
+       
 
           if(   res.data.data.type_id === "client") {
 
           
 
-
+         localStorage.setItem('items', JSON.stringify( res.data.data.client_name));
          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   ,  data :  res.data.data  ,  userInfo : {  name : res.data.data.client_name   ,   type : res.data.data.type_id }         }} ,  { replace : false}  )  ;  
           
           
@@ -70,12 +70,14 @@ function Login() {
           }else if(  res.data.data.type_id === "facilitator" )  {
 
 
-               
+            localStorage.setItem('items', JSON.stringify( res.data.data.facilitator_name));
           navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   , data :  res.data.data   ,  userInfo : {  name : res.data.data.facilitator_name   ,   type : res.data.data.type_id }         }} ,  { replace : false}  )  ; 
 
           
           }else{
-         
+            
+
+            localStorage.setItem('items', JSON.stringify( res.data.data.school_name));
             navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id   ,  data :  res.data.data  , userInfo : {  name : res.data.data.school_name   ,   type : res.data.data.type_id }        }} ,  { replace : false}  )  ;
 
           }

@@ -23,7 +23,8 @@ import BusinessPlan from './Pages/BusinessPlan';
 import CourseDetails from './Pages/CourseDetails'; 
 import EditAccount from './Pages/EditAccount'; 
 import ForgotPassword from "./Pages/ForgotPassword"  ;  
-import Password from "./Pages/Password"  ;  
+import Password from "./Pages/Password"  ; 
+import RequireAuth from './Pages/RequireAuth'; 
 
 
 
@@ -49,7 +50,8 @@ root.render(
 
 
 
-  
+    
+ <Route  element = {<RequireAuth /> }> 
  <Route path= "home"  > 
    <Route index element ={  <Home/> } />   
    <Route path= "dashboard" >
@@ -75,7 +77,10 @@ root.render(
        <Route  path= "permanentcoursedetails"  element ={  <CourseDetails /> } />  
    </Route>
  </Route>   
- 
+  </Route>
+
+
+
   
  </Route>
 </Routes>     
