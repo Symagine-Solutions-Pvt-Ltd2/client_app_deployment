@@ -77,14 +77,6 @@ function SideBar(   props ) {
    }
 
 
-
-
-
-
-
-
-
-
    return(
     <div  className= "Sidebar"  style={{ borderTopRightRadius: 25  , borderBottomRightRadius : 25}}>
       <div  className="Sidebar-description"   style={{ borderRadius: 25}}>    
