@@ -39,7 +39,7 @@ function Login() {
 
     axios({ 
 
-      url : "http://localhost:8000/admin/login"  ,  
+      url : "http://3.123.39.199:5000/admin/login"  ,  
       method : "POST"  , 
       data : {
         

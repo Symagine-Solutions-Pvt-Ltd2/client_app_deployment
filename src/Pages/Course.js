@@ -26,7 +26,7 @@ function Course() {
 
         axios({ 
   
-         url : "http://localhost:8000/admin/course_details_id"  ,    
+         url : "http://3.123.39.199:5000/admin/course_details_id"  ,    
          
          method : "POST"  , 
          data : {

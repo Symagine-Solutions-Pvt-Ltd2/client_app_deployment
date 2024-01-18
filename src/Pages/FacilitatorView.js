@@ -56,7 +56,7 @@ function  FacilitatorView() {
 
         axios({ 
   
-         url : "http://localhost:8000/facilitator/a_facilitator"  ,  
+         url : "http://3.123.39.199:5000/facilitator/a_facilitator"  ,  
          method : "POST"  , 
          data : {
            
