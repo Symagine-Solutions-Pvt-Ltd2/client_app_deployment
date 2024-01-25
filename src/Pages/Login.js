@@ -124,14 +124,6 @@ function Login() {
       <div className="input_text2"> 
       <input  className="input_box_text" style={{    border : "1px solid #5E81F4"  }}  placeholder="Enter your password"  onChange={  onChangePassword} /> 
       </div>
-      
-
-      <div className="password-text" > 
-
-      <input style = {{ height : "100%"  , width : "55%"   , display : "flex"  , textAlign : "end"  , color : "#5A6198"  , border : "0px solid red"}}  type="text"  value="Forgot password? "  disabled /> 
-      <input  style = {{ height : "100%"  , color : "#F06B6D" , backgroundColor : "#F7E5E9"  , border : "0px solid red"  , textAlignLast : "center" }}  type="button" value= "Click here"   onClick={ () => {    navigate(  "/forgotpassword"  ,   { replace : false}  )  ; }}/> 
-
-      </div>
 
       <div className="button"   onClick={ () => {  goToHome()  }}>
             <p  style= {{  color  : "#FFFFFF"  , fontWeight : 600  , fontSize : 16}}>Log in</p>
@@ -139,8 +131,9 @@ function Login() {
 
      <div className="description2_login">
 
-      <p>For any login related problem contact system admin!</p>
-     </div>
+     <p  style = {{ color  : "#c23815"}}>For login related problem contact System Admin</p>
+     </div>  
+
     </div>
   
        

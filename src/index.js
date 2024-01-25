@@ -44,7 +44,8 @@ root.render(
       
  <Route path= "/"   >  
  <Route index element={<GettingStarted />} />  
- <Route path= "login"  element ={  <Login/>  } />  
+ <Route path= "login"  element ={  <Login/>  } />    
+ 
  <Route path= "forgotpassword"  element ={  <ForgotPassword/>  } />   
  <Route path= "password"  element ={  <Password/>  } />  
 
