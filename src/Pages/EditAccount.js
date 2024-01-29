@@ -20,11 +20,15 @@ function  EditAccount(  {  props }) {
 
   
 
-    console.log( "editaccount" );
+    console.log( "editaccount" ); 
+
+     
+    console.log( location.state.typeId ) ;   
+  
    
     console.log( location.state.data1 ) ;   
   
- // console.log( location.state.type) ;  
+     console.log( location.state.userInfo  ) ;  
     
 
    
@@ -265,7 +269,10 @@ axios({
                  
        
 
-                <div  className="editaccount_form_row_btn_div"  style= {{  height : "20%" }}> 
+                <div  className="editaccount_form_row_btn_div"  style= {{  height : "20%" }}>   
+
+
+                <input className="editaccount_form_row_btn" type="button"   value= "Reset Password"   onClick={()  => {     navigate(  "/home/resetpassword"   , {   state: {  typeId :   location.state.typeId    ,   data : location.state.data1   ,  userInfo :  location.state.userInfo   ,      screentype : "resetpassword"     } }  , { replace : false}  )  }  }  />
                         <input className="editaccount_form_row_btn"   style= {{  height : "60%" }}  type="submit" value="Submit" /> 
                 </div>
                         
@@ -368,8 +375,11 @@ axios({
            
            
   
-        <div  className="editaccount_form_row_btn_div"> 
-                          <input className="editaccount_form_row_btn" type="submit" value="Submit" /> 
+        <div  className="editaccount_form_row_btn_div">  
+         
+
+         <input className="editaccount_form_row_btn" type="button"   value= "Reset Password"   onClick={()  => {     navigate(  "/home/resetpassword"   , {   state: {  typeId :   location.state.typeId    ,   data : location.state.data1   ,  userInfo :  location.state.userInfo   ,      screentype : "resetpassword"     } }  , { replace : false}  )  }  }  /> 
+         <input className="editaccount_form_row_btn" type="submit" value="Submit" /> 
         </div>
                         
     </form>
@@ -437,7 +447,9 @@ axios({
 
         
 
-                        <div  className="editaccount_form_row_btn_div"  style= {{  height : "20%" }}> 
+                        <div  className="editaccount_form_row_btn_div"  style= {{  height : "20%" }}>   
+
+                        <input className="editaccount_form_row_btn" type="button"   value= "Reset Password"   onClick={()  => {     navigate(  "/home/resetpassword"   , {   state: {  typeId :   location.state.typeId    ,   data : location.state.data1   ,  userInfo :  location.state.userInfo   ,      screentype : "resetpassword"     } }  , { replace : false}  )  }  }  />
                         <input className="editaccount_form_row_btn"   style= {{  height : "60%" }}  type="submit" value="Submit" /> 
                         </div>
                       

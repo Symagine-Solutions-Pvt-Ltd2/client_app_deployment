@@ -218,7 +218,7 @@ function StudentView() {
  
 
 
-      <input   className="inner_table_btn"   style={{ height: "40%"  , width : "60%"   ,border: "0px solid red" }}  type="button" value = "view"  onClick={()  => {     }  } /> 
+      <input   className="inner_table_btn"   style={{ height: "40%"  , width : "60%"   ,border: "0px solid red" }}  type="button" value = "view"  onClick={()  => {     navigate(  "/home/dashboard/student/viewplan"   ,    { state: {   schoolId:  location.state.schoolId ,    programId :  location.state.programId   ,     data1 : location.state.data  ,    userInfo :  location.state.userInfo   , data : el     }}     ,       { replace : false}  )      }  } /> 
             
 
        </div> 

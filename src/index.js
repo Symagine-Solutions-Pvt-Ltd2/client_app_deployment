@@ -10,8 +10,6 @@ import reportWebVitals from './reportWebVitals';
 // real page imports  
 
 import Course from './Pages/Course'; 
-  
-import FirstView  from  "./Pages/FirstView" ; 
 import GettingStarted from './Pages/GettingStarted' ;  
 import Login from "./Pages/Login" ;  
 import Home from "./Pages/Home" ;  
@@ -22,9 +20,9 @@ import FacilitatorView from  "./Pages/FacilitatorView"  ;
 import BusinessPlan from './Pages/BusinessPlan';  
 import CourseDetails from './Pages/CourseDetails'; 
 import EditAccount from './Pages/EditAccount'; 
-import ForgotPassword from "./Pages/ForgotPassword"  ;  
-import Password from "./Pages/Password"  ; 
-import RequireAuth from './Pages/RequireAuth'; 
+import RequireAuth from './Pages/RequireAuth';  
+import Password from './Pages/Password';
+import Feedback  from './Pages/Feedback.js';
 
 
 
@@ -44,16 +42,14 @@ root.render(
       
  <Route path= "/"   >  
  <Route index element={<GettingStarted />} />  
- <Route path= "login"  element ={  <Login/>  } />    
- 
- <Route path= "forgotpassword"  element ={  <ForgotPassword/>  } />   
- <Route path= "password"  element ={  <Password/>  } />  
+ <Route path= "login"  element ={  <Login/>  } />   
 
 
 
     
  <Route  element = {<RequireAuth /> }> 
- <Route path= "home"  > 
+ <Route path= "home"  >  
+ <Route path= "resetpassword"  element ={  <Password/>  } />   
    <Route index element ={  <Home/> } />   
    <Route path= "dashboard" >
         <Route index  element ={  <SchoolView />  } />   
@@ -68,7 +64,7 @@ root.render(
            <Route index  element ={  <StudentView /> }  />  
            <Route  path= "addstudent"  element ={  <AddAccount/> }  />
            <Route  path= "editstudent"  element ={  <EditAccount/> }  />    
-           <Route  path= "viewplan"  element ={  <BusinessPlan /> }  />    
+           <Route  path= "viewplan"  element ={  <Feedback /> }  />    
         </Route>   
 
         

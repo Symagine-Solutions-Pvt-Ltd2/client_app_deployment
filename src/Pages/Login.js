@@ -48,14 +48,16 @@ function Login() {
 
       }
 
-     }).then( ( res) => {   
+     }).then( ( res) => {     
+
+      console.log( res ) ;
 
         if(   res.data.message ===  "Login successful"    ){
          
           alert( "login successful")  ;  
   
            
-          console.log( res ) ;  
+           
        
 
           if(   res.data.data.type_id === "client") {
