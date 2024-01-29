@@ -92,19 +92,19 @@ function SideBar(   props ) {
 
          <div   className="Sidebar-profile-Name-div" > 
     
-                     <div style= {{ height : "60%"  , width:"40%"  , backgroundColor : "white"  ,  borderRadius : "50%" }}>
-                         <p> RM</p>
+                     <div style= {{ height : "80%" , width: "37%"  , backgroundColor : "white"  ,  borderRadius : "50%"   , display : "flex"  , justifyContent : "center"  , alignItems : "center" }}>
+                         <p style= {{ fontSize : "24px"  , color: "#5A6199" }} > RM</p>
                        </div>
          </div>  
           
 
          < div  className="Sidebar-Admin-info-div" > 
                 <div  style={{  height: "55%"  }}>
-                 <p  style={{ color : "white"}}> {  userInfo.name } </p>
+                 <p  style={{ fontSize : 20  ,    color : "white"  , fontWeight : 700}}> {  userInfo.name } </p>
                  </div> 
 
                  <div  style={{  height: "35%"  }}>
-                <p style={{ color : "white"}}>  {  userInfo.type  } </p>
+                <p style={{ fontSize : 16  ,  color : "#B7B7D0"  ,  fontWeight : 400}}>  {  userInfo.type  } </p>
                   </div>
          </div>  
 
