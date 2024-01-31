@@ -64,7 +64,7 @@
       display:  flex ;  
 
       flex-direction: row ;
-      border:   1px solid black ;
+      border:   1px solid #B6B7D0 ;
   
   }  
   
@@ -87,7 +87,7 @@
    display: flex; 
    align-items:  center ;
    justify-content:center  ;   
-   border-left:  1px solid black;
+   border-left:  1px solid #B6B7D0;
   
   }  
   
@@ -98,7 +98,8 @@
 
     width : 80% ; 
     height : 80% ;  
-    border-radius:  20px;  
+    border-radius:  20px;   
+    border : 1px solid #5E82F4;
 
 
   

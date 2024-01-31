@@ -141,22 +141,22 @@ function  FacilitatorView() {
 
 
 
-               <div   className="clientview_table_row_box"   style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
+               <div   className="clientview_table_row_box"   style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
                <p className="header_text">Sl No</p>
                </div>  
 
 
-               <div   className="clientview_table_row_box"  style= {{   width: "25%" , height: "100%"   , borderRight : "1px solid black" }}>
+               <div   className="clientview_table_row_box"  style= {{   width: "25%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
                  <p className="header_text">Name of facilitator</p>
                </div> 
 
-               <div   className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
+               <div   className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}  }>
                  <p className="header_text">Email ID</p>
                </div>
-               <div  className="clientview_table_row_box"  style= {{  width: "15%"  ,  height: "100%"  , borderRight : "1px solid black"}}>
+               <div  className="clientview_table_row_box"  style= {{  width: "15%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
                  <p className="header_text" >Account Status</p>
                </div> 
-               <div    className="clientview_table_row_box" style= {{   width: "25%"  ,  height: "100%"  , borderRight : "1px solid black"}}> 
+               <div    className="clientview_table_row_box" style= {{   width: "25%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
                 <p className="header_text">Account status</p>
                </div> 
    
@@ -181,30 +181,30 @@ function  FacilitatorView() {
 
 
 
-                <div   key={  index  }    style={{   width : "100%"  ,   height: "25%"   ,     backgroundColor : "#FFFFFF"  , borderBottom : "1px solid black"   , display : "flex"  , flexDirection : "row"}}> 
+                <div   key={  index  }    style={{   width : "100%"  ,   height: "25%"   ,     backgroundColor : "#FFFFFF"  , borderBottom : "1px solid #B6B7D0"   , display : "flex"  , flexDirection : "row"}}> 
 
 
-               <div    className="clientview_table_row_box"     style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid black" }}>
+               <div    className="clientview_table_row_box"     style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid #B6B7D0" }}>
                <p>  {  index+1 }   </p>
                </div>  
 
 
-               <div     className="clientview_table_row_box" style= {{   width: "25%" , height: "100%"   , borderRight : "1px solid black" }}>
+               <div     className="clientview_table_row_box" style= {{   width: "25%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
                  <p>   {  el.facilitator_name}    </p>
                </div> 
                
-               <div    className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
+               <div    className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
                  <p>  {   el.email_id}  </p>
                </div> 
 
 
-               <div    className="clientview_table_row_box"   style= {{  width: "15%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
+               <div    className="clientview_table_row_box"   style= {{  width: "15%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
                  <p> { el.status } </p>
                </div>  
 
 
 
-               <div  className="clientview_table_row_box"  style= {{   width: "25%"  ,  height: "100%" , borderRight : "1px solid black"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
+               <div  className="clientview_table_row_box"  style= {{   width: "25%"  ,  height: "100%" , borderRight : "1px solid #B6B7D0"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
 
 
                  <input type="button"  className="inner_table_btn"  value= "Status"     style= {{  width :"36%"  , height:"40%"  ,   border: "0px solid red" }}     onClick= { () => {handleStatusChange( el) } }  /> 
@@ -285,19 +285,19 @@ function  FacilitatorView() {
 
 
 
-       <div   className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
+       <div   className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
        <p className="header_text">Sl No</p>
        </div>  
 
 
-       <div   className="clientview_table_row_box"  style= {{   width: "32%" , height: "100%"   , borderRight : "1px solid black" }}>
+       <div   className="clientview_table_row_box"  style= {{   width: "32%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
          <p className="header_text" >Name of facilitator</p>
        </div> 
 
-       <div   className="clientview_table_row_box"  style= {{   width: "36%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
+       <div   className="clientview_table_row_box"  style= {{   width: "36%" ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}  }>
          <p className="header_text">Email ID</p>
        </div>
-       <div  className="clientview_table_row_box"  style= {{  width: "20%"  ,  height: "100%"  , borderRight : "1px solid black"}}>
+       <div  className="clientview_table_row_box"  style= {{  width: "20%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
          <p className="header_text">Account Status</p>
        </div> 
 
@@ -322,24 +322,24 @@ function  FacilitatorView() {
 
 
 
-        <div   key={  index  }    style={{   width : "100%"  ,   height: "25%"   ,     backgroundColor : "#FFFFFF"  , borderBottom : "1px solid black"   , display : "flex"  , flexDirection : "row"}}> 
+        <div   key={  index  }    style={{   width : "100%"  ,   height: "25%"   ,     backgroundColor : "#FFFFFF"  , borderBottom : "1px solid #B6B7D0"   , display : "flex"  , flexDirection : "row"}}> 
 
 
-       <div    className="clientview_table_row_box"     style= {{   width: "12%"  ,  height: "100%"  ,  borderRight : "1px solid black" }}>
+       <div    className="clientview_table_row_box"     style= {{   width: "12%"  ,  height: "100%"  ,  borderRight : "1px solid #B6B7D0" }}>
        <p>  {  index+1 }   </p>
        </div>  
 
 
-       <div     className="clientview_table_row_box" style= {{   width: "32%" , height: "100%"   , borderRight : "1px solid black" }}>
+       <div     className="clientview_table_row_box" style= {{   width: "32%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
          <p>   {  el.facilitator_name}    </p>
        </div> 
        
-       <div    className="clientview_table_row_box"  style= {{   width: "36%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
+       <div    className="clientview_table_row_box"  style= {{   width: "36%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
          <p>  {   el.email_id}  </p>
        </div> 
 
 
-       <div    className="clientview_table_row_box"   style= {{  width: "20%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
+       <div    className="clientview_table_row_box"   style= {{  width: "20%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
          <p> { el.status } </p>
        </div>  
 

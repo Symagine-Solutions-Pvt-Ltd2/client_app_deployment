@@ -141,35 +141,35 @@ function StudentView() {
        <div className="clientview_table_inner_div_column_name">   
 
 
-       <div  className="clientview_table_row_box"   style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
+       <div  className="clientview_table_row_box"   style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
        <p className="header_text">Sl No</p>
        </div> 
-       <div  className="clientview_table_row_box" style= {{   width: "11%" , height: "100%"   , borderRight : "1px solid black" }}>
-         <p className="header_text" >Name of school</p>
+       <div  className="clientview_table_row_box" style= {{   width: "11%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
+         <p className="header_text"  style ={{  textAlign : "center" }} >Name of school</p>
        </div>
-       <div  className="clientview_table_row_box"  style= {{   width: "11%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
-         <p className="header_text">Name of student</p>
+       <div  className="clientview_table_row_box"  style= {{   width: "11%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
+         <p className="header_text" style ={{  textAlign : "center" }}>Name of student</p>
        </div>
-       <div  className="clientview_table_row_box"   style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid black"  }}> 
+       <div  className="clientview_table_row_box"   style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"  }}> 
 
          <p  className="header_text"  style={{ textAlign : "center"}}>Status (submitted Business Plan)</p>
        </div> 
-       <div  className="clientview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid black"}}> 
+       <div  className="clientview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
         <p className="header_text" style={{ textAlign : "center"}} >Certificate issued</p>
        </div> 
 
-       <div className="clientview_table_row_box"   style= {{  width: "11%"  ,    height: "100%"   , borderRight : "1px solid black"  , justifyContent : "center"}}> 
+       <div className="clientview_table_row_box"   style= {{  width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"  , justifyContent : "center"}}> 
         <p className="header_text" style={{ textAlign : "center"}} >View Business Plan</p>
        </div> 
-       <div  className="clientview_table_row_box" style= {{   width: "11%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
+       <div  className="clientview_table_row_box" style= {{   width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
         <p className="header_text">Download</p>
        </div>
         
-       <div className="clientview_table_row_box"   style= {{   width: "11%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
-        <p className="header_text">Account Status</p>
+       <div className="clientview_table_row_box"   style= {{   width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
+        <p className="header_text" style ={{  textAlign : "center" }}>Account Status</p>
        </div>
 
-       <div   className="clientview_table_row_box"  style= {{   width: "15%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
+       <div   className="clientview_table_row_box"  style= {{   width: "15%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
         <p className="header_text">Account status</p>
        </div>
     </div>   
@@ -193,28 +193,28 @@ function StudentView() {
          data.map( (  el   , index )  => ( 
 
 
-      <div    key= { index }   style= {{ width : "100%" , height: "33.33%"  , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"  ,  borderBottom : "1px solid black"  }} > 
+      <div    key= { index }   style= {{ width : "100%" , height: "33.33%"  , borderRight : "1px solid #B6B7D0"  , display : "flex" , flexDirection : "row"  ,  borderBottom : "1px solid #B6B7D0"  }} > 
 
 
-      <div   className="clientview_table_row_box"   style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
+      <div   className="clientview_table_row_box"   style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
        <p> { index+1 }</p>
        </div> 
 
-       <div  className="clientview_table_row_box"   style= {{   width: "11%" , height: "100%"    , borderRight : "1px solid black" }}>
+       <div  className="clientview_table_row_box"   style= {{   width: "11%" , height: "100%"    , borderRight : "1px solid #B6B7D0" }}>
          <p> {  el.school_name }</p>
        </div>
-       <div className="clientview_table_row_box"   style= {{   width: "11%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
+       <div className="clientview_table_row_box"   style= {{   width: "11%" ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}  }>
          <p> {  el.student_name}</p>
        </div>
-       <div className="clientview_table_row_box"   style= {{  width: "11%"  ,  height: "100%"  , borderRight : "1px solid black"}}>
+       <div className="clientview_table_row_box"   style= {{  width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
          <p>Yes</p>
        </div>  
 
-       <div className="clientview_table_row_box"   style= {{  width: "11%"  ,  height: "100%"  , borderRight : "1px solid black"}}>
+       <div className="clientview_table_row_box"   style= {{  width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
          <p>Yes</p>
        </div>  
 
-       <div  className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"    , borderRight : "1px solid black"}}>
+       <div  className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"    , borderRight : "1px solid #B6B7D0"}}>
  
 
 
@@ -224,7 +224,7 @@ function StudentView() {
        </div> 
 
 
-       <div className="clientview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row"}}> 
+       <div className="clientview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0" , display: "flex"  ,   flexDirection : "row"}}> 
                         
           <input      className="inner_table_btn"       style={{ height: "40%"  , width : "70%"   ,border: "0px solid red" }}  type="button" value = "download"    onClick={()  => {       }  } /> 
                        
@@ -233,12 +233,12 @@ function StudentView() {
 
 
 
-       <div  className="clientview_table_row_box" style= {{  width: "11%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
+       <div  className="clientview_table_row_box" style= {{  width: "11%"  ,    height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
         <p> { el.status }</p>
        </div>   
 
 
-       <div   className="clientview_table_row_box" style= {{   width: "15%"  ,    height: "100%"  , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"   , justifyContent : "space-around"}}> 
+       <div   className="clientview_table_row_box" style= {{   width: "15%"  ,    height: "100%"  , borderRight : "1px solid #B6B7D0"  ,  display: "flex"  ,   flexDirection : "row"   , justifyContent : "space-around"}}> 
                     
 
 
@@ -268,28 +268,28 @@ function StudentView() {
         
         
 
-      <div className="clientview_table_inner_div_column_name"  style = {{ backgroundColor : "#FFFFFF"  , borderBottom : "1px solid black" }} >   
+      <div className="clientview_table_inner_div_column_name"  style = {{ backgroundColor : "#FFFFFF"  , borderBottom : "1px solid #B6B7D0"  ,  borderTop : "1px solid #B6B7D0"  }} >   
  
 
 
 
-       <div  style= {{   width: "19%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
+       <div  style= {{   width: "19%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
        <p> Total </p>
        </div> 
   
 
-       <div style= {{   width: "11%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
+       <div style= {{   width: "11%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
          <p> 3 students </p>
        </div> 
 
-       <div style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
+       <div style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
          <p>  2 started submission </p>
        </div> 
-       <div style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid black"}}> 
+       <div style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
         <p>2 certificates issued</p>
        </div> 
 
-       <div style= {{  width: "48%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
+       <div style= {{  width: "48%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
         <p>Export all business plans</p>
        </div> 
        
