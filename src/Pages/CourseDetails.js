@@ -38,7 +38,7 @@ function CourseDetails() {
    
     axios({   
 
-     url : "http://3.123.39.199:5000/admin/module_am"  ,    
+     url : "http://3.123.37.47:5000/admin/module_am"  ,    
      
      method : "POST"  , 
      data : { 
@@ -70,7 +70,7 @@ function CourseDetails() {
 
       axios({   
 
-        url : "http://3.123.39.199:5000/admin/workshop_am"  ,    
+        url : "http://3.123.37.47:5000/admin/workshop_am"  ,    
         
         method : "POST"  , 
         data : { 

@@ -37,7 +37,7 @@ const Popup = (  props ) => {
                  
        axios({ 
      
-       url : "http://3.123.39.199:5000/admin/school_sc"  ,   
+       url : "http://3.123.37.47:5000/admin/school_sc"  ,   
  
        method : "POST"  ,  
  
@@ -69,7 +69,7 @@ const Popup = (  props ) => {
                     
      axios({ 
   
-    url : "http://3.123.39.199:5000/admin/facilitator_sc"  ,   
+    url : "http://3.123.37.47:5000/admin/facilitator_sc"  ,   
 
     method : "POST"  ,  
 
@@ -103,7 +103,7 @@ else if(   userDetails.type_id === "student"  ) {
 
    axios({ 
  
-   url : "http://3.123.39.199:5000/admin/student_sc"  ,   
+   url : "http://3.123.37.47:5000/admin/student_sc"  ,   
 
    method : "POST"  ,  
 

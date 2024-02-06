@@ -67,7 +67,7 @@ function AddAccount() {
 
         axios({ 
 
-                url : "http://3.123.39.199:5000/facilitator/f_registration"  ,   
+                url : "http://3.123.37.47:5000/facilitator/f_registration"  ,   
 
                 method : "POST"  , 
                 data : {
@@ -139,7 +139,7 @@ function AddAccount() {
 
         axios({ 
 
-              url : "http://3.123.39.199:5000/admin/s_registration"  ,   
+              url : "http://3.123.37.47:5000/admin/s_registration"  ,   
 
               method : "POST"  ,  
 
@@ -231,7 +231,7 @@ function AddAccount() {
 
         axios({ 
 
-              url : "http://3.123.39.199:5000/admin/student_registration"  ,   
+              url : "http://3.123.37.47:5000/admin/student_registration"  ,   
 
               method : "POST"  ,  
 

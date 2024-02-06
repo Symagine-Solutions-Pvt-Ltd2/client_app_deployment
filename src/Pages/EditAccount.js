@@ -55,7 +55,7 @@ function  EditAccount(  {  props }) {
       
 axios({ 
       
-                      url : "http://3.123.39.199:5000/admin/e_school"  ,   
+                      url : "http://3.123.37.47:5000/admin/e_school"  ,   
       
                       method : "POST"  ,  
 
@@ -111,7 +111,7 @@ axios({
       
 axios({ 
       
-                      url : "http://3.123.39.199:5000/facilitator/e_facilitator"  ,   
+                      url : "http://3.123.37.47:5000/facilitator/e_facilitator"  ,   
       
                       method : "POST"  ,  
 
@@ -160,7 +160,7 @@ axios({
             
            axios({ 
       
-        url : "http://3.123.39.199:5000/admin/student_e"  ,   
+        url : "http://3.123.37.47:5000/admin/student_e"  ,   
 
         method : "POST"  ,  
 
