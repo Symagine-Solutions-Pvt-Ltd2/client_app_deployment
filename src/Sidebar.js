@@ -22,14 +22,33 @@ function SideBar(   props ) {
   
 
      
-   useEffect(() => { 
+   useEffect(() => {   
+
+
+
+      let  logo_name =  props.info.name  ; 
+   var names = logo_name.split(' ') ; 
+   console.log( names) ; 
+   let initials = names[0].substring(0, 1).toUpperCase();
+
+   if (names.length > 1) {
+   initials += names[names.length - 1].substring(0, 1).toUpperCase();
+     }
+   
+
+   console.log( initials) ; 
+
+
+    
+
 
       if(   props.info.type === "client"){
           
          
         let  newUser = {
            name : props.info.name , 
-           type : "Client"
+           type : "Client"  , 
+           nameInitial : initials  ,
         }
         setUserInfo( newUser ) ;
       }
@@ -39,7 +58,8 @@ function SideBar(   props ) {
          
         let  newUser = {
            name : props.info.name , 
-           type : "School"
+           type : "School"  , 
+           nameInitial : initials  ,
         }
         setUserInfo( newUser ) ;
       } 
@@ -49,7 +69,8 @@ function SideBar(   props ) {
          
         let  newUser = {
            name : props.info.name , 
-           type : "Facilitator"
+           type : "Facilitator"  , 
+           nameInitial : initials  ,
         }
         setUserInfo( newUser ) ;
       } 
@@ -93,7 +114,7 @@ function SideBar(   props ) {
          <div   className="Sidebar-profile-Name-div" > 
     
                      <div style= {{ height : "80%" , width: "37%"  , backgroundColor : "white"  ,  borderRadius : "50%"   , display : "flex"  , justifyContent : "center"  , alignItems : "center" }}>
-                         <p style= {{ fontSize : "24px"  , color: "#5A6199" }} > RM</p>
+                         <p style= {{ fontSize : "24px"  , color: "#5A6199" }} >{ userInfo.nameInitial }</p>
                        </div>
          </div>  
           

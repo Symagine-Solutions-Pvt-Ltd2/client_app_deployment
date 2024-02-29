@@ -46,7 +46,8 @@ const Popup = (  props ) => {
          
             "_id" : userDetails._id , 
             "client_id" :  userDetails.client_id ,
-                  "status" : value   
+            "status" : value    , 
+            "program_id" :  userDetails.program_id   
  
        }
  
@@ -78,7 +79,8 @@ const Popup = (  props ) => {
       
          "_id" : userDetails._id , 
          "school_id" :  userDetails.school_id ,
-               "status" : value   
+               "status" : value    , 
+               "program_id" :  userDetails.program_id 
 
     }
 
@@ -112,7 +114,8 @@ else if(   userDetails.type_id === "student"  ) {
      
         "_id" : userDetails._id , 
         "school_id" :  userDetails.school_id ,
-         "status" : value   
+         "status" : value    , 
+         "program_id" :  userDetails.program_id 
 
    }
 

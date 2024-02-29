@@ -31,6 +31,8 @@ function CourseDetails() {
 
 
   useEffect(() => { 
+     
+
     
 
    if( location.state.type === "module"  ) {
@@ -96,7 +98,10 @@ function CourseDetails() {
     
          
 
-    }
+    }  
+
+
+
 
 } , [])  ; 
 
@@ -156,16 +161,16 @@ function CourseDetails() {
 
 
      <div  className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
-       <p>Sl No</p>
+       <p className="header_text"  >Sl No</p>
      </div>  
 
-     <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"   }}>
-        <p>Type</p>
+     <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"   ,   borderRight : "1px solid black" }}>
+        <p className="header_text"  >Type</p>
      </div>
     
        
      <div  className="clientview_table_row_box"  style= {{   width: "45%" , height: "100%"   }}>
-        <p>Name</p>
+        <p className="header_text" >Name</p>
      </div>
     
 
