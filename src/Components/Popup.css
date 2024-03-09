@@ -21,7 +21,6 @@
 position: relative;
 width : 50% ; 
 height : 40% ;
-
 background-color: #353B55;   
 border-radius: 2%;
 
@@ -36,8 +35,8 @@ border-radius: 2%;
     height : 80% ;
     width : 10% ;   
     background-color: #353B55;
-    border : 0px
-  
+    border : 0px ; 
+   
 
 }  
 
@@ -55,7 +54,11 @@ border-radius: 2%;
 
   
       height: 40%; 
-      background-color: #FFF;
+      background-color: #FFF; 
+      display:  flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction:  column;
 
 } 
   

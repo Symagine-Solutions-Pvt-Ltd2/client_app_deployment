@@ -1,4 +1,4 @@
-import { useState } from "react"; 
+import { useState ,  useEffect } from "react"; 
 import Sidebar  from "../Sidebar" ;   
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
 import "../Style/AddAccount.css" ;
@@ -18,8 +18,7 @@ function AddAccount() {
 
     const [ assignedProgram ,   setAssignedProgram  ]   = useState( location.state.programId) ; 
     const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
-
-
+    
    
   
     console.log( "addaccount" ) ; 
@@ -32,11 +31,7 @@ function AddAccount() {
 
 
 
-
-
-
-
-
+   
 
 
 
@@ -108,7 +103,51 @@ function AddAccount() {
       event.preventDefault();
     }
   
-   
+     
+
+
+
+
+
+      // to add new student in the database  and update answer 
+    
+      const  addStudentAnswerHolder = (   programId , studentId) => {
+             
+
+
+        axios({ 
+
+                url : "http://3.123.37.47:5000/admin/motc"  ,   
+  
+                method : "POST"  ,  
+  
+                data : {
+                  
+                        "program_id" : programId  , 
+                        "student_id" : studentId
+  
+                   
+                }
+          
+               }).then( ( res) => {   
+          
+             
+                  
+                    console.log(  res.data) ;  
+                  
+  
+  
+                  // navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : location.state.type ,   schoolId : location.state.schoolId  ,        programId : location.state.programId   , userInfo :  location.state.userInfo }}        ,  { replace : false}  )  
+      
+                 
+               } ).catch(( err) => { 
+                   console.log( "error") ;
+          
+                }  ) ;
+
+
+        } 
+
 
 
 
@@ -161,8 +200,9 @@ function AddAccount() {
                  
                   alert( "Registered Successfully.")  ;  
                    
-                  console.log( res.data.data) ; 
+                  console.log( res.data.data) ;   
 
+                  
                   navigate(  "/home/dashboard"   ,   { state: {    typeId :    "client"   ,   programId : location.state.programId    , clientId :location.state.clientId  ,    userInfo :  location.state.userInfo    , data : location.state.data     }}     ,      { replace : false}  )   ;
     
                 } 
@@ -242,7 +282,8 @@ function AddAccount() {
                 "password" :event.target.password.value  , 
                 "type_id" :  "student"   , 
                 "program_id"   : location.state.programId     ,
-                 "school_id"   : location.state.schoolId    ,
+                 "school_id"   : location.state.schoolId    , 
+
                  
               }
         
@@ -254,9 +295,14 @@ function AddAccount() {
                  
 
                   console.log(  res.data.data) ;  
+                  
+                  console.log(  res.data.data._id) ; 
+                  console.log(  location.state.programId) ; 
+
+                  addStudentAnswerHolder( location.state.programId , res.data.data._id) ;
 
 
-            navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : location.state.schoolId  ,        programId : location.state.programId    ,    userInfo :  location.state.userInfo  , data : location.state.data     }}        ,  { replace : false}  )  
+        //    navigate(  "/home/dashboard/student"      ,   { state: {     schoolId : location.state.schoolId  ,        programId : location.state.programId    ,    userInfo :  location.state.userInfo  , data : location.state.data     }}        ,  { replace : false}  )  
     
                 } 
                 else {

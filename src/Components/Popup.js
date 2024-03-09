@@ -164,34 +164,34 @@ else if(   userDetails.type_id === "student"  ) {
     return( props.trigger) ?( 
 
             <div className="popup" >
-              <div className="popup-inner" >  
+              <div className="popup-inner"   style = {{ borderRadius : 20  }} >  
 
-                    <div className="popup-inner-body1"> 
+                    <div className="popup-inner-body1"   style={{ backgroundColor : "#5A6199"  ,  borderTopLeftRadius : 20  , borderTopRightRadius : 20}}> 
 
-                     <button className="close-btn" onClick={ () => {  props.setTrigger( false ) }  }>
+                     <button className="close-btn"   style={{ backgroundColor : "#5A6199"  }}   onClick={ () => {  props.setTrigger( false ) }  }>
                      <CloseIcon  sx={{ color: "#FFFFFF"  , fontSize : 35   }}/>
                       </button>   
                     
                     </div> 
 
-                     <div  className="popup-inner-body2"   >
+                     <div  className="popup-inner-body2"     >
                       
 
                       <p> Do you want to change the status of </p>
-                     {  props.children }  
+                        <p> {  props.children } </p>
 
             
                      </div>
                 
                      
-                     <div className="popup-inner-body3" > 
+                     <div className="popup-inner-body3"   style={{ backgroundColor : "#5A6199" , borderBottomLeftRadius : 20 , borderBottomRightRadius : 20 }}> 
   
 
 
-                    <input style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1"}}  className="popup-inner-body2-button"    type="button" value = "Active" 
+                    <input style = {{ borderRadius : 15   , backgroundColor : "#A4A4BC"}}  className="popup-inner-body2-button"    type="button" value = "Active" 
                         onClick={()  => {  statusChange( "active") }} /> 
 
-                    <input  style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1" }}  className="popup-inner-body2-button"     type="button" value = "Inactive"  
+                    <input  style = {{ borderRadius : 15   , backgroundColor : "#A4A4BC" }}  className="popup-inner-body2-button"     type="button" value = "Inactive"  
                        onClick={()  => {  statusChange( "inactive") }} />  
  
                       <input  style = {{ borderRadius : 15   , backgroundColor : "#F06B6E" ,  color : "#FFF" }}   className="popup-inner-body2-button"    type="button" value = "Delete"  

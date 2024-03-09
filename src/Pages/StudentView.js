@@ -183,7 +183,7 @@ function StudentView() {
 
 
 
-      <div  className="clientview_table_inner_div_table_row"     style = {{height : "60%" }}>
+      <div  className="clientview_table_inner_div_table_row"  >
           
 
 
@@ -193,7 +193,7 @@ function StudentView() {
          data.map( (  el   , index )  => ( 
 
 
-      <div    key= { index }   style= {{ width : "100%" , height: "33.33%"  , borderRight : "1px solid #B6B7D0"  , display : "flex" , flexDirection : "row"  ,  borderBottom : "1px solid #B6B7D0"  }} > 
+      <div    key= { index }   style= {{ width : "100%" , height: "25%"  , borderRight : "1px solid #B6B7D0"  , display : "flex" , flexDirection : "row"  ,  borderBottom : "1px solid #B6B7D0"  }} > 
 
 
       <div   className="clientview_table_row_box"   style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
@@ -207,11 +207,11 @@ function StudentView() {
          <p> {  el.student_name}</p>
        </div>
        <div className="clientview_table_row_box"   style= {{  width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
-         <p>Yes</p>
+         <p>  {  el.bp_submitted} </p>
        </div>  
 
        <div className="clientview_table_row_box"   style= {{  width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
-         <p>Yes</p>
+         <p> {  el.certificate}</p>
        </div>  
 
        <div  className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"    , borderRight : "1px solid #B6B7D0"}}>
@@ -268,32 +268,7 @@ function StudentView() {
         
         
 
-      <div className="clientview_table_inner_div_column_name"  style = {{ backgroundColor : "#FFFFFF"  , borderBottom : "1px solid #B6B7D0"  ,  borderTop : "1px solid #B6B7D0"  }} >   
- 
-
-
-
-       <div  style= {{   width: "19%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
-       <p> Total </p>
-       </div> 
-  
-
-       <div style= {{   width: "11%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
-         <p> 3 students </p>
-       </div> 
-
-       <div style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
-         <p>  2 started submission </p>
-       </div> 
-       <div style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
-        <p>2 certificates issued</p>
-       </div> 
-
-       <div style= {{  width: "48%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
-        <p>Export all business plans</p>
-       </div> 
        
-    </div>   
 
 
         
