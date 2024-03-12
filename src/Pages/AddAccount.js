@@ -29,8 +29,8 @@ function AddAccount() {
   // console.log( location.state.programName) ;    
   
 
-
-
+  
+  
    
 
 
@@ -62,7 +62,7 @@ function AddAccount() {
 
         axios({ 
 
-                url : "http://3.123.37.47:5000/facilitator/f_registration"  ,   
+                url : "https://learn-up.app/facilitator/f_registration"  ,   
 
                 method : "POST"  , 
                 data : {
@@ -117,7 +117,7 @@ function AddAccount() {
 
         axios({ 
 
-                url : "http://3.123.37.47:5000/admin/motc"  ,   
+                url : "https://learn-up.app/admin/motc"  ,   
   
                 method : "POST"  ,  
   
@@ -178,7 +178,7 @@ function AddAccount() {
 
         axios({ 
 
-              url : "http://3.123.37.47:5000/admin/s_registration"  ,   
+              url : "https://learn-up.app/admin/s_registration"  ,   
 
               method : "POST"  ,  
 
@@ -271,7 +271,7 @@ function AddAccount() {
 
         axios({ 
 
-              url : "http://3.123.37.47:5000/admin/student_registration"  ,   
+              url : "https://learn-up.app/admin/student_registration"  ,   
 
               method : "POST"  ,  
 

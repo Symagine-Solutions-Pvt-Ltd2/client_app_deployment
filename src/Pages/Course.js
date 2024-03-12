@@ -26,7 +26,7 @@ function Course() {
 
         axios({ 
   
-         url : "http://3.123.37.47:5000/admin/course_details_id"  ,    
+         url : "https://learn-up.app/admin/course_details_id"  ,    
          
          method : "POST"  , 
          data : {

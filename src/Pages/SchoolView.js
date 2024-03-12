@@ -73,7 +73,7 @@ function SchoolView() {
 
         axios({ 
   
-         url : "http://3.123.37.47:5000/admin/ca_school"  ,  
+         url : "https://learn-up.app/admin/ca_school"  ,  
          method : "POST"  , 
          data : {
            
@@ -104,7 +104,7 @@ function SchoolView() {
 
           axios({ 
   
-            url : "http://3.123.37.47:5000/facilitator/s_facilitator"  ,  
+            url : "https://learn-up.app/facilitator/s_facilitator"  ,  
             method : "POST"  , 
 
             data : { 

@@ -34,7 +34,7 @@ function Feedback() {
 
       axios({ 
   
-        url : "http://3.123.37.47:5000/admin/all_bp"  ,  
+        url : "https://learn-up.app/admin/all_bp"  ,  
         method : "POST"  , 
         data : {
           
@@ -116,7 +116,7 @@ function Feedback() {
 
      axios({ 
       
-      url : "http://3.123.37.47:5000/admin/bp_feedback"  ,   
+      url : "https://learn-up.app/admin/bp_feedback"  ,   
 
       method : "POST"  , 
       data : {
@@ -182,21 +182,21 @@ function Feedback() {
 
              </div>
             
-              <div className= "clientview_table_outer_div_body2" style={{  height : "60%"}}   >   
+              <div className= "clientview_table_outer_div_body2" style={{  height : "70%"}}   >   
     
 
                <div className="clientview_table_inner_div_column_name"  style={ { height : "25%"}}>  
                
-               <div    className="clientview_table_row_box"  style= {{   width: "25%" , height: "100%"   , borderRight : "1px solid black" }}>
+               <div    className="clientview_table_row_box"  style= {{   width: "25%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
                  <p className="header_text">Details</p>
                </div>
-               <div   className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
+               <div   className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
                  <p className="header_text">Student's answer</p>
                </div>
-               <div  className="clientview_table_row_box"   style= {{  width: "30%"  ,  height: "100%"    , borderRight : "1px solid black"}}>
+               <div  className="clientview_table_row_box"   style= {{  width: "30%"  ,  height: "100%"    , borderRight : "1px solid #B6B7D0"}}>
                  <p className="header_text">Feedback</p>
                </div> 
-               <div   className="clientview_table_row_box"  style= {{   width: "20%"  ,  height: "100%"  , borderRight : "1px solid black"}}> 
+               <div   className="clientview_table_row_box"  style= {{   width: "20%"  ,  height: "100%"  }}> 
                </div> 
 
 
@@ -244,13 +244,29 @@ function Feedback() {
               ) )
 
               }
-            </div>
+            </div> 
+            <div className="clientview_table_inner_div_column_name"  style={ { height : "25%"}}>  
+               
+               <div    className="clientview_table_row_box"  style= {{   width: "33%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
+                 <p className="header_text">Task Completed</p>
+               </div>
+               <div   className="clientview_table_row_box"  style= {{   width: "33%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
+                 <p className="header_text">bkkk</p>
+               </div>
+               <div  className="clientview_table_row_box"   style= {{   width: "33%"  ,  height: "100%"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
+             
+             <button  style = {{  height : "40%"  , width : "50%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15   , fontWeight : 600 }}  onClick={() => {  }}>See Student Answers</button>   
+             </div> 
+               
+
+
+              </div>  
               </div> 
 
               <div className="body3"> 
 
-              <div  style = {{ width : "25%"  , height : "34%"  ,  padding : "2"}}   onClick={ () => { submitFeedback() } }  className="add_new_program_button">
-                <p  style={ { textAlign : "center"}}>Approve Business Plan (to allow download of certificate)</p>
+              <div  style = {{ width : "25%"  , height : "34%"  ,  padding : "2" , borderRadius: 25}}   onClick={ () => { submitFeedback() } }  className="add_new_program_button">
+                <p  style={ { textAlign : "center"}}>Approve (to allow download of certificate)</p>
               </div>
             
               </div>

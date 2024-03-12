@@ -58,7 +58,7 @@ function StudentView() {
 
         axios({ 
   
-         url : "http://3.123.37.47:5000/admin/a_student"  ,  
+         url : "https://learn-up.app/admin/a_student"  ,  
          method : "POST"  ,  
 
 

@@ -39,7 +39,7 @@ function Login() {
 
     axios({ 
 
-      url : "http://3.123.37.47:5000/admin/login"  ,  
+      url : "https://learn-up.app/admin/login"  ,  
       method : "POST"  , 
       data : {
         

@@ -40,7 +40,7 @@ function CourseDetails() {
    
     axios({   
 
-     url : "http://3.123.37.47:5000/admin/module_am"  ,    
+     url : "https://learn-up.app/admin/module_am"  ,    
      
      method : "POST"  , 
      data : { 
@@ -72,7 +72,7 @@ function CourseDetails() {
 
       axios({   
 
-        url : "http://3.123.37.47:5000/admin/workshop_am"  ,    
+        url : "https://learn-up.app/admin/workshop_am"  ,    
         
         method : "POST"  , 
         data : { 
