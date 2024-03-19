@@ -8,12 +8,13 @@ import axios from "axios"  ;
 function Feedback() {    
 
   const [ data , setData ] = useState( []); 
+  const [ feedbackArray , setFeedbackArray ] = useState( []);  
 
     const location = useLocation();    
     const  navigate = useNavigate() ; 
 
   
-    const [ feedbackArray , setFeedbackArray ] = useState( []);  
+    
 
     
 
@@ -81,7 +82,12 @@ function Feedback() {
  
         }  ) ; 
 
-  } 
+  }else{
+
+    setTimeout(() => {
+      alert( "Business Plan not submitted by student !") ;
+    }, 500)
+  }
 
 } , [])  ; 
 
@@ -255,7 +261,7 @@ function Feedback() {
                </div>
                <div  className="clientview_table_row_box"   style= {{   width: "33%"  ,  height: "100%"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
              
-             <button  style = {{  height : "40%"  , width : "50%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15   , fontWeight : 600 }}  onClick={() => {  }}>See Student Answers</button>   
+             <button  style = {{  height : "40%"  , width : "50%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15   , fontWeight : 600 }}  onClick={() => {    navigate(  "/home/dashboard/student/studentanswer"      ,   { state: {     userInfo :  location.state.userInfo     ,    data :  location.state.data    }}        ,  { replace : false}  )   }}>See Student Answers</button>   
              </div> 
                
 

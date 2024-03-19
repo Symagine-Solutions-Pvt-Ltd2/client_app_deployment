@@ -23,6 +23,7 @@ import EditAccount from './Pages/EditAccount';
 import RequireAuth from './Pages/RequireAuth';  
 import Password from './Pages/Password';
 import Feedback  from './Pages/Feedback.js';
+import StudentAnswer from './Pages/StudentAnswer.js';
 
 
 
@@ -64,7 +65,8 @@ root.render(
            <Route index  element ={  <StudentView /> }  />  
            <Route  path= "addstudent"  element ={  <AddAccount/> }  />
            <Route  path= "editstudent"  element ={  <EditAccount/> }  />    
-           <Route  path= "viewplan"  element ={  <Feedback /> }  />    
+           <Route  path= "viewplan"  element ={  <Feedback /> }  />   
+           <Route  path= "studentanswer"  element ={  <StudentAnswer /> }  />  
         </Route>   
 
         
