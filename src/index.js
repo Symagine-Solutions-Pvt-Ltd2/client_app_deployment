@@ -24,7 +24,7 @@ import RequireAuth from './Pages/RequireAuth';
 import Password from './Pages/Password';
 import Feedback  from './Pages/Feedback.js';
 import StudentAnswer from './Pages/StudentAnswer.js';
-
+import PrivacyPolicyAndTC from "./Pages/PrivacyPolicyAndTC.js"  ;
 
 
 
@@ -44,6 +44,7 @@ root.render(
  <Route path= "/"   >  
  <Route index element={<GettingStarted />} />  
  <Route path= "login"  element ={  <Login/>  } />   
+ <Route path= "policy"  element ={  <PrivacyPolicyAndTC/>  } />
 
 
 

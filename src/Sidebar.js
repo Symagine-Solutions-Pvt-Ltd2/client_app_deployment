@@ -145,12 +145,18 @@ function SideBar(   props ) {
       </div>  
 
 
-         <div className="Sidebar-logout-box">   
+         <div className="Sidebar-logout-box">    
 
+
+
+
+    
    
-                      <button className="Sidebar-logout-button"  onClick={ () => {  Logout()  }  }> 
-                         
-                      <div style={{height : "100%" , width :"40%"  , display : "flex"  , alignItems : "center" , justifyContent : "center"}}>
+         <div className="Sidebar-logout-button_div" >
+                      <button className="Sidebar-logout-button"  type="button"  onClick={ () => {  Logout()  }  }>   
+
+
+                       <div style={{height : "100%" , width :"40%"  , display : "flex"  , alignItems : "center" , justifyContent : "center"}}>
                   
                       <LogoutIcon  sx={{ color: "#F06B6D"  , fontSize : 22    }}/>
                     
@@ -161,8 +167,22 @@ function SideBar(   props ) {
                          <p style={{ color : "#F06B6D"  , fontSize : 14  , textAlign : "end"  }}>Log out</p>
                       </div>
                         
+                        
       
                       </button>  
+                      </div> 
+                      <div className="Sidebar-policy-div"> 
+                       
+                      <div style= {{ display : "flex"  , flexDirection : "row"}} >
+    <button className="button_c"  style={{ backgroundColor : "#5A6199"  , textDecoration : "underline"  , color : "#FFF" }}   onClick={()  => {        navigate(  "/policy"   ,   { state: {    screenType  :  "privacyPolicy" }}     , { replace : false}  )  }  }  >Privacy policy</button> 
+    <button className="button_c" style={{ backgroundColor : "#5A6199"  , textDecoration : "underline" , color : "#FFF"}} onClick={()  => {        navigate(  "/policy"   ,   { state: {    screenType  :  "tandc" }}     , { replace : false}  )  }  } >Legal notice</button> 
+    <p style={{ fontWeight : "bold", marginLeft: "5px"  , color : "#FFF" }}>&copy;</p> 
+    <p  className="button_c"  style={{ fontWeight : "bold"  , color : "#FFF"}} >2024 - soceo </p> 
+    </div>
+
+                      </div>
+
+                  
          </div>
     </div>
 

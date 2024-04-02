@@ -25,6 +25,9 @@
          
     height: 100%;
     width: 47.31%;
+    display: flex;
+    align-items: flex-end;
+  
       
 } 
 
@@ -125,6 +128,18 @@ height : 8% ;
      align-items:  center; 
      justify-content:  center;
 } 
+
+
+
+
+.button_c {
+
+    border: 0px solid red ;
+   font-size: x-small; 
+   margin : 4px ; 
+
+
+}
 
 
 .description2_login{
