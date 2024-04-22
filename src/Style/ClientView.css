@@ -140,13 +140,16 @@
     
 
 .add_new_program_button{
-   margin-top:  2%;
+    margin-top:  2%;
     height:  24.82% ;
     width : 18%;  
     background-color: #FCC046 ; 
     margin-right: 5%;
-    border-radius: 25;
-
+    border-width: 0;
+    border-radius:  25px ; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
 }
   
 
@@ -160,7 +163,30 @@
     align-items: center; 
     justify-content: center; 
    
-}
+}  
+
+
+
+
+
+.clientview_table_row_box_scrollable {
+
+    padding :2px ;  
+    overflow-y:  scroll ; 
+   
+}  
+
+
+
+.clientview_table_row_box_scrollable::-webkit-scrollbar{
+
+    width:  1px; 
+    background-color:  #B6B7D0 ;  
+   
+  
+  
+  } 
+
  
 
 

@@ -163,13 +163,52 @@ function Feedback() {
 
  } 
  
+  
 
+
+
+  // to download images of bplan answers submitted by students 
+   
+ const  bpAnswerImageDownload = ( img_url  ) => {   
+
+    console.log(  img_url )  ; 
+ 
+
+    if( img_url != ""){
+     
+          
+      axios({ 
+      
+        url : "https://learn-up.app/admin/bp_feedback"  ,   
+  
+        method : "GET"  , 
+  
+       }).then( ( res) => {   
+  
+  
+       } ).catch(( err) => { 
+           console.log( "error") ;
+  
+        }  ) ;  
+
+
+
+    }else{
+
+
+      alert( "No image found") ;
+    }
+
+ }   
+
+
+  
 
  
    
-const MyDoc = ( ) => {  
+const MyDoc = () => {  
   
-  
+ 
  return(
  <Document> 
       <Page >
@@ -186,34 +225,16 @@ const MyDoc = ( ) => {
       <Text>    </Text>
     </View>
    {
-    data.map( ( el   , index ) => {  
-
-     /*  console.log("hugyu") ; 
-      console.log( el.image) ;   */  
-
-      let a = el.image ;
-  
-      if( a !== ""){
+    data.map( ( el   , index ) => {
      return(
      <View key={ index } >   
           
        <Text>   </Text>
         <Text>Task Name : { el.task}</Text>
         <Text>Student Answer :  {  el.ans } </Text> 
-        <Image   src= { a }  style={{ width : "350px" , height : "350px"}}    /> 
+        <Image   src= "https://learn-up.s3.eu-central-1.amazonaws.com/9102_20240215_083356_087544.jpg"   style={{ width : "350px" , height : "350px"}}    /> 
         </View>
      )
-    }else{
-
-      return(
-        <View key={ index } >   
-             
-          <Text>   </Text>
-           <Text>Task Name : { el.task}</Text>
-           <Text>Student Answer :  {  el.ans } </Text> 
-           </View>
-        )
-    }
    }
 
    ) 
@@ -259,10 +280,12 @@ const MyDoc = ( ) => {
                <div    className="clientview_table_row_box"  style= {{   width: "30%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
                  <p className="header_text">Details</p>
                </div>
-               <div   className="clientview_table_row_box"  style= {{   width: "32%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  }  }>
+               <div   className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  }  }>
                  <p className="header_text">Student's answer</p>
                </div> 
-             
+               <div   className="clientview_table_row_box"  style= {{   width: "7%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0" }  }>
+                 <p className="header_text">Img</p>
+               </div>
                <div  className="clientview_table_row_box"   style= {{  width: "30%"  ,  height: "100%"    , borderRight : "1px solid #B6B7D0"}}>
                  <p className="header_text">Feedback</p>
                </div> 
@@ -290,9 +313,14 @@ const MyDoc = ( ) => {
                <div   className="clientview_table_row_box_scrollable"  style= {{   width: "30%" , height: "100%", borderRight : "1px solid #B6B7D0" }}>
                  <p> {  el.task} </p>
                </div>
-               <div  className="clientview_table_row_box_scrollable"  style= {{   width: "32%" ,  height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
+               <div  className="clientview_table_row_box_scrollable"  style= {{   width: "25%" ,  height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
                  <p> {  el.ans } </p>
                </div> 
+
+               <div  className="clientview_table_row_box"   style= {{   width: "7%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
+             
+                <button  style = {{  height : "40%"  , width : "70%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15 }}  onClick={() => {   bpAnswerImageDownload(  el.image)  }}>Img</button>   
+        </div>  
 
 
 
@@ -327,7 +355,7 @@ const MyDoc = ( ) => {
                </div>
                <div  className="clientview_table_row_box"   style= {{   width: "37%"  ,  height: "100%"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
              
-             <button  style = {{  height : "40%"  , width : "50%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15   , fontWeight : 600 }}  onClick={() => {  navigate(  "/home/dashboard/client/student/studentanswer"      ,   { state: {     userInfo :  location.state.userInfo     ,    data :  location.state.data    }}        ,  { replace : false}  )   }}>See Student Answers</button>   
+             <button  style = {{  height : "40%"  , width : "50%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15   , fontWeight : 600 }}  onClick={() => {  navigate(  "/home/dashboard/student/studentanswer"      ,   { state: {     userInfo :  location.state.userInfo     ,    data :  location.state.data    }}        ,  { replace : false}  )   }}>See Student Answers</button>   
              </div> 
                
 
