@@ -14,7 +14,7 @@ function BusinessPlan() {
     const goToNext = () => {
   
         navigate(  "/home/dashboard/client/addclient"   ,  { replace : false}  ) ; 
-        console.log("ASJghshGHS") ;  
+        // console.log("ASJghshGHS") ;  
  
  
  

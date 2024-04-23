@@ -21,12 +21,12 @@ function AddAccount() {
     
    
   
-   // console.log( "addaccount" ) ; 
- // console.log( location.state.schoolId ) ; 
- // console.log( location.state.typeId  ) ; 
- // console.log( location.state.clientId ) ; 
- // console.log( location.state.programId ) ;  
-  //// console.log( location.state.programName) ;    
+   // // console.log( "addaccount" ) ; 
+ // // console.log( location.state.schoolId ) ; 
+ // // console.log( location.state.typeId  ) ; 
+ // // console.log( location.state.clientId ) ; 
+ // // console.log( location.state.programId ) ;  
+  //// // console.log( location.state.programName) ;    
   
 
   
@@ -48,10 +48,10 @@ function AddAccount() {
        
 
 
-     // console.log( event.target.name.value) ;   
-     // console.log( event.target.email.value) ;    
-     // console.log( event.target.password.value) ;    
-     // console.log( event.target.reset_password.value) ;    
+     // // console.log( event.target.name.value) ;   
+     // // console.log( event.target.email.value) ;    
+     // // console.log( event.target.password.value) ;    
+     // // console.log( event.target.reset_password.value) ;    
       
 
       if(  event.target.password.value !== event.target.reset_password.value  ) {
@@ -82,7 +82,7 @@ function AddAccount() {
    
               
                     alert( "Registered Successfully.")  ;  
-                   // console.log(  res.data.data) ;  
+                   // // console.log(  res.data.data) ;  
 
          navigate(  "/home/dashboard/facilitator"   ,    { state: {    typeId :    "client"    ,   schoolId : location.state.schoolId  , programId : location.state.programId ,   userInfo :  location.state.userInfo  ,  data : location.state.data       }}    , { replace : false}  )   ;
                   } 
@@ -92,7 +92,7 @@ function AddAccount() {
                   }
                  
                } ).catch(( err) => { 
-                  // console.log( "error") ;
+                  // // console.log( "error") ;
           
                 }  ) ;  
       
@@ -133,7 +133,7 @@ function AddAccount() {
           
              
                   
-                   // console.log(  res.data) ;  
+                   // // console.log(  res.data) ;  
                   
   
   
@@ -141,7 +141,7 @@ function AddAccount() {
       
                  
                } ).catch(( err) => { 
-                  // console.log( "error") ;
+                  // // console.log( "error") ;
           
                 }  ) ;
 
@@ -162,11 +162,11 @@ function AddAccount() {
     
 
       
-     // console.log( event.target.name.value) ;   
-     // console.log( event.target.email.value) ;    
-     // console.log( event.target.password.value) ;    
-     // console.log( event.target.repeat_password.value) ;    
-     // console.log( event.target.contact_person.value) ;    
+     // // console.log( event.target.name.value) ;   
+     // // console.log( event.target.email.value) ;    
+     // // console.log( event.target.password.value) ;    
+     // // console.log( event.target.repeat_password.value) ;    
+     // // console.log( event.target.contact_person.value) ;    
       
 
       if(  event.target.password.value !== event.target.repeat_password.value  ) {
@@ -200,7 +200,7 @@ function AddAccount() {
                  
                   alert( "Registered Successfully.")  ;  
                    
-                 // console.log( res.data.data) ;   
+                 // // console.log( res.data.data) ;   
 
                   
                   navigate(  "/home/dashboard"   ,   { state: {    typeId :    "client"   ,   programId : location.state.programId    , clientId :location.state.clientId  ,    userInfo :  location.state.userInfo    , data : location.state.data     }}     ,      { replace : false}  )   ;
@@ -212,7 +212,7 @@ function AddAccount() {
                 }
                
              } ).catch(( err) => { 
-                // console.log( "error") ;
+                // // console.log( "error") ;
         
               }  ) ;  
     
@@ -241,17 +241,17 @@ function AddAccount() {
      const  addStudent = ( event) => {
 
              
-     // console.log( event.target.name.value) ;   
-     // console.log( event.target.email.value) ;    
-     // console.log( event.target.password.value) ;    
-     // console.log( event.target.repeat_password.value) ;     
+     // // console.log( event.target.name.value) ;   
+     // // console.log( event.target.email.value) ;    
+     // // console.log( event.target.password.value) ;    
+     // // console.log( event.target.repeat_password.value) ;     
     
 
       event.target.sbtn.disabled =  true ; 
 
       setTimeout(() => {
-        console.log("After two second") ;
-       // console.log( event.target.sbtn.disabled) ;
+        // console.log("After two second") ;
+       // // console.log( event.target.sbtn.disabled) ;
         event.target.sbtn.disabled =  false;
       }, 3000) 
 
@@ -294,10 +294,10 @@ function AddAccount() {
                   alert( "Registered Successfully.")  ; 
                  
 
-                 // console.log(  res.data.data) ;  
+                 // // console.log(  res.data.data) ;  
                   
-                 // console.log(  res.data.data._id) ; 
-                 // console.log(  location.state.programId) ; 
+                 // // console.log(  res.data.data._id) ; 
+                 // // console.log(  location.state.programId) ; 
 
                   addStudentAnswerHolder( location.state.programId , res.data.data._id) ;
 
@@ -311,7 +311,7 @@ function AddAccount() {
                 }
                
              } ).catch(( err) => { 
-                // console.log( "error") ;
+                // // console.log( "error") ;
         
               }  ) ;  
     

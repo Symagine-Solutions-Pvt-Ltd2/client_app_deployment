@@ -19,9 +19,9 @@ function StudentAnswer() {
 
 
     
-   // console.log(  "studans" )  ;
-   // console.log(  location.state.data )  ; 
-   //// console.log(  location.state.userInfo )  ; 
+   // // console.log(  "studans" )  ;
+   // // console.log(  location.state.data )  ; 
+   //// // console.log(  location.state.userInfo )  ; 
       
 
 
@@ -103,7 +103,7 @@ function StudentAnswer() {
     
           }).then( ( res) => {   
        
-           // console.log(  res.data.data ) ; 
+           // // console.log(  res.data.data ) ; 
 
             
 
@@ -123,14 +123,14 @@ function StudentAnswer() {
                   return el !== "created_at" ; 
                 })
                  
-              //  // console.log(  filterKey ) ; 
+              //  // // console.log(  filterKey ) ; 
                 
               questionAnswerConnect.push(   [ obj[filterKey[0]] ,objAns[filterKey[0]]] )  ; 
             
           }  
 
 
-          // console.log( questionAnswerConnect ) ; 
+          // // console.log( questionAnswerConnect ) ; 
             
           let finalArrToRender  =[] ;
            
@@ -144,8 +144,8 @@ function StudentAnswer() {
              el[0].map(( item , ind)  => {
                  
                
-             // console.log( item ) ; 
-             // console.log( el[1][ind] ) ;   
+             // // console.log( item ) ; 
+             // // console.log( el[1][ind] ) ;   
              
 
               if( item.sub_type ===  "task_text" || item.sub_type ===  "quiz"  ||   item.sub_type === "upload_picture" ){
@@ -167,12 +167,12 @@ function StudentAnswer() {
            }) ; 
 
            
-          // console.log( "here") ;
-          // console.log( finalArrToRender) ;
+          // // console.log( "here") ;
+          // // console.log( finalArrToRender) ;
            setAllData( finalArrToRender) ;
           
         } ).catch(( err) => {  
-           // console.log(  err) ;
+           // // console.log(  err) ;
   
          }  ) ; 
    

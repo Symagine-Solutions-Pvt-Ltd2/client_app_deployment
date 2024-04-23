@@ -41,23 +41,23 @@ function SchoolView() {
 
 
   
-    console.log("in school view ")  ; 
+    // console.log("in school view ")  ; 
     
-   // console.log( location.state.typeId ) ;   
+   // // console.log( location.state.typeId ) ;   
 
-   // console.log( location.state.userId ) ;  
+   // // console.log( location.state.userId ) ;  
 
-    console.log(location.state.programId ) ;  
+    // console.log(location.state.programId ) ;  
   
-    console.log(location.state.clientId  ) ;  
-    //console.log(location.state.data) ; 
+    // console.log(location.state.clientId  ) ;  
+    //// console.log(location.state.data) ; 
 
 
     
     const goToNext = () => {
   
        navigate(  "/home/dashboard/addschool"   ,   { state: {        typeId : "school"  ,   clientId : clientId ,   programId : programId   , programName : "program87"   ,     userInfo :  location.state.userInfo   ,    data :   location.state.data   }}   ,  { replace : false}  ) ; 
-       console.log("ASJghshGHS") ;  
+       // console.log("ASJghshGHS") ;  
 
       }   
     
@@ -86,14 +86,14 @@ function SchoolView() {
         }).then( ( res) => {   
   
   
-         // console.log(  res.data.data ) ; 
+         // // console.log(  res.data.data ) ; 
            setData(  res.data.data ) ;  
            
            
-         // // console.log(   res.data.data[1].name )  ;
+         // // // console.log(   res.data.data[1].name )  ;
   
         } ).catch(( err) => {  
-           // console.log( "error") ;
+           // // console.log( "error") ;
   
          }  ) ;   
 
@@ -116,14 +116,14 @@ function SchoolView() {
            }).then( ( res) => {   
      
      
-           // console.log(  res.data.data ) ; 
+           // // console.log(  res.data.data ) ; 
             
             const newarr = [  res.data.data ] ;  
            setData( newarr) ;
-         // console.log(  newarr )  ; 
+         // // console.log(  newarr )  ; 
      
            } ).catch(( err) => {  
-              // console.log( "error") ;
+              // // console.log( "error") ;
      
             }  ) ;   
    
@@ -136,7 +136,7 @@ function SchoolView() {
           
           const newarr = [ location.state.data  ] ;  
           setData( newarr) ;
-        // console.log(  newarr )  ; 
+        // // console.log(  newarr )  ; 
         }
 
   
@@ -152,7 +152,7 @@ function SchoolView() {
     const  handleStatusChange = ( cs  ) => {    
     
       setPopupInfo( cs) ;
-      //// console.log( cs) ;
+      //// // console.log( cs) ;
       setUserNameForPopup( cs.school_name) ;
         setPopup( true)  ;
       

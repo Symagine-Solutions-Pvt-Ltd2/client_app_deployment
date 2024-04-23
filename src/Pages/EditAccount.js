@@ -20,15 +20,15 @@ function  EditAccount(  {  props }) {
 
   
 
-   // console.log( "editaccount" ); 
+   // // console.log( "editaccount" ); 
 
      
-   // console.log( location.state.typeId ) ;   
+   // // console.log( location.state.typeId ) ;   
   
    
-   // console.log( location.state.data1 ) ;   
+   // // console.log( location.state.data1 ) ;   
   
-    // console.log( location.state.userInfo  ) ;  
+    // // console.log( location.state.userInfo  ) ;  
     
 
    
@@ -42,14 +42,14 @@ function  EditAccount(  {  props }) {
 
 
 
-       // console.log( event.target.name.value) ;    
-       // console.log( event.target.email.value) ;      
-       // console.log( event.target.contact_person.value) ;  
+       // // console.log( event.target.name.value) ;    
+       // // console.log( event.target.email.value) ;      
+       // // console.log( event.target.contact_person.value) ;  
          
 
 
         
-   //     // console.log(  location.state.type    )   ; 
+   //     // // console.log(  location.state.type    )   ; 
 
 
       
@@ -71,11 +71,11 @@ axios({
                      }).then( ( res) => {   
                   
                             
-                         // console.log( res) ; 
+                         // // console.log( res) ; 
                      alert(  res.data.message) ; 
                   navigate(  "/home/dashboard"   ,   { state: {    typeId: "client"  ,   clientId :  data.client_id , programId :  data.program_id   ,   userInfo :  location.state.userInfo  ,  data : location.state.data       }}     ,      { replace : false}  )   ;
                      } ).catch(( err) => { 
-                        // console.log( "error") ;
+                        // // console.log( "error") ;
                 
                       }  ) ;  
         
@@ -98,14 +98,14 @@ axios({
 
 
 
-       // console.log( event.target.name.value) ;    
-       // console.log( event.target.email.value) ;      
+       // // console.log( event.target.name.value) ;    
+       // // console.log( event.target.email.value) ;      
   
          
 
    
         
-   //     // console.log(  location.state.type    )   ; 
+   //     // // console.log(  location.state.type    )   ; 
 
 
       
@@ -126,12 +126,12 @@ axios({
                      }).then( ( res) => {   
                   
                             
-                         // console.log( res) ; 
+                         // // console.log( res) ; 
                           alert(  res.data.message) ; 
                           navigate(  "/home/dashboard/facilitator"   ,    { state: {  typeId: "client"    ,    schoolId : data.school_id  , programId : data.program_id   ,   userInfo :  location.state.userInfo   , data : location.state.data         }}    , { replace : false}  )   ;
                        
                      } ).catch(( err) => { 
-                        // console.log( "error") ;
+                        // // console.log( "error") ;
                 
                       }  ) ;  
         
@@ -149,8 +149,8 @@ axios({
  
          
      
-       // console.log( event.target.name.value) ;    
-       // console.log( event.target.email.value) ;     
+       // // console.log( event.target.name.value) ;    
+       // // console.log( event.target.email.value) ;     
          
         
 
@@ -175,14 +175,14 @@ axios({
        }).then( ( res) => {   
     
               
-           // console.log( res) ;  
+           // // console.log( res) ;  
 
             alert(  res.data.message) ; 
             navigate(  "/home/dashboard/student"   ,    { state: {     schoolId : data.school_id  , programId : data.program_id ,   userInfo :  location.state.userInfo     , data : location.state.data      }}    , { replace : false}  )   ;
 
          
        } ).catch(( err) => { 
-          // console.log( "error") ;
+          // // console.log( "error") ;
   
         }  ) ;  
        
@@ -201,7 +201,7 @@ axios({
 
    const handleCheckboxChange1 =() => {
 
-        console.log("bvhjghhj")  ; 
+        // console.log("bvhjghhj")  ; 
    }
  
 

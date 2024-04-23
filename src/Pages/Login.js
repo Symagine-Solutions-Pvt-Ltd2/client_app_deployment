@@ -16,7 +16,7 @@ function Login() {
   const onChangeEmail  = ( event ) => {
      
 
-    console.log(event.target.value); 
+    // console.log(event.target.value); 
     setEmail( event.target.value);
 
     }   
@@ -27,7 +27,7 @@ function Login() {
   const onChangePassword  = ( event ) => {
      
 
-    console.log(event.target.value); 
+    // console.log(event.target.value); 
     setPassword ( event.target.value);
 
     }   
@@ -50,7 +50,7 @@ function Login() {
 
      }).then( ( res) => {     
 
-     // console.log( res ) ;
+     // // console.log( res ) ;
 
         if(   res.data.message ===  "Login successful"    ){
          
@@ -93,7 +93,7 @@ function Login() {
 
 
      } ).catch(( err) => { 
-        // console.log( "error") ;
+        // // console.log( "error") ;
 
       }  ) ;  
 

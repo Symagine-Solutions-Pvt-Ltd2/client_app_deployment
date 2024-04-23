@@ -35,16 +35,16 @@ function StudentView() {
   
 
 
-   // console.log( "studentview" )  ; 
-   // console.log(  location.state.schoolId  )  ;
-   // console.log( location.state.programId )  ; 
+   // // console.log( "studentview" )  ; 
+   // // console.log(  location.state.schoolId  )  ;
+   // // console.log( location.state.programId )  ; 
     
 
 
     const goToNext = () => {
   
        navigate(  "/home/dashboard/student/addstudent"   ,  { state: {    typeId : "student"   ,      schoolId: schoolId   , programId :  programId     ,    userInfo :  location.state.userInfo ,    data : location.state.data       }}   ,  { replace : false}  ) ; 
-       console.log("ASJghshGHS") ;  
+       // console.log("ASJghshGHS") ;  
 
 
 
@@ -73,17 +73,17 @@ function StudentView() {
         }).then( ( res) => {   
   
   
-         // console.log(  res.data.data ) ; 
+         // // console.log(  res.data.data ) ; 
           if(   res.data.message  === "Information retrieve successfully"  ){
            
             setData(  res.data.data ) ; 
 }
            
-         // // console.log(   res.data.data[1].name )  ;
+         // // // console.log(   res.data.data[1].name )  ;
   
         } ).catch(( err) => {   
 
-           // console.log( "error") ;
+           // // console.log( "error") ;
   
          }  ) ; 
   
@@ -100,7 +100,7 @@ function StudentView() {
     const  handleStatusChange = ( cs  ) => {    
     
       setPopupInfo( cs) ;
-      //// console.log( cs) ;
+      //// // console.log( cs) ;
       setUserNameForPopup( cs.student_name) ;
         setPopup( true)  ;
       
