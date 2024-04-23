@@ -18,7 +18,7 @@ const PasswordPopup= (  props ) => {
 
   const userDetails  =  props.data ; 
 
-  console.log( props.data) ; 
+ // console.log( props.data) ; 
 
 
     

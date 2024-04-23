@@ -30,10 +30,10 @@ function  FacilitatorView() {
  
  
 
-     console.log( "FacilitatorView" ) ; 
-    console.log( location.state.schoolId ) ; 
-    console.log( location.state.programId ) ;
-    console.log( location.state.typeId ) ;
+    // console.log( "FacilitatorView" ) ; 
+   // console.log( location.state.schoolId ) ; 
+   // console.log( location.state.programId ) ;
+   // console.log( location.state.typeId ) ;
     
    
   
@@ -69,7 +69,7 @@ function  FacilitatorView() {
         }).then( ( res) => {   
   
   
-          console.log(  res.data.data ) ;   
+         // console.log(  res.data.data ) ;   
 
 
           if(   res.data.message  === "Information retrieve successfully"  ){
@@ -78,10 +78,10 @@ function  FacilitatorView() {
 }
            
            
-         //  console.log(   res.data.data[1].name )  ;
+         // // console.log(   res.data.data[1].name )  ;
   
         } ).catch(( err) => {  
-            console.log( "error") ;
+           // console.log( "error") ;
   
          }  ) ; 
   
@@ -95,7 +95,7 @@ function  FacilitatorView() {
     const  handleStatusChange = ( cs  ) => {    
     
       setPopupInfo( cs) ;
-      // console.log( cs) ;
+      //// console.log( cs) ;
       setUserNameForPopup( cs.facilitator_name) ;
         setPopup( true)  ;
       

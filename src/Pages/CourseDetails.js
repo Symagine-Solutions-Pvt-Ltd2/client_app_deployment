@@ -24,10 +24,10 @@ function CourseDetails() {
   const [  contentName  ,  setContentName  ]   = useState(  location.state.name  ) ; 
  
 
-  console.log(   location.state.typeId  )  ;
-  console.log(   location.state.type  )  ;
-  console.log(    location.state.courseName  )  ;
-  console.log(  location.state.name  )  ;
+ // console.log(   location.state.typeId  )  ;
+ // console.log(   location.state.type  )  ;
+ // console.log(    location.state.courseName  )  ;
+ // console.log(  location.state.name  )  ;
 
 
   useEffect(() => { 
@@ -54,13 +54,13 @@ function CourseDetails() {
 
     }).then( ( res) => {   
 
-      console.log(  "details" ) ;
-      console.log(  res ) ; 
+     // console.log(  "details" ) ;
+     // console.log(  res ) ; 
       setData(  res.data.data ) ;  
     
 
     } ).catch(( err) => {  
-        console.log( "error") ;
+       // console.log( "error") ;
 
      }  ) ; 
  
@@ -86,13 +86,13 @@ function CourseDetails() {
    
        }).then( ( res) => {   
    
-         console.log(  "details" ) ;
-         console.log(  res ) ; 
+        // console.log(  "details" ) ;
+        // console.log(  res ) ; 
           setData(  res.data.data ) ;  
        
    
        } ).catch(( err) => {  
-           console.log( "error") ;
+          // console.log( "error") ;
    
         }  ) ; 
     
@@ -116,7 +116,7 @@ function CourseDetails() {
 
 
   
-   console.log( location.state.typeId  ) ; 
+  // console.log( location.state.typeId  ) ; 
      
 
 

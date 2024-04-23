@@ -18,7 +18,7 @@ function Course() {
     
       
 
-   console.log(  location.state.courseId)  ; 
+  // console.log(  location.state.courseId)  ; 
 
       useEffect(() => { 
     
@@ -37,8 +37,8 @@ function Course() {
   
         }).then( ( res) => {   
   
-          console.log(  "here" ) ;
-          console.log(  res ) ;  
+         // console.log(  "here" ) ;
+         // console.log(  res ) ;  
           
            if( res.data.message === "Information retrieve successfully"){
 
@@ -47,11 +47,11 @@ function Course() {
 
            }
            
-         //  console.log(   res.data.data[1].name )  ;
+         // // console.log(   res.data.data[1].name )  ;
   
         } ).catch(( err) => {   
 
-            console.log( "errort") ;
+           // console.log( "errort") ;
   
          }  ) ; 
   

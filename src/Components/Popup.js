@@ -15,7 +15,7 @@ const Popup = (  props ) => {
   
   const userDetails  =  props.data ; 
 
-  console.log( userDetails  ) ; 
+ // console.log( userDetails  ) ; 
 
    
   
@@ -53,12 +53,12 @@ const Popup = (  props ) => {
  
       }).then( ( res) => {   
  
-       console.log( res) ; 
+      // console.log( res) ; 
        alert( res.data.message) ;  
       props.setTrigger( false ) ;
         
       } ).catch(( err) => { 
-          console.log( "error") ;
+         // console.log( "error") ;
  
        }  ) ;   
  
@@ -86,12 +86,12 @@ const Popup = (  props ) => {
 
    }).then( ( res) => {   
 
-    console.log( res) ; 
+   // console.log( res) ; 
     alert( res.data.message) ;  
    props.setTrigger( false ) ;
      
    } ).catch(( err) => { 
-       console.log( "error") ;
+      // console.log( "error") ;
 
     }  ) ;  
 
@@ -121,12 +121,12 @@ else if(   userDetails.type_id === "student"  ) {
 
   }).then( ( res) => {   
 
-   console.log( res) ; 
+  // console.log( res) ; 
    alert( res.data.message) ;  
   props.setTrigger( false ) ;
     
   } ).catch(( err) => { 
-      console.log( "error") ;
+     // console.log( "error") ;
 
    }  ) ;   
  

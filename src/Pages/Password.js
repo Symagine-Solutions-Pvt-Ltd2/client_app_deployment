@@ -17,13 +17,13 @@ function Password() {
     const location = useLocation(); 
     const  navigate = useNavigate() ;  
 
-   // console.log( location.state.userId )  ;
+   //// console.log( location.state.userId )  ;
 
   
-   console.log(  location.state.typeId   )  ; 
-   console.log(  location.state.data  )  ; 
-   console.log(  location.state.userInfo   )  ; 
-   console.log(  location.state.screentype   )  ; 
+  // console.log(  location.state.typeId   )  ; 
+  // console.log(  location.state.data  )  ; 
+  // console.log(  location.state.userInfo   )  ; 
+  // console.log(  location.state.screentype   )  ; 
 
 
     const [ password1 , setPassword1 ] = useState(""); 
@@ -34,10 +34,10 @@ function Password() {
 
     const resetPassword = (  ) => {       
           
-        console.log(  password1) ;  
-        console.log(  password2) ;  
-        console.log(  location.state.userId  ) ;  
-        console.log(  location.state.token  ) ;  
+       // console.log(  password1) ;  
+       // console.log(  password2) ;  
+       // console.log(  location.state.userId  ) ;  
+       // console.log(  location.state.token  ) ;  
          
 
         
@@ -59,7 +59,7 @@ function Password() {
                }).then( ( res) => {   
            
                  
-                console.log( res.data) ;  
+               // console.log( res.data) ;  
                  
                  if(  res.data.status === "success"){
                   
@@ -74,7 +74,7 @@ function Password() {
        
            
                } ).catch(( err) => { 
-                   console.log( "error") ;
+                  // console.log( "error") ;
            
                 }  ) ;   
 
@@ -101,7 +101,7 @@ function Password() {
                }).then( ( res) => {   
            
                  
-                console.log( res.data) ;  
+               // console.log( res.data) ;  
                  
                  if(  res.data.status === "success"){
                   
@@ -116,7 +116,7 @@ function Password() {
        
            
                } ).catch(( err) => { 
-                   console.log( "error") ;
+                  // console.log( "error") ;
            
                 }  ) ;   
 

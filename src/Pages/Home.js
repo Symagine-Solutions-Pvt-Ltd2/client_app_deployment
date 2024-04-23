@@ -19,8 +19,8 @@ function Home () {
  
 
   
-    console.log(   location.state.data ) ; 
-     console.log(   location.state. userInfo  ) ; 
+   // console.log(   location.state.data ) ; 
+    // console.log(   location.state. userInfo  ) ; 
     console.log(location.state.typeId ) ;
    
 
@@ -30,9 +30,9 @@ function Home () {
 
    
 
-   console.log(  typeId) ;  
+  // console.log(  typeId) ;  
   
-   console.log( programId) ;  
+  // console.log( programId) ;  
 
    
     navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   clientId :  location.state.data._id  , programId : programId   ,   data :   location.state.data  ,   userInfo :  location.state.userInfo    }}    ,     { replace : false}  )  ;

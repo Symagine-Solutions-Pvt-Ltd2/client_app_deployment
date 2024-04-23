@@ -50,7 +50,7 @@ function Login() {
 
      }).then( ( res) => {     
 
-      console.log( res ) ;
+     // console.log( res ) ;
 
         if(   res.data.message ===  "Login successful"    ){
          
@@ -93,7 +93,7 @@ function Login() {
 
 
      } ).catch(( err) => { 
-         console.log( "error") ;
+        // console.log( "error") ;
 
       }  ) ;  
 

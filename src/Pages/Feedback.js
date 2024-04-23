@@ -16,12 +16,12 @@ function Feedback() {
 
 
 
-    console.log(  location.state.data )  ; 
-    console.log(  location.state.userInfo )  ; 
-    console.log(  location.state.typeId )  ; 
-    console.log(  location.state.schoolId )  ;
-    console.log(  location.state.programId )  ; 
-    console.log(  "feedback" )  ;
+   // console.log(  location.state.data )  ; 
+   // console.log(  location.state.userInfo )  ; 
+   // console.log(  location.state.typeId )  ; 
+   // console.log(  location.state.schoolId )  ;
+   // console.log(  location.state.programId )  ; 
+   // console.log(  "feedback" )  ;
     
 
 
@@ -45,7 +45,7 @@ function Feedback() {
        }).then( ( res) => {   
  
  
-       console.log(  res.data ) ;  
+      // console.log(  res.data ) ;  
 
         if( res.data.message === "Information retrieve successfully"){
         
@@ -55,9 +55,9 @@ function Feedback() {
 
           tempData.map((  el , index ) => {
             
-            console.log( location.state.data.bp_answer[index] ) ; 
-            console.log(  el) ;
-            console.log(  index ) ;   
+           // console.log( location.state.data.bp_answer[index] ) ; 
+           // console.log(  el) ;
+           // console.log(  index ) ;   
 
             let data1 = { 
              "id"  :  index , 
@@ -78,7 +78,7 @@ function Feedback() {
     
  
        } ).catch(( err) => {  
-           console.log( "error") ;
+          // console.log( "error") ;
  
         }  ) ; 
 
@@ -117,9 +117,9 @@ function Feedback() {
      // submit feedback    
     const  submitFeedback = (  ) => {    
     
-     console.log( "dhjzga") ;   
+    // console.log( "dhjzga") ;   
       
-     console.log( feedbackArray ) ;   
+    // console.log( feedbackArray ) ;   
     
 
      axios({ 
@@ -136,7 +136,7 @@ function Feedback() {
 
      }).then( ( res) => {   
 
-          console.log( res) ; 
+         // console.log( res) ; 
           
           
            if(   res.data.message === "Feedback added successfully"){
@@ -152,7 +152,7 @@ function Feedback() {
 
 
      } ).catch(( err) => { 
-         console.log( "error") ;
+        // console.log( "error") ;
 
       }  ) ;  
  
@@ -189,7 +189,7 @@ const MyDoc = ( ) => {
     data.map( ( el   , index ) => {  
 
      /*  console.log("hugyu") ; 
-      console.log( el.image) ;   */  
+     // console.log( el.image) ;   */  
 
       let a = el.image ;
   
