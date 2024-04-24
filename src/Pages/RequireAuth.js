@@ -4,7 +4,7 @@ const RequireAuth = () => {
     const location = useLocation();
     
 
-     console.log (localStorage.getItem('items')); 
+     //  console.log (localStorage.getItem('items')); 
    
 
     return (
