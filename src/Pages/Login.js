@@ -136,9 +136,9 @@ function Login() {
       <input  className="input_box_text" style={{    border : "1px solid #5E81F4"  }}  placeholder="Enter your password"  onChange={  onChangePassword} /> 
       </div>
 
-      <div className="button"   onClick={ () => {  goToHome()  }}>
-            <p  style= {{  color  : "#FFFFFF"  , fontWeight : 600  , fontSize : 16}}>Log in</p>
-     </div>  
+      <button className="button"   style={{ border : "0px black" , color : "#ffffff" , fontWeight : 600  , fontSize : 16}}  onClick={ () => { goToHome() }}>
+      Log In
+     </button>  
 
      <div className="description2_login">
 

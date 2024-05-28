@@ -83,14 +83,14 @@ function Home () {
 
 
              
-                <div  onClick={() => { goToNext() } }     className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
+                <button  onClick={() => { goToNext() } }     className="home-body2-button1" style={{ backgroundColor : "#353B55"  , border : "0px red"}} >
                    <p style={{ color : "white"}}>Dashboard</p>
-                </div>  
+                </button>  
 
                 
-                <div  onClick={() => { navigate(  "/home/viewcourse"  ,      { state: {    courseId :  location.state.data._id  ,   userInfo :  location.state.userInfo  ,  data :   location.state.data   }}  ,  { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
+                <button  onClick={() => { navigate(  "/home/viewcourse"  ,      { state: {    courseId :  location.state.data._id  ,   userInfo :  location.state.userInfo  ,  data :   location.state.data   }}  ,  { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0" , border : "0px red"}} > 
                 <p style={{ color : "white"}}>View Course</p>
-                </div>
+                </button>
              
              </div>
               
@@ -144,14 +144,14 @@ function Home () {
             </div>
             <div className="home-body2">  
              
-                <div  onClick={() => {    navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,  programId : programId   ,   data :   location.state.data    ,     userInfo :  location.state.userInfo   }}    ,     { replace : false}  )  ; } }    
-                 className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
+                <button  onClick={() => {    navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,  programId : programId   ,   data :   location.state.data    ,     userInfo :  location.state.userInfo   }}    ,     { replace : false}  )  ; } }    
+                 className="home-body2-button1" style={{ backgroundColor : "#353B55" , border : "0px red"}} >
                    <p style={{ color : "white"}}>Dashboard</p>
-                </div> 
+                </button> 
                 
-                <div  onClick={() => { navigate(  "/home/viewcourse"  ,     { state: {    courseId : location.state.data._id   ,   userInfo :  location.state.userInfo   , data :   location.state.data }} ,    { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
+                <button  onClick={() => { navigate(  "/home/viewcourse"  ,     { state: {    courseId : location.state.data._id   ,   userInfo :  location.state.userInfo   , data :   location.state.data }} ,    { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0" , border : "0px red"}} > 
                 <p style={{ color : "white"}}>View Course</p>
-                </div>
+                </button>
              
              </div>
               
@@ -213,13 +213,13 @@ function Home () {
 
 
 
-                <div  onClick={() => {   navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   userId : location.state.data._id  , programId : programId   ,    userInfo :  location.state.userInfo       ,  data : location.state.data}}    ,     { replace : false}  )   } }     className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
+                <button  onClick={() => {   navigate(  "/home/dashboard"   ,     { state: {    typeId : typeId  ,   userId : location.state.data._id  , programId : programId   ,    userInfo :  location.state.userInfo       ,  data : location.state.data}}    ,     { replace : false}  )   } }     className="home-body2-button1" style={{ backgroundColor : "#353B55" , border : "0px red"}} >
                    <p style={{ color : "white"}}>Dashboard</p>
-                </div> 
+                </button> 
                 
-                <div  onClick={() => { navigate(  "/home/viewcourse"  ,     { state: {    courseId : location.state.data._id   ,    userInfo :  location.state.userInfo ,   data : location.state.data  }}  ,    { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
+                <button  onClick={() => { navigate(  "/home/viewcourse"  ,     { state: {    courseId : location.state.data._id   ,    userInfo :  location.state.userInfo ,   data : location.state.data  }}  ,    { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0" , border : "0px red"}} > 
                 <p style={{ color : "white"}}>View Course</p>
-                </div>  
+                </button>  
              
              </div>
               

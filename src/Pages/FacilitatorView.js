@@ -241,9 +241,9 @@ function  FacilitatorView() {
 
               <div className="body3"> 
 
-              <div onClick={ () => { goToNext() } } className="add_new_program_button"  style= { {  backgroundColor : "#FCC046"  , borderRadius : 15 , display : "flex"  , alignItems : "center"  , justifyContent : 'center'} }>
+              <button onClick={ () => { goToNext() } } className="add_new_program_button"  style= { {  backgroundColor : "#FCC046"  , borderRadius : 15 , display : "flex"  , alignItems : "center"  , justifyContent : 'center'} }>
                 <p>Add new facilitator</p>
-              </div>
+              </button>
             
               </div>
              
