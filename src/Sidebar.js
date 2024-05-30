@@ -3,7 +3,9 @@ import {Link  , useNavigate } from "react-router-dom"  ;
 import "./Style/Sidebar.css"  ;    
 import  logo1 from "./Images/logo1.png" ;  
 import LogoutIcon from '@mui/icons-material/Logout';  
-import { useState  , useEffect  } from "react"; 
+import { useState  , useEffect  } from "react";  
+import ConfirmationBox from "./Components/ConfirmationBox.js" ; 
+
 
 
 
@@ -17,7 +19,7 @@ function SideBar(   props ) {
    /*// // console.log( props.info) ;   */
   
    const [  userInfo   , setUserInfo ]   = useState({ }  ) ;   
-
+   const[ logoutPopupInfo  , setLogoutPopupInfo ] = useState( false) ; 
      
   
 
@@ -92,8 +94,7 @@ function SideBar(   props ) {
        
 
 
-      localStorage.removeItem('items')  ; 
-      navigate(  "/login"  ,   { replace : false}  )  ;
+      setLogoutPopupInfo( true)  ;
 
    }
 
@@ -148,7 +149,9 @@ function SideBar(   props ) {
          <div className="Sidebar-logout-box">    
 
 
-
+        
+         <ConfirmationBox  trigger= { logoutPopupInfo } setTrigger={ setLogoutPopupInfo }  >
+          </ConfirmationBox>
 
     
    

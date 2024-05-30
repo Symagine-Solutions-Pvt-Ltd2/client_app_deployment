@@ -1,0 +1,72 @@
+.logout_popup{
+  
+    position : fixed ; 
+    left : 0 ;
+    top : 0 ; 
+    width: 19%; 
+    height : 100vh ; 
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;   
+ 
+
+ 
+}     
+
+
+
+.logout_popup_inner{
+
+
+    position: relative;
+    width : 80% ; 
+    height : 18% ;
+    margin: 10% ; 
+    background-color:  #B6B7D0;  
+    border-radius: 20px;
+    
+}   
+
+ 
+.logout_popup_inner_div1{ 
+
+
+     height  : 30% ;  
+     margin: 5% ;
+
+}
+
+
+
+
+.logout_popup_inner_div2{
+
+   height : 40% ;
+   display:  flex ; 
+   justify-content: space-around;
+   align-items: space-around; 
+   font-weight: 400; 
+
+}
+
+
+.logout_popup_button{
+
+    height : 80% ;
+    width : 30% ; 
+    border-radius: 10px ;  
+    background-color: hsl(233, 26%, 48%);
+    border : 0px red ; 
+    color : #ffffff ; 
+ 
+ }
+
+
+
+
+
+
+
+
+
+
