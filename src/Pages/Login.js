@@ -2,7 +2,9 @@ import {Link, useNavigate , useLocation  } from "react-router-dom"  ;
 import "../Style/Login.css"  ;   
 import { useState  } from "react";
 import axios from "axios"  ; 
-import  login from "../Images/login.jpg"  ; 
+import  login from "../Images/login.jpg"  ;  
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 function Login() {    
 
@@ -12,6 +14,7 @@ function Login() {
 
   const[ email , setEmail] = useState( "") ; 
   const[ password , setPassword ] = useState( "") ; 
+  const[ passwordVisibilty  , setPasswordVisibilty  ] = useState( false) ;  
 
   const onChangeEmail  = ( event ) => {
      
@@ -100,7 +103,27 @@ function Login() {
 
    // navigate(  "/home"  ,   { replace : false}  )  ; 
 
-    }   
+    }     
+
+
+
+
+    const onChangePasswordVisisbilty   = (  ) => {
+        
+
+      var x = document.getElementById("password_input"); 
+  
+      if (x.type === "password") {
+        x.type = "text"; 
+        setPasswordVisibilty( true );
+      } else {
+        x.type = "password"; 
+        setPasswordVisibilty( false );
+      } 
+     
+      
+      } ; 
+  
  
 
   return (
@@ -132,11 +155,28 @@ function Login() {
       <input  className="input_box_text"  style={{    border : "1px solid #5E81F4"  }} placeholder="Enter your email or user id"    onChange={onChangeEmail } /> 
       </div> 
 
-      <div className="input_text2"> 
-      <input  className="input_box_text" style={{    border : "1px solid #5E81F4"  }}  placeholder="Enter your password"  onChange={  onChangePassword} /> 
-      </div>
+      <div className="input_text2">  
+       
 
-      <button className="button"   style={{ border : "0px black" , color : "#ffffff" , fontWeight : 600  , fontSize : 16}}  onClick={ () => { goToHome() }}>
+       <span class="ab"> {
+ 
+       
+       passwordVisibilty ?
+       <button  className ="login_button"  onClick={ () => { onChangePasswordVisisbilty()}}>
+       <VisibilityIcon sx={{   fontSize : 26    }}/> 
+       </button>
+       : 
+       <button    className ="login_button" onClick={ () => { onChangePasswordVisisbilty()}} >
+       <VisibilityOffIcon sx={{   fontSize : 26    }}/> 
+       </button>
+ }
+        </span>
+       <input   style={{    border : "1px solid #5E81F4"  }}  id="password_input"   type="password" className="input_box_text"   placeholder="Enter your password"    onChange={ onChangePassword }/>  
+     
+ 
+       </div> 
+
+      <button className="button"    style={{ border : "0px black" , color : "#ffffff" , fontWeight : 600  , fontSize : 16}}  onClick={ () => { goToHome() }}>
       Log In
      </button>  
 
