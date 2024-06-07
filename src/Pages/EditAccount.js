@@ -246,7 +246,7 @@ axios({
                                   defaultValue={ data.facilitator_name      }
                                   className="admin_input-box" 
                                   style={ { borderRadius : "16px"}} 
-                                
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -262,7 +262,8 @@ axios({
                                   name="email" 
                                   defaultValue={ data.email_id  }
                                   className="admin_input-box"  
-                                  style={ { borderRadius : "16px"}}
+                                  style={ { borderRadius : "16px"}} 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -324,7 +325,8 @@ axios({
                           <input type="text"
                                   name="name" 
                                   defaultValue= {  data.school_name }
-                                  className="admin_input-box"
+                                  className="admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -338,7 +340,8 @@ axios({
                           <input type="text" 
                                    name = "email"
                                     defaultValue= {  data.email_id }
-                                  className="admin_input-box"
+                                  className="admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -354,7 +357,8 @@ axios({
                           <input type="text" 
                               name ="contact_person"
                             defaultValue= {  data.contact_person     }   
-                                  className="admin_input-box"
+                                  className="admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -424,7 +428,8 @@ axios({
                                 name="name"
                                  defaultValue={ data.student_name }
                                 className="admin_input-box" 
-                                style={ { borderRadius : "16px"}}
+                                style={ { borderRadius : "16px"}} 
+                                required
                                 /> 
                         </div>  
               </div> 
@@ -439,7 +444,8 @@ axios({
                                 name="email"
                                 defaultValue={ data.email_id    }
                                 className="admin_input-box"  
-                                style={ { borderRadius : "16px"}}
+                                style={ { borderRadius : "16px"}} 
+                                required
                                 /> 
                         </div>  
               </div> 

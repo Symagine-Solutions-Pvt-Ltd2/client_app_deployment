@@ -41,16 +41,16 @@ function SchoolView() {
 
 
   
-    // console.log("in school view ")  ; 
+  //   console.log("in school view ")  ; 
     
-   // // console.log( location.state.typeId ) ;   
+  //  // console.log( location.state.typeId ) ;   
 
-   // // console.log( location.state.userId ) ;  
+  //  // console.log( location.state.userId ) ;  
 
-    // console.log(location.state.programId ) ;  
+  //   console.log(location.state.programId ) ;  
   
-    // console.log(location.state.clientId  ) ;  
-    //// console.log(location.state.data) ; 
+  //   console.log(location.state.clientId  ) ;  
+  //   // console.log(location.state.data) ; 
 
 
     
@@ -86,7 +86,9 @@ function SchoolView() {
         }).then( ( res) => {   
   
   
-         // // console.log(  res.data.data ) ; 
+          console.log(  res.data ) ;  
+
+
            setData(  res.data.data ) ;  
            
            

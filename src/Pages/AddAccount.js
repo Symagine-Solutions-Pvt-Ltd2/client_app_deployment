@@ -373,7 +373,7 @@ function AddAccount() {
                                   name="name"
                                   className="addaccount_admin_input-box" 
                                   style={ { borderRadius : "16px"}} 
-                                
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -388,7 +388,8 @@ function AddAccount() {
                           <input type="text"
                                   name="email"
                                   className="addaccount_admin_input-box"  
-                                  style={ { borderRadius : "16px"}}
+                                  style={ { borderRadius : "16px"}} 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -402,7 +403,8 @@ function AddAccount() {
                           <input type="text"
                                   name="password"
                                   className="addaccount_admin_input-box" 
-                                  style={ { borderRadius : "16px"}}
+                                  style={ { borderRadius : "16px"}} 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -418,7 +420,8 @@ function AddAccount() {
                                   name="reset_password"
                                
                                   className="addaccount_admin_input-box" 
-                                  style={ { borderRadius : "16px"}}
+                                  style={ { borderRadius : "16px"}} 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -472,7 +475,8 @@ function AddAccount() {
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="name"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -485,7 +489,8 @@ function AddAccount() {
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="email"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -498,7 +503,8 @@ function AddAccount() {
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="password"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -510,7 +516,8 @@ function AddAccount() {
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="repeat_password"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -522,7 +529,8 @@ function AddAccount() {
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="contact_person"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -598,7 +606,8 @@ function AddAccount() {
                         <input type="text"
                                 name="name"
                                 className="addaccount_admin_input-box" 
-                                style={ { borderRadius : "16px"}}
+                                style={ { borderRadius : "16px"}} 
+                                required
                                 /> 
                         </div>  
               </div> 
@@ -612,7 +621,8 @@ function AddAccount() {
                         <input type="text"
                                 name="email"
                                 className="addaccount_admin_input-box"  
-                                style={ { borderRadius : "16px"}}
+                                style={ { borderRadius : "16px"}} 
+                                required
                                 /> 
                         </div>  
               </div> 
@@ -626,7 +636,8 @@ function AddAccount() {
                         <input type="text"
                                 name="password"  
                                 className="addaccount_admin_input-box" 
-                                style={ { borderRadius : "16px"}}
+                                style={ { borderRadius : "16px"}} 
+                                required
                                 /> 
                         </div>  
               </div> 
@@ -641,7 +652,8 @@ function AddAccount() {
                         <input type="text"
                                 name="repeat_password"
                                 className="addaccount_admin_input-box" 
-                                style={ { borderRadius : "16px"}}
+                                style={ { borderRadius : "16px"}} 
+                                required
                                 /> 
                         </div>  
               </div> 
