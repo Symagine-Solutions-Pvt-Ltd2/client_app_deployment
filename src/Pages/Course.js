@@ -79,7 +79,7 @@ function Course() {
 
             <div  className="clientview_body1"  style ={{ height : "12%"}} >  
 
-
+        
                
                <div style={{  backgroundColor : "#D9D9D9"  , height : "60%"  , display : "flex"   , justifyContent : "center"  , alignItems : "center" }} > 
 

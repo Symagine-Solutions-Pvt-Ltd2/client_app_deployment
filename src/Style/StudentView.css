@@ -48,7 +48,7 @@
 
 .clientview_body1{
 
-    height:  8.06% ;
+    height:  10% ;
     width : 100%; 
    display:  flex ;
     background-color: #FFF; 
@@ -59,7 +59,7 @@
 .clientview_table_outer_div_body2{
    
 
-    height:  67.12% ;
+    height: 67% ;
     width : 100%; 
    display:  flex ;
     background-color:  yellow; 
@@ -91,7 +91,7 @@
 .body3{
 
      
-    height:  24.82% ;
+    height:  23% ;
     width : 100%; 
    display:  flex ;
     background-color: orangered; 

@@ -54,8 +54,8 @@ function Login() {
      }).then( ( res) => {     
 
      // // console.log( res ) ;
-
-        if(   res.data.message ===  "Login successful"    ){
+    
+        if(   res.data.message ===  "Login successful"   &&  ( res.data.data.type_id === "client"  || res.data.data.type_id === "school" || res.data.data.type_id === "facilitator"   )   ){
          
           alert( "login successful")  ;  
   
@@ -87,8 +87,10 @@ function Login() {
 
           }
 
-        } 
-        else {
+        }else if(     res.data.message ===  "Login successful"  ){
+
+          alert( "Invalid Credentials!")  ;  
+        }else {
 
           alert( res.data.message)  ;
         }

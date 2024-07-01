@@ -49,18 +49,80 @@
 
 .clientview_body1{
 
-    height:  8.06% ;
+    height:  10% ;
     width : 100%; 
    display:  flex ;
     background-color: #FFF; 
-    flex-direction: column;
+    flex-direction: column; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
 
 }
+  
+
+
+.clientview_body1_search_div{
+  
+    width : 50% ; 
+    background-color: #FFFFFF;  
+    height: 70% ;
+    display: flex; 
+    align-items: center;
+    justify-content: flex-end;
+     flex-direction: row;  
+     border : 1px solid #000000 ; 
+     border-radius: 15px ;
+
+
+
+}     
+
+
+
+.clientview_body1_search_input{
+
+  
+
+ 
+     height: 100%;  
+     width : 100% ; 
+     border : none; 
+     border-radius: 15px ;
+     padding-left: 10px ; 
+
+
+}    
+
+
+
+.clientview_body1_search_button{
+
+  
+
+ 
+   
+    background-color: #FFFFFF;
+    border : 0px red ;
+    border-radius:  15px ;
+
+}  
+
+ 
+
+
+
+
+
+
+
+
 
 .clientview_table_outer_div_body2{
    
 
-    height:  67.12% ;
+    height:  67% ;
     width : 100%; 
    display:  flex ;
     background-color: pink; 
@@ -129,7 +191,7 @@
 .clientview_body3{
 
      
-    height:  24.82% ;
+    height:  23% ;
     width : 100%; 
    display:  flex ;
     background-color: #FFF; 

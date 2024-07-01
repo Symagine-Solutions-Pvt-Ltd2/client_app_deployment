@@ -2,7 +2,8 @@ import {Link , useNavigate  , useLocation} from "react-router-dom" ;
 import { useState   , useEffect } from "react"; 
 import Sidebar from "../Sidebar"  ; 
 import "../Style/ClientView.css" ; 
-import axios from "axios"  ; 
+import axios from "axios"  ;  
+import SearchIcon from '@mui/icons-material/Search';  
 
 
  
@@ -26,7 +27,7 @@ function SchoolView() {
    const[ popupInfo  , setPopupInfo ] = useState("") ;
    const[ popup  , setPopup ] = useState( false) ; 
    const[ userNameForPopup  , setUserNameForPopup ] = useState( "") ; 
- 
+   const [  searchInput   , setSearchInput ]   = useState( "nil") ;   
 
 
     
@@ -41,16 +42,16 @@ function SchoolView() {
 
 
   
-  //   console.log("in school view ")  ; 
+   console.log("in school view ")  ; 
     
-  //  // console.log( location.state.typeId ) ;   
+   // console.log( location.state.typeId ) ;   
 
-  //  // console.log( location.state.userId ) ;  
+       console.log( location.state.userId ) ;  
 
-  //   console.log(location.state.programId ) ;  
+    console.log(location.state.programId ) ;  
   
-  //   console.log(location.state.clientId  ) ;  
-  //   // console.log(location.state.data) ; 
+    console.log(location.state.clientId  ) ;  
+    // console.log(location.state.data) ; 
 
 
     
@@ -162,6 +163,65 @@ function SchoolView() {
  } 
 
 
+    
+ const onSearch  = () => {  
+
+
+  console.log(  searchInput ) ;     
+
+
+
+  axios({ 
+ 
+   url : "https://learn-up.app/admin/client_s_s"  ,   
+
+   method : "POST"  , 
+   data : {
+     
+    "search_key" :  clientId  , 
+    "page_no" :  1 ,
+     "limit" : 100000    , 
+     "search" :  searchInput
+
+
+   }
+
+  }).then( ( res) => {   
+
+
+    console.log( res ) ;
+     
+     
+    if(   res.data.message === "No data found"){
+      
+      alert(  "Data not found") ;
+      setData([]) ;     
+
+      
+    }
+    else if(  res.data.message === "Information retrieve successfully"  ) {
+
+    // console.log(  res ) ;  
+     setData( res.data.data) ; 
+
+    }
+
+
+
+
+
+
+  }
+         ).catch(( err) => {  
+      //console.log( "error") ;
+
+   }  ) ; 
+    
+} 
+
+
+
+
 
 
 
@@ -195,7 +255,25 @@ function SchoolView() {
 
 
                  
-                 <div  className="clientview_body1"> 
+                 <div  className="clientview_body1">   
+
+
+                 
+      <div className="clientview_body1_search_div"> 
+
+
+       
+<i style={{ position : "absolute" }}>  
+ <button className="clientview_body1_search_button"   onClick={() => { onSearch() }}>
+ <SearchIcon sx={{   fontSize : 26    }}/> 
+ </button>
+  </i>
+<input   className="clientview_body1_search_input"   type="text" placeholder="Search by name..."    onChange={  ( e ) => {  setSearchInput( e.target.value )} }/>  
+
+
+</div>
+
+
                
                  </div>
                 
@@ -370,9 +448,12 @@ function SchoolView() {
                 <div className="clientview_sidebar" >
                        <Sidebar   info = {  location.state.userInfo}   data= { location.state.data} /> 
                 </div> 
-                <div className="clientview_body">  
-                 <div  className="clientview_body1"> 
-               
+                <div className="clientview_body">   
+
+                 <div  className="clientview_body1">  
+
+
+                   
                  </div>
                 
                   <div className="clientview_table_outer_div_body2">   
@@ -512,7 +593,10 @@ function SchoolView() {
                          <Sidebar   info = {  location.state.userInfo}   data = {location.state.data }/> 
                   </div> 
                   <div className="clientview_body">  
-                   <div  className="clientview_body1"> 
+                   <div  className="clientview_body1">   
+
+
+                
                  
                    </div>
                   
