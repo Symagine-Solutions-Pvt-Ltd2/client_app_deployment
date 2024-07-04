@@ -63,7 +63,8 @@ function Password() {
                  
                  if(  res.data.status === "success"){
                   
-                   alert(  res.data.message) ;  
+                   alert(  res.data.message) ;   
+                   navigate(-1);
               //   navigate(  "/home/dashboard/client/editclient"   , {   state: {  typeId : "client"   ,   data :   location.state.data   ,   programName : location.state.programName    , type : location.state.type  ,  userInfo :  location.state.userInfo   } }  , { replace : false}  )  }    
                  } 
               else {
@@ -105,7 +106,9 @@ function Password() {
                  
                  if(  res.data.status === "success"){
                   
-                   alert(  res.data.message) ;  
+                   alert(  res.data.message) ;   
+                   navigate(-1);
+
               //   navigate(  "/home/dashboard/client/editclient"   , {   state: {  typeId : "client"   ,   data :   location.state.data   ,   programName : location.state.programName    , type : location.state.type  ,  userInfo :  location.state.userInfo   } }  , { replace : false}  )  }    
                  } 
               else {
