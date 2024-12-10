@@ -24,7 +24,7 @@ import RequireAuth from './Pages/RequireAuth';
 import Password from './Pages/Password';
 import Feedback  from './Pages/Feedback.js';
 import StudentAnswer from './Pages/StudentAnswer.js';
-import PrivacyPolicyAndTC from "./Pages/PrivacyPolicyAndTC.js"  ;
+import   PrivacyPolicyAndTC from "./Pages/PrivacyPolicyAndTC.js"  ;
 
 
 
