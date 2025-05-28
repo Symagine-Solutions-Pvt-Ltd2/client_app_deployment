@@ -44,14 +44,14 @@ function SchoolView() {
   
    console.log("in school view ")  ; 
     
-   // console.log( location.state.typeId ) ;   
+   console.log( location.state.typeId ) ;   
 
        console.log( location.state.userId ) ;  
 
     console.log(location.state.programId ) ;  
   
     console.log(location.state.clientId  ) ;  
-    // console.log(location.state.data) ; 
+   console.log(location.state.data) ; 
 
 
     
@@ -133,14 +133,37 @@ function SchoolView() {
             }  ) ;   
    
 
-        }else{
+        }else  if(   typeId === "school" ) {
               
 
+             alert("here") ; 
+            
+             console.log( location.state.data ) ;
 
+          axios({ 
+  
+            url : "https://learn-up.app/admin/s_details"  ,  
+            method : "POST"  , 
 
-          
-          const newarr = [ location.state.data  ] ;  
-          setData( newarr) ; 
+            data : { 
+
+               "_id" : location.state.data._id
+     
+            }
+     
+           }).then( ( res) => {   
+     
+     
+            console.log(  res) ; 
+            
+           
+           setData( [res.data.data]  ) ;
+         // // console.log(  newarr )  ; 
+     
+           } ).catch(( err) => {  
+              // // console.log( "error") ;
+     
+            }  ) ; 
 
         // // console.log(  newarr )  ; 
         }
