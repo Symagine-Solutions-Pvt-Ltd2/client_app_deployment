@@ -52,7 +52,8 @@ root.render(
  <Route  element = {<RequireAuth /> }> 
  <Route path= "home"  >  
  <Route path= "resetpassword"  element ={  <Password/>  } />   
-   <Route index element ={  <Home/> } />   
+   <Route index element ={  <Home/> } /> 
+     
    <Route path= "dashboard" >
         <Route index  element ={  <SchoolView />  } />   
         <Route  path= "addschool"  element ={  <AddAccount/> }  /> 
@@ -62,7 +63,7 @@ root.render(
         <Route  path= "editfacilitator"  element ={  <EditAccount/> }  />   
 
 
-        <Route  path= "student"  >
+        <Route  path= "student" >
            <Route index  element ={  <StudentView /> }  />  
            <Route  path= "addstudent"  element ={  <AddAccount/> }  />
            <Route  path= "editstudent"  element ={  <EditAccount/> }  />    

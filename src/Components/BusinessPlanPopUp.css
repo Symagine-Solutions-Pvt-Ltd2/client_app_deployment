@@ -1,0 +1,80 @@
+.BusinessPlanPopup{
+  
+    position : fixed ; 
+    right : 0 ;
+    top : 0 ; 
+    width: 81%; 
+    height : 100vh ; 
+    display: flex;
+    align-items:  center; 
+    justify-content: center;   
+    background-color: rgba(128, 128, 128, 0.6);
+ 
+
+ 
+} 
+
+
+
+.businessplanpopup {
+
+position: relative;
+width : 50% ; 
+height : 40% ;
+background-color: #353B55;   
+border-radius: 2%;
+
+
+
+}  
+ 
+
+
+
+.businessplanpopup-inner-body1{
+
+    height: 20%; 
+    display : flex ; 
+    align-items:  center ; 
+    justify-content: flex-end ;  
+    padding-right:  2%;
+}
+
+
+.businessplanpopup-inner-body2{
+
+  
+      height: 80%; 
+      background-color: #FFF;
+      display:  flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction:  column;
+
+} 
+  
+
+
+.businessplanpopup-inner-div1{
+
+    height: 25%; 
+    width :70% ; 
+   
+    display:  flex;
+    justify-content: space-around ; 
+    align-items: center;
+    flex-direction:  row;
+}
+
+.businessplanpopup-inner-div1_input1{
+
+
+    width : 30% ; 
+}
+
+
+.businessplanpopup-inner-div1_label1{
+
+
+    width : 40% ; 
+}
