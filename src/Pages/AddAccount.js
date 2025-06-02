@@ -18,7 +18,7 @@ function AddAccount() {
 
     const [ assignedProgram ,   setAssignedProgram  ]   = useState( location.state.programId) ; 
     const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
-    
+    const [  studyMode ,   setStudyMode  ]   = useState( "" ) ; 
    
   
    // // console.log( "addaccount" ) ; 
@@ -191,6 +191,7 @@ function AddAccount() {
                  "contact_person" :   event.target.contact_person.value  ,
                  "program_id" : location.state.programId   , 
                  "client_id" :  location.state.clientId ,    
+                 "study_mode" : studyMode
                
               }
         
@@ -326,7 +327,14 @@ function AddAccount() {
    
  
 
- 
+    
+     const handleCheckboxChangeForMode  = (  option  ) => {
+            
+       setStudyMode( option) ; 
+        }
+    
+
+     
 
 
 
@@ -545,15 +553,57 @@ function AddAccount() {
                          
                  <p>{ assignedProgram }</p>
                  </div>  
-    </div> 
+              </div> 
         
+                   
+        <div className="addaccount_form_row">
+                <div className="addaccount_admin_Form-Description" >   
+                          <p className="header_text">Study Mode</p> 
+                </div>     
+
+                <div className="addaccount_admin_Form-Input"  style = {{  display : "flex"  , justifyContent : "space-around"}}  >         
+                          
+
+                     <div style={ {  width : "20%"  , height : "50%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
+                            
+                            <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                              <p  style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >Online</p>   
+                              </div>
+    
+    
+                            <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+     
+                             <input   type="checkbox"  value="online"  checked = {  studyMode === "online" }    onChange={  () => handleCheckboxChangeForMode("online") }   />   
+                             </div>
+    
+                          
+    
+                        </div> 
+
+                            <div style={ {  width : "20%"  , height : "50%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
+                            
+                            <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                              <p  style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >Offline</p>   
+                              </div>
+    
+    
+                            <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+     
+                            <input   type="checkbox"  value="offline"   checked = { studyMode === "offline" }    onChange={  () => handleCheckboxChangeForMode( "offline") }        />   
+                             </div>
+    
+                          
+    
+                        </div> 
+                 </div>  
+               </div> '
   
            
            
   
-        <div  className="addaccount_form_row_btn_div"> 
-  <input className="addaccount_form_row_btn" type="submit" value="Submit" /> 
-        </div>
+                        <div  className="addaccount_form_row_btn_div"> 
+                <input className="addaccount_form_row_btn" type="submit" value="Submit" /> 
+                        </div>
                         
     </form>
   
